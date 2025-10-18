@@ -1,0 +1,189 @@
+<?php
+
+// =======================================================
+// Website Title
+add_theme_support('title-tag');
+// =======================================================
+
+// =======================================================
+// Linkup Additional CSS & JS 
+function link_css_js() {
+
+    // Bootstrap CSS CDN
+    wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', array(), '5.3.3', 'all');
+
+    // Main Theme Style (style.css)
+    wp_enqueue_style('main-style', get_stylesheet_uri(), array('bootstrap-css'), '1.0.0', 'all');
+
+    // Custom CSS
+    wp_enqueue_style('custom', get_stylesheet_directory_uri() . '/css/custom.css', array('main-style'), '1.0.0', 'all');
+
+    // jQuery (built-in)
+    wp_enqueue_script('jquery');
+
+    // Bootstrap JS CDN
+    wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', array('jquery'), '5.3.3', true);
+
+    // Custom JS
+    wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/js/main.js', array('bootstrap-js'), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'link_css_js');
+
+
+
+
+
+// ======================================================================
+// Register Theme Customizer For Header Section 
+
+function tamim_customize_register_main($wp_customize) {
+
+    // ✅ Panel for Header-related Options
+    $wp_customize->add_panel('tamim_header_panel', array(
+        'title'       => __('Header Section', 'tamim-personal'),
+        'description' => __('Customize header, logo, menu, and CV.', 'tamim-personal'),
+        'priority'    => 10,
+    ));
+
+    // ✅ Logo Section
+    $wp_customize->add_section('tamim_logo_section', array(
+        'title'       => __('Logo Settings', 'tamim-personal'),
+        'priority'    => 10,
+        'panel'       => 'tamim_header_panel',
+    ));
+
+    $wp_customize->add_setting('header_logo', array(
+        'default'           => get_template_directory_uri() . '/img/logo.png',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'header_logo_control', array(
+        'label'       => __('Upload Logo', 'tamim-personal'),
+        'section'     => 'tamim_logo_section',
+        'settings'    => 'header_logo',
+    )));
+
+    // ✅ Menu Settings
+    $wp_customize->add_section('tamim_menu_section', array(
+        'title'       => __('Menu Settings', 'tamim-personal'),
+        'priority'    => 20,
+        'panel'       => 'tamim_header_panel',
+    ));
+
+    $wp_customize->add_setting('menu_position', array(
+        'default'           => 'center',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('menu_position', array(
+        'label'    => __('Menu Position', 'tamim-personal'),
+        'section'  => 'tamim_menu_section',
+        'settings' => 'menu_position',
+        'type'     => 'radio',
+        'choices'  => array(
+            'left'   => __('Left', 'tamim-personal'),
+            'center' => __('Center', 'tamim-personal'),
+            'right'  => __('Right', 'tamim-personal'),
+        ),
+    ));
+
+    // ✅ CV Upload Section
+    $wp_customize->add_section('tamim_cv_section', array(
+        'title'       => __('CV Upload', 'tamim-personal'),
+        'priority'    => 30,
+        'panel'       => 'tamim_header_panel',
+    ));
+
+    $wp_customize->add_setting('cv_pdf_file', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Upload_Control($wp_customize, 'cv_pdf_file', array(
+        'label'     => __('Upload CV (PDF)', 'tamim-personal'),
+        'section'   => 'tamim_cv_section',
+        'settings'  => 'cv_pdf_file',
+        'mime_type' => 'application/pdf',
+    )));
+}
+add_action('customize_register', 'tamim_customize_register_main');
+
+// =================== Menu Configure ================================
+register_nav_menu( 'main_menu', __( 'main Menu', 'tamim-personal' ) );
+
+
+// ======================================================================
+// Register Theme Customizer For Footer Section 
+
+function tamim_customize_register_footer($wp_customize) {
+
+    // ✅ Separate Panel for Footer Options
+    $wp_customize->add_panel('tamim_footer_panel', array(
+        'title'       => __('Footer Section', 'tamim-personal'),
+        'description' => __('Customize footer text and layout.', 'tamim-personal'),
+        'priority'    => 20,
+    ));
+
+    // ✅ Toggle to Enable/Disable Footer
+    $wp_customize->add_setting('show_footer_section', array(
+    'default'           => true,
+    'sanitize_callback' => 'tamim_sanitize_checkbox',
+));
+
+$wp_customize->add_control('show_footer_section', array(
+    'label'       => __('Show Footer Section', 'tamim-personal'),
+    'section'     => 'tamim_footer_section',
+    'type'        => 'checkbox',
+    'description' => __('Enable or disable the footer section.', 'tamim-personal'),
+));
+
+    // ✅ Footer Section
+    $wp_customize->add_section('tamim_footer_section', array(
+        'title'       => __('Copywrite Setting', 'tamim-personal'),
+        'priority'    => 10,
+        'panel'       => 'tamim_footer_panel',
+    ));
+
+    $wp_customize->add_setting('footer_content', array(
+        'default'           => '© Moniruzzaman Tamim | 2025',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_content', array(
+        'label'       => __('Footer Text', 'tamim-personal'),
+        'description' => __('Enter your footer copyright.', 'tamim-personal'),
+        'section'     => 'tamim_footer_section',
+        'settings'    => 'footer_content',
+        'type'        => 'text',
+        'active_callback' => 'tamim_show_footer_callback', // ✅
+
+    ));
+
+    // Footer Link (URL)
+$wp_customize->add_setting('footer_link', array(
+    'default'           => 'https://yourwebsite.com',
+    'sanitize_callback' => 'esc_url_raw',
+));
+
+$wp_customize->add_control('footer_link', array(
+    'label'       => __('Footer Link', 'tamim-personal'),
+    'description' => __('Link to your website or profile.', 'tamim-personal'),
+    'section'     => 'tamim_footer_section',
+    'settings'    => 'footer_link',
+    'active_callback' => 'tamim_show_footer_callback', // ✅
+));
+
+}
+add_action('customize_register', 'tamim_customize_register_footer');
+
+
+
+function tamim_sanitize_checkbox($checked) {
+    return ( ( isset($checked) && true == $checked ) ? true : false );
+}
+
+function tamim_show_footer_callback() {
+    return get_theme_mod('show_footer_section', true);
+}
+
+?>

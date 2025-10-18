@@ -1,0 +1,166 @@
+/* /* Header Section.................  */
+
+.header-section{
+  background: #000;
+  height: 80px; /* 🔹 header-এর height */
+  display: flex;
+  justify-content: center; /* 🔹 horizontally center */
+  align-items: center; /* 🔹 vertically center */
+}
+
+/* /* ===================================================== */
+/* /* Header LOGO SECTION .................................... */
+img.lheader-ogo-image {
+    width: 200px;
+}
+/* ======================================================= */
+/* HEADER MENU SECTION........................................... */
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    position: relative;
+    display: inline-block;
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Main Menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  
+}
+
+.nav-menu li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+
+}
+.nav-menu a:hover {
+  color: #00bcd4;
+}
+/* Dropdown Menu */
+.nav-menu li ul  {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+
+.nav-menu li ul  li {
+  width: 100%;
+}
+
+.nav-menu li ul  a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.nav-menu li ul  a:hover {
+  background: #00bcd4;
+  color: #fff;
+}
+
+/* Hover effect to show dropdown */
+.nav-menu li ul :hover .nav-menu li ul  {
+  opacity: 1;
+  visibility: visible;
+  top: 38px;
+}
+/* Responsive (Mobile) */
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    background: #1e1e2f;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    display: none;
+  }
+
+  .navbar.active .nav-menu {
+    display: flex;
+  }
+}
+/* ================================================================================== */
+/* HEADER EXTRA SECTION  */
+
+
+
+/* ============================================================================================== */
+/* HEADER MENU POSSITION CHANGE CSS  */
+.header-section.left_Menu, .header-section.right_Menu, .header-section.center_Menu{
+  display: flex;           /* flex container */
+  align-items: center;     /* vertical alignment */
+  justify-content: flex-start;  /* items left side এ থাকবে */
+}
+
+.header-section.left_Menu .header-colum-one {
+  order: 1;
+}
+.header-section.left_Menu .header-colum-two{
+  order: 0;
+}
+.header-section.left_Menu .header-colum-three {
+  order: 2;
+}
+
+.header-section.right_Menu .header-colum-one {
+  order: 0;
+}
+.header-section.right_Menu .header-colum-two{
+  order: 2;
+}
+.header-section.right_Menu .header-colum-three {
+  order: 1;
+}
+.header-section.center_Menu .header-colum-one {
+  order: 0;
+}
+.header-section.center_Menu .header-colum-two{
+  order: 1;
+}
+.header-section.center_Menu .header-colum-three {
+  order: 2;
+}
+
+ 
+
+/* footer-buttom-content */
+a.footer-buttom-content {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
