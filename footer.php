@@ -1,13 +1,24 @@
+
+
 <?php
 $year = date('Y');
-$designer_name = get_theme_mod('footer_content', 'Developer Jillur');
+$designer_name = get_theme_mod('footer_content', 'Developer TAMIM');
 $designer_link = get_theme_mod('footer_link', '#');
 ?>
 
-<?php if (get_theme_mod('show_footer_section', true)) : ?>
+
 <footer>
+    <!-- Main Footer  Fotter Part Start -->
+<div class="container">
+    <div class="row">
+<div><?php dynamic_sidebar('footer-sidebar-1'); ?> </div>
+    </div>
+</div>
+   <!-- Main Footer   Part END -->
+<!-- Buttom Fotter Part Start -->
+    <?php if (get_theme_mod('show_footer_section', true)) : ?>
     <div class="container-fluid bg-black py-3 text-center">
-        <div class="row">
+    <div class="row">
             <div class="col-xl-12">
                 <?php
                 $year = date('Y');
@@ -27,8 +38,10 @@ $designer_link = get_theme_mod('footer_link', '#');
             </div>
         </div>
     </div>
+    <?php endif; ?>
+<!-- Buttom Footer Part End... -->
 </footer>
-<?php endif; ?>
+
 <!-- // Footer Section END  -->
 
 
