@@ -10,12 +10,15 @@
             <div class="row">
                 <div class="col-xl-8"> 
                     <!-- Slicing Blog Related Code  -->
-                    <?php get_template_part('templete/blog_post'); ?>
+                    <?php get_template_part('templete/page_setting'); ?> 
+                    <div class="commnet-area">
+                        <?php comments_template(); ?>
+                    </div>
                 </div>
+
                 <div class="col-xl-4">
                     <div class="Sidebars-part">
-                                            <h2>Show SideBar Area</h2>
-                                            <?php get_sidebar(); ?>
+<h2>Show SideBar Area</h2>
                     </div>
                 </div>
 

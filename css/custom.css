@@ -81,13 +81,51 @@ body{
 
 
 /* ===================== BLOG SECTION STYLES ==========================*/
-.blog-area{
-    background-color: var(--shadow);
+.blog-area {
+    background: var(--shadow);
     border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 3px 5px #e9e0e0;
 }
-.blog-area img.img-fluid.w-100.rounded.wp-post-image {
-    height: 40vh;
+.blog-area .blog-image a img{
+    height: 30vh;
+    object-fit: cover;
+    overflow: hidden;
 }
 .blog-area .blog-content{
     padding:10px 15px;
 }
+
+
+.blog-area .blog-content h2 a {
+    display: inline-block;
+    color:black;
+    font-size: 30px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+
+.blog-area .blog-content h6 a {
+    color: black;
+    display: inline-block;
+}
+
+.blog-area .blog-content span a {
+    color: rgb(252, 250, 250);
+    background-color: #ea186f;
+    padding: 12px 37px;
+}
+ 
+.page-numbers  {
+    color: white;
+    background-color: #ea186f;
+    padding: 8px 14px;
+    margin: 5px;
+}
+ span.page-numbers.current {
+    background: black;
+    color: #fbfbfb;
+}
+
+
+/* ===================== Archive Page  STYLES ==========================*/

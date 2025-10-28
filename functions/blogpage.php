@@ -1,43 +1,24 @@
-<?php 
-
-// ======================================================================
-//For Show Thumbnail Image Function
-// Enable featured images
+<?php
+// ===========Set Feature Image on Blog Page and Post Section=============
 add_theme_support('post-thumbnails');
 add_image_size('post-thumbnails', 970, 350, true);
-// =======================================================
 
-// Pagination Function
-function ali_pagenav() {
-    global $wp_query, $wp_rewrite;
 
-    $pages = '';
-    $max = $wp_query->max_num_pages;
-
-    if ($max <= 1) return; // No pagination needed if only one page
-
-    $current = get_query_var('paged') ? get_query_var('paged') : 1;
-
-    $args = array(
-        'base'      => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-        'format'    => '?paged=%#%',
-        'current'   => max(1, $current),
-        'total'     => $max,
-        'prev_text' => __('« Prev'),
-        'next_text' => __('Next »'),
-        'type'      => 'array'
-    );
-
-    $pages = paginate_links($args);
-
-    if (is_array($pages)) {
-        echo '<div class="wp_pagenav">';
-        echo '<span class="pages">Page ' . $current . ' of ' . $max . '</span>';
-        echo '<ul class="pagination">';
-        foreach ($pages as $page) {
-            echo '<li>' . $page . '</li>';
-        }
-        echo '</ul>';
-        echo '</div>';
-    }
+// Pagenav Function
+function ali_pagenav(){
+  global $wp_query, $wp_rewrite;
+  $pages ='';
+  $max = $wp_query->max_num_pages;
+  if(!$current = get_query_var('paged')) $current = 1;
+  $args['base'] = str_replace(999999999, '%#%', get_pagenum_link(999999999));
+  $args['total'] = $max;
+  $args['current'] = $current;
+  $total = 1;
+  $args['prev_text'] = 'Prev';
+  $args['next_text'] = 'Next';
+  if ($max > 1) echo '</pre>
+    <div class="wp_pagenav">';
+      if ($total == 1 && $max > 1) $pages = '<p class="pages"> Page ' .$current . '<span>of</span>' . $max . '</p>';
+      echo $pages . paginate_links($args);
+      if ($max > 1 ) echo '</div><pre>';
 }

@@ -1,7 +1,7 @@
 <?php
 
 
-// Register Theme Customizer For Footer Section 
+// ==========================Register Theme Customizer For Footer Section =======================================
 
 // Register Theme Customizer For Footer Section 
 function tamim_customize_register_footer($wp_customize) {

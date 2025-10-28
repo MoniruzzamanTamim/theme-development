@@ -1,6 +1,6 @@
 <?php
 
-// Register Theme Customizer For Header Section 
+// =========================================== Register Theme Customizer For Header Section =========================
 
 function tamim_customize_register_main($wp_customize) {
 
@@ -74,5 +74,5 @@ function tamim_customize_register_main($wp_customize) {
 }
 add_action('customize_register', 'tamim_customize_register_main');
 
-// =================== Menu Configure ================================
+// =================== Menu  Configure ================================
 register_nav_menu( 'main_menu', __( 'main Menu', 'tamim-personal' ) );

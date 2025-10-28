@@ -1,6 +1,6 @@
 <?php
 
-// / Linkup Additional CSS & JS 
+// ========================= Linkup Additional CSS & JS  Font-Awesome, BootStrap, And Others Link ================================
 function link_css_js() {
 
 //1)  Link Main Style.css File 

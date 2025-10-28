@@ -9,6 +9,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-8"> 
+
+                <div class="archive-title">
+                    <?php
+                  the_archive_title('<h1 class="title">','</h1>');
+                  the_author_description('<div class="description">', '</div>');
+              ?>
+                </div>
+
                     <!-- Slicing Blog Related Code  -->
                     <?php get_template_part('templete/blog_post'); ?>
                 </div>

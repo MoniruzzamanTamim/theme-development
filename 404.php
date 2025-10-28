@@ -1,12 +1,32 @@
+<!-- ================Header Section Start===================  -->
+<?php error_reporting(E_ALL);
+ini_set('display_errors', 1);
+get_header(); ?>
+<!-- ================Header Section Start====================  -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 
-    <h1>HeLLO 404 Page</h1>
-<?php get_footer(); ?>  <!-- Footer Load -->
+<!-- ================Body Section Start===================  -->
+<section class="body_section">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8"> 
+                    <!-- Slicing Blog Related Code  -->
+                    <?php get_template_part('templete/blog_post'); ?>
+                </div>
+                <div class="col-xl-4">
+                    <div class="Sidebars-part">
+                                            <h2>Show SideBar Area</h2>
+                                            <?php get_sidebar(); ?>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</section>
+<!-- ================Body Section End====================  -->
+
+
+<!-- ================Footer Section Start===================  -->
+<?php get_footer(); ?> 
+<!-- ================Footer Section Start====================  -->
