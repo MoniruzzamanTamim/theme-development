@@ -4,7 +4,7 @@
                         if(have_posts( )):
                             while(have_posts( )): the_post();
                         ?>
-                        <div class="blog-area">
+                        <div class="blog-area" >
                             <div class="blog-image">
                                 <a href="<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer">
                                     <?php 

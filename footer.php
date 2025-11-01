@@ -9,11 +9,18 @@ $designer_link = get_theme_mod('footer_link', '#');
 
 <footer>
     <!-- Main Footer  Fotter Part Start -->
-<div class="container">
-    <div class="row">
-<div><?php dynamic_sidebar('footer-sidebar-1'); ?> </div>
+<section class="main-footer-section">
+      <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="main-footer">
+                    <?php dynamic_sidebar('footer-sidebar-1'); ?>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
    <!-- Main Footer   Part END -->
 <!-- Buttom Fotter Part Start -->
     <?php if (get_theme_mod('show_footer_section', true)) : ?>
