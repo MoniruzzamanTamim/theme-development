@@ -66,3 +66,65 @@ function service_shotcodes( $atts ) {
     return $myvariable;
 }
 add_shortcode( 'services', 'service_shotcodes');
+
+
+
+
+
+// Short Code generated For Slider Option
+
+// 📸 Shortcode: [slider] বা [slider category="home-page-slider"]
+function tamim_slider_shortcode( $atts ) {
+    // 🔧 Shortcode attributes
+    $atts = shortcode_atts( array(
+        'category' => '',         // ক্যাটাগরি নির্দিষ্ট না থাকলে ফাঁকা থাকবে
+        'posts_per_page' => -1,   // সব পোস্ট দেখাবে
+    ), $atts, 'slider' );
+
+    // 🔍 মূল query arguments
+    $args = array(
+        'post_type'      => 'slider',
+        'posts_per_page' => $atts['posts_per_page'],
+        'post_status'    => 'publish',
+        'orderby'        => 'date',
+        'order'          => 'ASC',
+    );
+
+    // 🧩 যদি shortcode-এ category নির্দিষ্ট করা থাকে
+    if ( !empty( $atts['category'] ) && strtolower($atts['category']) !== 'all' ) {
+        $args['tax_query'] = array(
+            array(
+                'taxonomy' => 'category', // ✅ CPT-তে category enable থাকতে হবে
+                'field'    => 'slug',
+                'terms'    => sanitize_title($atts['category']),
+            ),
+        );
+    }
+
+    $query = new WP_Query( $args );
+    ob_start();
+
+    if ( $query->have_posts() ) : ?>
+    <section class="shortcode_slider_section">
+        <div class="owl-carousel owl-theme slider-shortcode">
+            <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                <div class="slider_item">
+                    <?php if ( has_post_thumbnail() ) : ?>
+                       <?php the_post_thumbnail('median', array('class' => 'slider_image'));  ?>
+                    <?php endif; ?>
+                    <?php if ( get_the_content() ) : ?>
+                            <p><?php the_content(); ?></p>
+                        <?php endif; ?>
+                
+                </div>
+            <?php endwhile; ?>
+        </div>
+    </section>
+    <?php 
+    endif;
+
+    wp_reset_postdata();
+    return ob_get_clean();
+}
+add_shortcode( 'slider', 'tamim_slider_shortcode' );
+?>

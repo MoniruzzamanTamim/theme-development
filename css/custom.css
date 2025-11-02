@@ -51,8 +51,12 @@ body{
     color: var(--dark-color);
     font-size: 16px;
     line-height: 1.6;
+    overflow-x: hidden;
 }   
 
+.col-xl-12.no-padding {
+    padding: 0 !important;
+}
 
 
 /* ===================== GLOBAL CLASSES ==========================*/
@@ -167,3 +171,94 @@ h2.custom_post_title {
     font-weight: 400;
 }
 /* ==========Custom Post Css END ============*/
+
+
+/* Jquery plugin CSS START  SLIDER Section   */
+
+/* 🔥 Slider Image Height Fix */
+.slider-section .owl-carousel .slider_item img , .owl-carousel .slider_item img {
+  height: 84vh !important;           /* 🟢 84% of viewport height */
+  object-fit: cover;      /* 🔵 ইমেজ কাটবে না, সুন্দরভাবে ফিট হবে */
+  width: 100%;            /* 🔵 পুরো প্রস্থ জুড়ে থাকবে */
+  display: block;
+}
+
+/* ================================
+   🖼️ Slider Item Wrapper
+   ================================ */
+.slider_item {
+    position: relative; /* Caption বা arrow overlay রাখার জন্য parent কে relative করা হয়েছে */
+}
+
+/* ================================
+   ⚪ Owl Carousel Dots (নিচের ছোট বুলেট)
+   ================================ */
+.owl-dots {
+    position: absolute;       /* Absolute অবস্থানে রাখা হয়েছে */
+    left: 50%;                /* মাঝখানে আনা হয়েছে */
+    bottom: 56px;             /* নিচ থেকে 56px উপরে */
+    transform: translateX(50%); /* অনুভূমিকভাবে পুরোপুরি center align */
+    /* stroke-linecap: butt; → এটি এখানে দরকার নেই, SVG element এর জন্য ব্যবহৃত হয় */
+}
+
+/* ================================
+   ⬅️➡️ Owl Carousel Navigation Arrows Position Fix
+   ================================ */
+.owl-nav {
+  position: absolute;          /* Slider এর উপর Overlay হিসেবে বসবে */
+  top: 50%;                    /* উল্লম্বভাবে মাঝখানে */
+  width: 100%;                 /* পুরো স্লাইডের প্রস্থ জুড়ে */
+  display: flex;               /* Flexbox ব্যবহার করে দুই পাশে item বসানো */
+  justify-content: space-between; /* Left ও Right পাশে arrow থাকবে */
+  transform: translateY(-50%); /* উল্লম্বভাবে নিখুঁতভাবে center করা */
+}
+
+/* ================================
+   🧭 Owl Navigation Button Styles (Prev/Next)
+   ================================ */
+.owl-nav button.owl-prev,
+.owl-nav button.owl-next {
+  background: none !important;  /* ব্যাকগ্রাউন্ড রিমুভ করা হয়েছে */
+  border: none;                 /* বর্ডার বাদ দেওয়া হয়েছে */
+  cursor: pointer;              /* মাউস hover করলে pointer cursor দেখাবে */
+}
+
+/* ================================
+   🅰️ Arrow Icon Style
+   ================================ */
+button.owl-prev,
+button.owl-next span {
+    font-size: 45px !important; /* তীর চিহ্ন বড় করা হয়েছে */
+    color: red !important;      /* তীরের রঙ লাল */
+    background: none !important;/* ব্যাকগ্রাউন্ড রিমুভ */
+}
+
+/* ডান দিকের তীরের অবস্থান সামান্য ভিতরে আনা */
+.owl-nav button.owl-next {
+  right: 18px !important;
+}
+
+/* ================================
+   🔴 Active / Hover Dots Style
+   ================================ */
+.owl-theme .owl-dots .owl-dot.active span, 
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: #e90c21; /* Active dot বা hover dot-এর রঙ লালচে (#e90c21) */
+}
+
+/* ============================================
+Slider Short Code কে ফুল উইথ বানানো যাতে করে শুঢুমাত্র কন্টেইনার ডিভ এও ফুল উইথ দেখায়
+============================================= */
+/* Wrapper কে full-width করে দিচ্ছি */
+.shortcode_slider_section {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;  /* viewport এর 50% left offset */
+    margin-right: -50vw; /* viewport এর 50% right offset */
+    width: 100vw;        /* viewport width */
+    max-width: 100vw;    /* full width রাখবে */
+    overflow: hidden;
+}
+/* Jquery plugin CSS END  */
+

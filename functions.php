@@ -27,7 +27,11 @@ include_once('functions/blogpage.php');
 //Blog Page Sidebar S
 include_once('functions/widget.php');
 // =======================================================
-//Custom Post 
+// ======================================================================
+//Theme Color Customize Option 
+include_once('functions/themecolor.php');
+// =======================================================
+//Custom Post ==================================================
 include_once('functions/custompost.php');
 // =======================================================
 
