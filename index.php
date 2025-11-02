@@ -10,11 +10,13 @@
             <div class="row">
                 <div class="col-xl-8"> 
                     <!-- Slicing Blog Related Code  -->
-                    <?php get_template_part('templete/blog_post'); ?>
+                    <div class="main_blog-post">
+                        <?php get_template_part('templete/blog_post'); ?>
+                    </div>
                 </div>
                 <div class="col-xl-4">
                     <div class="Sidebars-part">
-                                            <h2>Show SideBar Area</h2>
+                                            <h2 class="py-2">Show SideBar Area</h2>
                                             <?php get_sidebar(); ?>
                     </div>
                 </div>

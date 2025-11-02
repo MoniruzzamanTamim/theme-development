@@ -20,7 +20,7 @@ include_once('functions/footerFunction.php');
 // =======================================================
 
 // ======================================================================
-//Blog Page Sections
+//Blog Page Sections with Pagination
 include_once('functions/blogpage.php');
 // =======================================================
 // ======================================================================
@@ -29,6 +29,14 @@ include_once('functions/widget.php');
 // =======================================================
 //Custom Post 
 include_once('functions/custompost.php');
+// =======================================================
+
+//Create Short Code
+include_once('functions/shortcode.php');
+// =======================================================
+
+//Create Short Code with pagination
+include_once('functions/shortcodes.php');
 // =======================================================
 
 

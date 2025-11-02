@@ -129,3 +129,41 @@ body{
 
 
 /* ===================== Archive Page  STYLES ==========================*/
+
+/* ==========Custom Post ShortCode With Pagination Start  ============*/
+.short_page_nav .page-numbers {
+    color: white;
+    padding: 8px 14px;
+    background-color:  white  !important; 
+    margin: 5px;
+    display: flex !important;
+}
+.short_page_nav .page-numbers a.page-numbers {
+    background-color: #ea186f !important; 
+}
+.short_page_nav  span.page-numbers.current {
+    background: black !important;
+}
+/* ==========Custom Post ShortCode With Pagination END  ============*/
+
+/* ==========SideBar Area Custom Post Respondsive Start  ============*/
+.Sidebars-part #service_area .col-md-4 {
+    width: 100%;
+}
+/* ==========SideBar Area Custom Post Respondsive END ============*/
+/* ==========Custom Post Css Start  ============*/
+h2.custom_post_title {
+    font-size: 25px;
+    font-weight: 600;
+    color: black;
+}
+
+.child_service img {
+    height: 25vh !important;
+}
+
+.custom_post_des p {
+    padding: 10px 0 !important;
+    font-weight: 400;
+}
+/* ==========Custom Post Css END ============*/
