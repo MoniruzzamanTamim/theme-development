@@ -29,29 +29,32 @@ function tamim_customize_register_main($wp_customize) {
         'settings'    => 'header_logo',
     )));
 
-    // ✅ Menu Settings
-    $wp_customize->add_section('tamim_menu_section', array(
-        'title'       => __('Menu Settings', 'tamim-personal'),
-        'priority'    => 20,
-        'panel'       => 'tamim_header_panel',
-    ));
+/// =========================
+// ✅ Menu Position Customizer
+// =========================
+$wp_customize->add_section('tamim_menu_section', array(
+    'title'       => __('Menu Settings', 'tamim-personal'),
+    'priority'    => 20,
+    'panel'       => 'tamim_header_panel', // যদি panel না থাকে, তাহলে এটা বাদ দিতে পারো
+));
 
-    $wp_customize->add_setting('menu_position', array(
-        'default'           => 'center',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
+$wp_customize->add_setting('menu_position_change', array(
+    'default'           => 'center',
+    'sanitize_callback' => 'sanitize_text_field',
+));
 
-    $wp_customize->add_control('menu_position', array(
-        'label'    => __('Menu Position', 'tamim-personal'),
-        'section'  => 'tamim_menu_section',
-        'settings' => 'menu_position',
-        'type'     => 'radio',
-        'choices'  => array(
-            'left'   => __('Left', 'tamim-personal'),
-            'center' => __('Center', 'tamim-personal'),
-            'right'  => __('Right', 'tamim-personal'),
-        ),
-    ));
+$wp_customize->add_control('menu_position_change', array(
+    'label'    => __('Menu Position', 'tamim-personal'),
+    'section'  => 'tamim_menu_section',
+    'settings' => 'menu_position_change',
+    'type'     => 'radio',
+    'choices'  => array(
+        'left'   => __('Left', 'tamim-personal'),
+        'center' => __('Center', 'tamim-personal'),
+        'right'  => __('Right', 'tamim-personal'),
+    ),
+));
+
 
     // ✅ CV Upload Section
     $wp_customize->add_section('tamim_cv_section', array(

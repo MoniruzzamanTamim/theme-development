@@ -6,24 +6,24 @@
 <!-- ================Body Section Start===================  -->
 <section class="body_section">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-8"> 
-                    <!-- Slicing Blog Related Code  -->
-                    <?php get_template_part('templete/page_setting'); ?> 
-                    <div class="commnet-area">
-                        <?php comments_template(); ?>
-                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8"> 
+            <!-- Slicing Blog Related Code  -->
+                <?php get_template_part('templete/page_setting'); ?> 
+                <div class="commnet-area">
+                <?php comments_template(); ?>
                 </div>
-
-                <div class="col-xl-4">
-                    <div class="Sidebars-part">
-<h2>Show SideBar Area</h2>
-                    </div>
-                </div>
-
             </div>
+
+            <div class="col-xl-4">
+                <div class="Sidebars-part">
+                <h2>Show SideBar Area</h2>
+                </div>
+            </div>
+
         </div>
+    </div>
 </section>
 <!-- ================Body Section End====================  -->
 

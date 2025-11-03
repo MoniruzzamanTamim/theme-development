@@ -35,7 +35,7 @@ function tamim_customize_register_footer($wp_customize) {
 
     // ✅ Footer Text
     $wp_customize->add_setting('footer_content', array(
-        'default'           => '© Moniruzzaman Tamim | 2025',
+        'default'           => '@ Moniruzzaman Tamim | 2025',
         'sanitize_callback' => 'sanitize_text_field',
     ));
 

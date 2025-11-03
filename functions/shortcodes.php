@@ -127,4 +127,4 @@ function tamim_slider_shortcode( $atts ) {
     return ob_get_clean();
 }
 add_shortcode( 'slider', 'tamim_slider_shortcode' );
-?>
+

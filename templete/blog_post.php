@@ -1,5 +1,6 @@
 <!-- This Templete Use Show blog Related Details Details -->
-<div class="main-part">
+<!-- #Start Blog Page Code here-->
+<div class="main-part blog_part"> 
                         <?php 
                         if(have_posts( )):
                             while(have_posts( )): the_post();
@@ -34,3 +35,5 @@
                 <?php previous_posts_link(); ?>
                 <?php } ?>
 </div>
+
+<!-- #END Blog Page Code here-->

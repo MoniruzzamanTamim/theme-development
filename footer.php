@@ -52,9 +52,6 @@ $designer_link = get_theme_mod('footer_link', '#');
 <!-- // Footer Section END  -->
 
 
-
-
-
     <?php wp_footer();?>
 </body>
 </html>

@@ -9,10 +9,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-8"> 
-                    <!-- Slicing Blog Related Code  -->
-                    <div class="main_blog-post">
+                <!-- Blog Posts Area  Start Method Slicing -->
+                      <div class="main_blog-post">
                         <?php get_template_part('templete/blog_post'); ?>
                     </div>
+                       <!-- Blog Posts Area  END  -->
                 </div>
                 <div class="col-xl-4">
                     <div class="Sidebars-part">
