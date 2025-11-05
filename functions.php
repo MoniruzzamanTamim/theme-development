@@ -18,6 +18,10 @@ include_once('functions/headerFunction.php');
 //For Register Theme Customizer For Footer Section 
 include_once('functions/footerFunction.php');
 // =======================================================
+// ======================================================================
+//For Control Page Width Customly
+include_once('functions/pagewidth_setup.php');
+// =======================================================
 
 // ======================================================================
 //Blog Page Sections with Pagination

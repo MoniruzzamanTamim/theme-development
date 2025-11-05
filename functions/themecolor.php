@@ -65,9 +65,9 @@ function tamim_theme_color($wp_customize) {
     $header_colors = array(
         // General Header
         'header_bg'             => __('Header Background Color', 'tamim-personal'),
-        'header_text'           => __('Header Text Color', 'tamim-personal'),
-        'header_bg_hover'       => __('Header Hover Background Color', 'tamim-personal'),
-        'header_text_hover'     => __('Header Hover Text Color', 'tamim-personal'),
+        'header_menu_text'           => __(' Menu Text Color', 'tamim-personal'),
+        'header_bg_hover'       => __(' Menu Hover Background Color', 'tamim-personal'),
+        'header_text_hover'     => __(' Menu Hover Text Color', 'tamim-personal'),
 
         // Header Button
         'header_btn_text'           => __('Header Button Text Color', 'tamim-personal'),
@@ -124,12 +124,12 @@ $colors = array(
 
         // Header Colors
         'header_bg'             => get_theme_mod('tamim_color_header_bg', '#ffffff'),
-        'header_text'           => get_theme_mod('tamim_color_header_text', '#000000'),
+        'header_menu_text'           => get_theme_mod('tamim_color_header_text', '#000000'),
         'header_bg_hover'       => get_theme_mod('tamim_color_header_bg_hover', '#01b3a7'),
         'header_text_hover'     => get_theme_mod('tamim_color_header_text_hover', '#ffffff'),
 
-        'header_btn_text'           => get_theme_mod('tamim_color_header_btn_text', '#000000ff'),
-        'header_btn_text_hover'     => get_theme_mod('tamim_color_header_btn_text_hover', '#000000'),
+        'header_btn_text'           => get_theme_mod('tamim_color_header_btn_text', '#ffffffff'),
+        'header_btn_text_hover'     => get_theme_mod('tamim_color_header_btn_text_hover', '#ffffffff'),
         'header_btn_bg'             => get_theme_mod('tamim_color_header_btn_bg', '#ffffffff'),
         'header_btn_bg_hover'       => get_theme_mod('tamim_color_header_btn_bg_hover', '#01b3a7'),
         'header_btn_border'         => get_theme_mod('tamim_color_header_btn_border', '#ffffffff'),
@@ -156,7 +156,7 @@ $colors = array(
 
             /* === Header === */
             --header-bg-color: <?php echo esc_html($colors['header_bg']); ?>;
-            --header-text-color: <?php echo esc_html($colors['header_text']); ?>;
+            --header-text-color: <?php echo esc_html($colors['header_menu_text']); ?>;
             --header-bg-hover: <?php echo esc_html($colors['header_bg_hover']); ?>;
             --header-text-hover: <?php echo esc_html($colors['header_text_hover']); ?>;
 

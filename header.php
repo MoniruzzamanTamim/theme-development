@@ -1,7 +1,7 @@
 <?php
-// Header Section 
- ?>
- 
+// Header Section  Start 
+?>
+
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -38,10 +38,12 @@
 
             <!-- EXTRA SECTION Start -->
             <div class="col-xl-2 col-md-2 col-sm-2 text-end header_colum_three">
-                <?php $cv_pdf_url = get_theme_mod('cv_pdf_file'); ?>
+                <div class="header-extra">
+                    <?php $cv_pdf_url = get_theme_mod('cv_pdf_file'); ?>
                 <a href="<?php echo esc_url($cv_pdf_url); ?>" class="download-cv-button btn btn-primary" download>
                     <?php _e('Download CV', 'tamim-personal'); ?>
                 </a>
+                </div>
             </div>
            <!-- EXTRA SECTION Start -->  
 

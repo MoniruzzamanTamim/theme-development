@@ -6,40 +6,11 @@
 get_header(); ?>
 <!-- //Header Section END ============================================= -->
 
-<!-- Home Page Slider Section Start  -->
- <section class="slider-section ">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xl-12 no-padding">
-               <!-- owl Carosol Section Start -->
-
-            <div class="owl-carousel owl-theme">
-              <?php 
-                $args = array(
-                    'post_type'      => 'service',
-                    'posts_per_page' => -1,
-                    'post_status'    => 'publish'
-                );
-              $query = new WP_Query($args);
-              if($query->have_posts()):
-              while($query->have_posts()): $query->the_post(); 
-              ?>
-              <div class="slider_item">
-              <?php the_post_thumbnail('medium', array('class' => 'slider_image')); ?>
-              </div>
-              <?php endwhile; wp_reset_postdata(); endif; ?>
-            </div>
-               <!-- owl Carosol Section Start -->
-      </div>
-    </div>
-  </div>
- </section>
- <!-- Home Page Slider Section END  -->
 <!-- Home Page Slider Section Start From Custom post  -->
 <section class="slider-section">
-  <div class="container-fluid p-0"><!-- ✅ padding সরিয়ে পূর্ণ প্রস্থ -->
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-12">
+      <div class="col-xl-12">
         <!-- 🦉 Owl Carousel Section Start -->
         <div class="owl-carousel owl-theme">
           <?php 
@@ -78,7 +49,6 @@ get_header(); ?>
     </div>
   </div>
 </section>
-
  <!-- Home Page Slider Section END  From Custom Post -->
 
 <!-- Custom Post Type Section Show Front-END  Start -->
@@ -145,7 +115,6 @@ get_header(); ?>
 
       <?php else: ?>
         <div class="col-12 text-center">
-          <p>No services found.</p>
         </div>
       <?php endif; ?>
     </div>

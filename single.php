@@ -4,11 +4,11 @@
 
 
 <!-- ================Body Section Start===================  -->
-<section class="body_section">
+<section class="body_section py-5">
 
     <div class="container">
         <div class="row">
-            <div class="col-xl-8"> 
+            <div class="col-xl-8 "> 
             <!-- Slicing Blog Related Code  -->
                 <?php get_template_part('templete/page_setting'); ?> 
                 <div class="commnet-area">

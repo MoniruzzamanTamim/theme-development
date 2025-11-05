@@ -11,7 +11,9 @@
                 <div class="col-xl-8"> 
                 <!-- Blog Posts Area  Start Method Slicing -->
                       <div class="main_blog-post">
-                        <?php get_template_part('templete/blog_post'); ?>
+                        <div class="col-row">
+                            <?php get_template_part('templete/blog_post'); ?>
+                        </div>
                     </div>
                        <!-- Blog Posts Area  END  -->
                 </div>
