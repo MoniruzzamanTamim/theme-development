@@ -8,7 +8,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-xl-8"> 
+                <div class="col-xl-8 bg-black"> 
                 <!-- Blog Posts Area  Start Method Slicing -->
                       <div class="main_blog-post">
                         <div class="col-row">
@@ -17,7 +17,7 @@
                     </div>
                        <!-- Blog Posts Area  END  -->
                 </div>
-                <div class="col-xl-4">
+                <div class="col-xl-4 bg-black">
                     <div class="Sidebars-part">
                                             <h2 class="py-2">Show SideBar Area</h2>
                                             <?php get_sidebar(); ?>

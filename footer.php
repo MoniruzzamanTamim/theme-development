@@ -23,8 +23,9 @@ $designer_link = get_theme_mod('footer_link', '#');
 
    <!-- Main Footer   Part END -->
 <!-- Buttom Fotter Part Start -->
-    <?php if (get_theme_mod('show_footer_section', true)) : ?>
-    <div class="container-fluid bg-black py-3 text-center">
+<section class="buttom-footer bg-black py-3 text-center" >
+        <?php if (get_theme_mod('show_footer_section', true)) : ?>
+    <div class="container-fluid">
     <div class="row">
             <div class="col-xl-12">
                 <?php
@@ -46,6 +47,7 @@ $designer_link = get_theme_mod('footer_link', '#');
         </div>
     </div>
     <?php endif; ?>
+</section>
 <!-- Buttom Footer Part End... -->
 </footer>
 
