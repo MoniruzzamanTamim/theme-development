@@ -1,6 +1,9 @@
-<!-- ================Header Section Start===================  -->
-<?php get_header(); ?>
-<!-- ================Header Section Start====================  -->
+<?php
+/*
+* The template for displaying Search Resealt
+*/ 
+get_header(); ?>
+
 
 
 <!-- ================Body Section Start===================  -->

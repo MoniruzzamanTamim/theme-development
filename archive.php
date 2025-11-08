@@ -1,5 +1,9 @@
 <!-- ================Header Section Start===================  -->
-<?php get_header(); ?>
+<?php 
+/*
+* The template for displaying Archive Pages
+*/ 
+get_header(); ?>
 <!-- ================Header Section Start====================  -->
 
 

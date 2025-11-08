@@ -1,3 +1,7 @@
+<?php/*
+* The template for displaying pages
+*/ 
+?>
 <!-- ================Header Section Start===================  -->
 <?php get_header(); ?>
 <!-- ================Header Section End====================  -->

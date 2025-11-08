@@ -2,6 +2,8 @@
 // ===========Set Thumble on Blog and Page=============
 
 add_theme_support('post-thumbnails');
+add_image_size('post-thumbnails', 970, 350, true);
+
 
 function my_theme_setup(){
   add_theme_support('post-thumbnails');

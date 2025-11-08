@@ -1,5 +1,7 @@
 <?php
-// Header Section  Start 
+/*
+* This template for displaying the header
+*/
 ?>
 
 

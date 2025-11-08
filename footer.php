@@ -1,4 +1,8 @@
-
+<?php
+/*
+* This template for displaying the Footer
+*/
+?>
 
 <?php
 $year = date('Y');

@@ -1,5 +1,9 @@
 <!-- ================Header Section Start===================  -->
-<?php get_header(); ?>
+<?php 
+/*
+* The template for displaying Blog  Full Content 
+*/ 
+get_header(); ?>
 <!-- ================Header Section Start====================  -->
 
 
