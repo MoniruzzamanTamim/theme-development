@@ -1,3 +1,9 @@
+
+<?php 
+// Main Blog Post templete
+?>
+
+
 <div class="main-part blog_part row"> 
     <?php 
     if(have_posts()):
@@ -5,6 +11,7 @@
     ?>
     <div class="col-md-6 mb-4 h-100"> <!-- 2 columns inside the 8-col main area -->
         <div class="blog-area">
+            <span class="dashicons dashicons-format-<?php echo get_post_format( $post->ID ) ?>"></span>
             <div class="blog-image">
                 <a href="<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer">
                     <?php 

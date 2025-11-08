@@ -6,7 +6,7 @@
     <div class="col-md-6 mb-4 h-100"> <!-- 2 columns inside the 8-col main area -->
         <div class="blog-area">
             <div class="blog-format">
-                <h1> <span class="dashicons dashicons-format-audio"></span> Audio Related Post </h1>
+               <span class="dashicons dashicons-format-<?php echo get_post_format( $post->ID ) ?>"></span>
             </div>
             <div class="blog-image">
                 <a href="<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer">

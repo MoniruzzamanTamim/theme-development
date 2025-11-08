@@ -1,8 +1,18 @@
 <?php
-// ===========Set Feature Image on Blog Page and Post Section=============
-add_theme_support('post-thumbnails');
-add_image_size('post-thumbnails', 970, 350, true);
 
+
+// ===========Set Blog Post Formats On Post Section =============
+function tamim_theme_setup() {
+   // ===========Set Feature Image on Blog Page and Post Section=============
+
+    add_theme_support('post-thumbnails');
+    add_image_size('post-thumbnails', 970, 350, true);
+
+    // ===========Set FPost FormatsSection=============
+
+    add_theme_support('post-formats', array( 'aside', 'gallery', 'image', 'quote', 'video', 'audio' ));
+}
+add_action('after_setup_theme', 'tamim_theme_setup');
 
 // ===========Set Pagination On  Post Section=============
 function ali_pagenav(){
@@ -23,5 +33,3 @@ function ali_pagenav(){
       if ($max > 1 ) echo '</div><pre>';
 }
 
-// ===========Set Blog Post Formats On Post Section =============
-add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'quote', 'video', 'audio' ) );
