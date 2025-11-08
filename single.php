@@ -4,7 +4,7 @@
 
 
 <!-- ================Body Section Start===================  -->
-<section class="body_section py-5 bg-black color-white">
+<section class="body_section py-5 ">
 
     <div class="container">
         <div class="row">

@@ -7,6 +7,7 @@
         <div class="blog-area">
             <div class="blog-format">
                <span class="dashicons dashicons-format-<?php echo get_post_format( $post->ID ) ?>"></span>
+
             </div>
             <div class="blog-image">
                 <a href="<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer">

@@ -1,18 +1,13 @@
 <?php
+// ===========Set Thumble on Blog and Page=============
 
+add_theme_support('post-thumbnails');
 
-// ===========Set Blog Post Formats On Post Section =============
-function tamim_theme_setup() {
-   // ===========Set Feature Image on Blog Page and Post Section=============
-
-    add_theme_support('post-thumbnails');
-    add_image_size('post-thumbnails', 970, 350, true);
-
-    // ===========Set FPost FormatsSection=============
-
-    add_theme_support('post-formats', array( 'aside', 'gallery', 'image', 'quote', 'video', 'audio' ));
+function my_theme_setup(){
+  add_theme_support('post-thumbnails');
+  add_theme_support('post-formats', ['aside ', 'gallery ', 'image', 'audio', 'video', 'chat']);
 }
-add_action('after_setup_theme', 'tamim_theme_setup');
+add_action('after_setup_theme', 'my_theme_setup');
 
 // ===========Set Pagination On  Post Section=============
 function ali_pagenav(){
