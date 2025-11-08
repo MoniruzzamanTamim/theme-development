@@ -4,7 +4,7 @@ add_theme_support('post-thumbnails');
 add_image_size('post-thumbnails', 970, 350, true);
 
 
-// Pagenav Function
+// ===========Set Pagination On  Post Section=============
 function ali_pagenav(){
   global $wp_query, $wp_rewrite;
   $pages ='';
@@ -22,3 +22,6 @@ function ali_pagenav(){
       echo $pages . paginate_links($args);
       if ($max > 1 ) echo '</div><pre>';
 }
+
+// ===========Set Blog Post Formats On Post Section =============
+add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'quote', 'video', 'audio' ) );
