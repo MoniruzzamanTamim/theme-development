@@ -14,7 +14,7 @@ get_header(); ?>
         <div class="row">
             <div class="col-xl-8 "> 
             <!-- Slicing Blog Related Code  -->
-                <?php get_template_part('templete/page_setting' ,get_post_format() ); ?> 
+                <?php get_template_part('templete/blog-page_setting' ,get_post_format() ); ?> 
                 <div class="commnet-area">
                 <?php comments_template(); ?>
                 </div>

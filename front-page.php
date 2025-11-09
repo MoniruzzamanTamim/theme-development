@@ -32,7 +32,7 @@ get_header(); ?>
               <?php the_post_thumbnail('median', array('class' => 'slider_image'));  ?>
             <?php endif; ?>
             <?php if (get_the_content()) : ?>
-                <p class="text-light"><?php the_content(); ?></p>
+                <p class="text-light"><?php          (); ?></p>
               <?php endif; ?>
 
             <!-- Optional: Caption area -->
@@ -83,7 +83,7 @@ get_header(); ?>
             ?>
             <h2 class="custom_post_title"><?php the_title(); ?></h2>
             <div class="custom_post_des"><?php the_excerpt(); ?></div>
-            <a class="btn btn-primary mt-2" href="<?php the_permalink(); ?>">Read More</a>
+            <a class="btn btn-primary mt-2 wp-element-button service-btn" href="<?php the_permalink(); ?>">Read More</a>
           </div>
         </div>
       <?php 
@@ -120,7 +120,6 @@ get_header(); ?>
     </div>
   </div>
 </section>
-
 <!-- Custom Post Type Section Show Front-END  END-->
 
 <!-- Footer Section Start -->
