@@ -1,9 +1,13 @@
 // OWL CAROSOL 
 
 jQuery(document).ready(function($){
-  $('.owl-carousel').owlCarousel({
+  jQuery('#slider-carousel').owlCarousel({
     loop:true,
     nav:true,
+    items:1
+  });
+  jQuery('#banner-slider').owlCarousel({
+    loop:true,
     items:1
   });
 });

@@ -42,7 +42,7 @@
             <div class="col-xl-2 col-md-2 col-sm-2 text-end header_colum_three">
                 <div class="header-extra">
                     <?php $cv_pdf_url = get_theme_mod('cv_pdf_file'); ?>
-                <a href="<?php echo esc_url($cv_pdf_url); ?>" class="download-cv-button btn btn-primary" download>
+                <a href="<?php echo esc_url($cv_pdf_url); ?>" class="download-cv-button header-btn btn btn-primary" download>
                     <?php _e('Download CV', 'tamim-personal'); ?>
                 </a>
                 </div>

@@ -17,6 +17,7 @@ function link_css_js() {
 
     // 5) Link Custom CSS File
     wp_enqueue_style('custom', get_template_directory_uri() . '/css/custom.css', array(), '1.0.0', 'all');
+    wp_enqueue_style('home_page', get_template_directory_uri() . '/css/homepage.css', array(), '1.0.0', 'all');
     wp_enqueue_style('header_footer', get_template_directory_uri() . '/css/headerFooter.css', array(), '1.0.0', 'all');
 
     // 6) Enqueue Font Awesome (CDN)

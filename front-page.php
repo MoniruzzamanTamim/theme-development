@@ -5,14 +5,211 @@
 // Header Section Start =============================================
 get_header(); ?>
 <!-- //Header Section END ============================================= -->
+<!-- Banner Slider Section Satrt Here ==================================-->
+<section class="banner-section" >
+  <div id="banner-slider" class="owl-carousel owl-theme">
+  <div id="slider-item-one" class="slider-item d-flex align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col xl-6">
+              <div class="slider-content ">
+                  <h1>Hello,</h1>
+                  <h2>My name Md Moniruzzaman Tamim</h2>
+                  <h3>I'M <span class=texteffect></span><span>|</span></h3>
+                  <div class="social-media">
+                    <span><i class="fa fa-facebook"></i></span>
+                    <span><i class="fa fa-linkedin"></i></span>
+                    <span><i class="fa fa-briefcase"></i></span>
+                    <span><?php echo file_get_contents(get_template_directory() . '/img/fiverr.svg'); ?></span>
+                    <span><i class="fa fa-twitter"></i></span>
+                  </div>
+                  <div class="banner-btn">
+                    <button type="button" class="wp-element-button">Contact Me</button>
+                    <?php $cv_pdf_url = get_theme_mod('cv_pdf_file'); ?>
+                    <a href="<?php echo esc_url($cv_pdf_url); ?>" class="download-cv-button wp-element-button" download>
+                    <?php _e('Download CV', 'tamim-personal'); ?>
+                    </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+  <div id="slider-item-two" class="slider-item d-flex align-items-center"  style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/Shapes-Hero-Banner.png'); background-size: cover; background-position: center;  width: 100%;">
+    <div class="container">
+      <div class="row">
+            <div class="col xl-6">
+              <div class="slider-content slider-content-two ">
+                  <h1>Hello,</h1>
+                  <h2>As a Creative Web Designer, I Transform Ideas Into Stunning Digital Experiences That Combine Design, Usability, and Technology</h2>
+                  <div class="social-media">
+                    <span><i class="fa fa-facebook"></i></span>
+                    <span><i class="fa fa-linkedin"></i></span>
+                    <span><i class="fa fa-briefcase"></i></span>
+                    <span><?php echo file_get_contents(get_template_directory() . '/img/fiverr.svg'); ?></span>
+                    <span><i class="fa fa-twitter"></i></span>
+                  </div>
+                  <div class="banner-btn">
+                    <button type="button" class="wp-element-button">Contact Me</button>
+                    <?php $cv_pdf_url = get_theme_mod('cv_pdf_file'); ?>
+                    <a href="<?php echo esc_url($cv_pdf_url); ?>" class="download-cv-button wp-element-button" download>
+                    <?php _e('Download CV', 'tamim-personal'); ?>
+                    </a>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col xl 6">
+              <div class="slider-two-right">
+                <div class="slider-two-image ">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/slide-two-image.png" alt="slide-two-image">
+                <div class="inner-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/slider-two-inner.png" alt="slide-two-image">
+                </div>
+                <div class="inner-image-two">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/slider-two-inner-2.png" alt="slide-two-image">
+                </div>
+              </div>
+
+              </div>
+            </div>
+
+
+      </div>
+    </div>
+
+  </div>
+  <div id="slider-item-three" class="slider-item"><h1>3</h1></div>
+  <div id="slider-item-four" class="slider-item"><h1>4</h1></div>
+  <div id="slider-item-five" class="slider-item"><h1>5</h1></div>
+  </div>
+   
+</section>
+<!-- Banner Slider Section END  Here =====================================-->
+
+<!-- GroW Section Start here====================================== -->
+<section class="grow-section" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/grow-section-bg.png'); background-size: cover; background-position: center;  width: 100%;">
+ <div class="container">
+  <div class="row">
+    <div class="col-xl-5">
+      <div class="grow-content">
+        <h1>Transform Your Business with a Powerful Website</h1>
+        <p>Your website isn’t just a page — it’s your digital shop. I help you turn visitors into customers through smart design and clean code.</p>
+        <p>As a Web Developer, I create websites that not only look great but also perform — helping your business grow and reach new audiences.</p>
+        <div class="grow-service-part">
+        <div class="g-service">
+          <h3>20+ </h3>
+          <span>Total project</span>
+        </div>
+        <div class="g-service">
+          <h3>24/7 </h3>
+          <span>Support Lifetime</span>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="col-xl-7">
+      <div class="grow-video">
+        <video autoplay muted loop playsinline>
+            <source src="<?php echo get_template_directory_uri(); ?>/img/grow-section-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+        </video>
+        <button type="button" class="wp-element-button ">Contact Me</button>
+      </div>
+    </div>
+
+  </div>
+ </div>
+</section>
+<!-- GroW Section End here====================================== -->
+
+<!-- work Process Section Start here====================================== -->
+<section class="work-process-section">
+  <div class="row">
+    <div class="container">
+      <div class="col-xl-12">
+        <div class="work-title text-center">
+          <span>Our Working Process</span>
+          <h1>How Our Services Will Help You to Grow Your Business</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="work-process">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/data-discovery.png" alt="work-process-image">
+          <h4>Discovery</h4>
+          <p>In the discovery phase, I analyze your business goals, target audience, and design preferences. This step helps to create a clear vision for your website that aligns with your brand and objectives.</p>
+          <div class="number">01</div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="work-process">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/planning.png" alt="work-process-image">
+          <h4>Planning</h4>
+          <p>Once the goals are clear, I plan the website structure, layout, and technology stack. A sitemap, project timeline, and content strategy are created to ensure a smooth development process.</p>
+          <div class="number">02</div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="work-process">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/project-plan.png" alt="work-process-image">
+          <h4>Execute</h4>
+          <p>In this stage, I start designing and developing your website. Every page is built to be fully responsive, fast-loading, and SEO-friendly, ensuring the best user experience and visibility on search engines.</p>
+          <div class="number">03</div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="work-process">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/delivery.png" alt="work-process-image">
+          <h4>Deliver</h4>
+          <p>After complete testing, your website is launched and made live. I also provide post-launch support and basic training so you can manage your site with confidence.</p>
+          <div class="number">04</div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+
+</section>
+<!-- work Process Section End here====================================== -->
+
+<!-- build Section Start here====================================== -->
+ <div class="build-section">
+  <div class="row">
+    <div class="container">
+      <div class="build-content">
+        <p>We Carry More Than Just Good Coding Skills</p>
+        <h3>Let's Build Your Website!</h3>
+      </div>
+      <div class="build-image">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/build-img.png" alt="build-image">
+        <div class="build-img-inner-content">
+          <p>Web Service</p>
+          <h3>Perfect Solution for Web Services!</h3>
+          <button type="button" class="wp-element-button build-btn ">Contact Me</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+<!-- build Section End here====================================== -->
+
+
 
 <!-- Home Page Slider Section Start From Custom post  -->
-<section class="slider-section">
+<section class="slider-section ">
   <div class="container-fluid">
     <div class="row">
       <div class="col-xl-12">
         <!-- 🦉 Owl Carousel Section Start -->
-        <div class="owl-carousel owl-theme">
+        <div id="slider-carousel" class="owl-carousel owl-theme">
           <?php 
           $args = array(
               'post_type'      => 'slider',
@@ -32,7 +229,7 @@ get_header(); ?>
               <?php the_post_thumbnail('median', array('class' => 'slider_image'));  ?>
             <?php endif; ?>
             <?php if (get_the_content()) : ?>
-                <p class="text-light"><?php          (); ?></p>
+                <p class="text-light"><?php the_content(); ?></p>
               <?php endif; ?>
 
             <!-- Optional: Caption area -->
@@ -50,6 +247,8 @@ get_header(); ?>
   </div>
 </section>
  <!-- Home Page Slider Section END  From Custom Post -->
+
+
 
 <!-- Custom Post Type Section Show Front-END  Start -->
 <section id="service_area" class="my-5">
@@ -127,4 +326,6 @@ get_header(); ?>
 <!-- Footer Section END -->
 
 
- 
+
+
+<section class="py-5"></section>
