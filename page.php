@@ -6,6 +6,7 @@
 <?php get_header(); ?>
 <!-- ================Header Section End====================  -->
 
+<!-- page Width Control Related Code Start here -->
 <?php
     // Get the layout option (either 'full-width' or 'boxed') from custom meta field
     $layout_option = get_post_meta(get_the_ID(), '_page_layout', true);
@@ -20,6 +21,18 @@
         $container_class = 'container'; // Boxed layout
     }
 ?>
+<!-- page Width Control Related Code End  here -->
+<!-- // ================= Add Breadcrumb related Code Start here  ================= -->
+<?php
+    $show_breadcrumb = get_post_meta(get_the_ID(), '_tamim_show_breadcrumb', true); 
+    if ($show_breadcrumb) : ?>
+        <nav class="breadcrumb">
+            <a href="<?php echo home_url(); ?>">Home</a> › 
+            <span><?php the_title(); ?></span>
+        </nav>
+<?php endif; ?>
+<!-- // ================= Add Breadcrumb related Code End here  ================= -->
+
 
 <!-- ================Body Section Start===================  -->
 <section class="body_section">

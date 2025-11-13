@@ -19,8 +19,9 @@ include_once('functions/headerFunction.php');
 include_once('functions/footerFunction.php');
 // =======================================================
 // ======================================================================
+//Page Setting for Page Relate Code metabox
 //For Control Page Width Customly
-include_once('functions/pagewidth_setup.php');
+include_once('functions/pagesetting.php');
 // =======================================================
 
 // ======================================================================

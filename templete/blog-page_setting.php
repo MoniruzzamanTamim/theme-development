@@ -1,4 +1,6 @@
 <!-- This Templete Use Show Page Details -->
+
+
 <div class="main-part">
     <?php 
         if(have_posts( )):

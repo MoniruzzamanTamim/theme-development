@@ -60,22 +60,6 @@ body{
 }
 
 
-/* Page Width Control করার জন্য সিএসএস  */
-/* Full-width layout */
-.container-fluid {
-    width: 100%;
-    padding: 0 !important;
-    margin: 0 auto; /* Center the container */
-
-}
-
-/* Boxed layout */
-.container {
-    width: 100%;
-    padding: 0 !important;
-    max-width: 1200px; /* Adjust the max-width as per your design */
-    margin: 0 auto; /* Center the container */
-}
 
 
 .wp-element-button {
@@ -93,6 +77,48 @@ body{
 h2{
  color:var(--h2-color);
 }
+
+/* ======================================Page Setting Related Codestart here =================================== */
+/* Page Width Control করার জন্য সিএসএস  */
+/* Full-width layout */
+.container-fluid {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 auto; /* Center the container */
+
+}
+
+/* Boxed layout */
+.container {
+    width: 100%;
+    padding: 0 !important;
+    max-width: 1200px; /* Adjust the max-width as per your design */
+    margin: 0 auto; /* Center the container */
+}
+/* // ================= Add Breadcrumb Meta Box  Related Css================= */
+.breadcrumb {
+    font-size: 25px !important;
+    margin: 0  !important;
+    justify-content: center !important;
+    padding: 40px 0 !important;
+    background: black !important;
+    border-top: 1px solid white !important;
+    width: 100% !important;
+}
+.breadcrumb a {
+    color: #efefef !important;
+    text-decoration: none !important;
+    font-size: 25px;
+}
+.breadcrumb a:hover {
+    text-decoration: underline !important;
+}
+.breadcrumb span {
+    font-size: 25px;
+    color: #ff004a;
+    margin-left: 16px !important;
+}
+/* ======================================Page Setting Related Code End here =================================== */
 
 /* ===================== BLOG SECTION STYLES ==========================*/
 .blog-area{
