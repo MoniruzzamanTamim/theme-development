@@ -87,6 +87,62 @@ get_header(); ?>
 </section>
 <!-- Banner Slider Section END  Here =====================================-->
 
+<!-- About Section Start here====================================== -->
+<section class="about-section">
+    <div class="container">
+      <div class="row">
+      <div class="row">
+      <div class="col-xl-12">
+        <div class="about-title text-center">
+          <span>What I do</span>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-5">
+      <div class="about-image"> 
+      <img src="<?php echo get_template_directory_uri(); ?>/img/about.png" alt="build-image">
+      </div>
+    </div>
+    <div class="col-xl-7">
+      <div class="about-content">
+        <h1>Custom Programming</h1>
+        <p>Looking for an experienced WordPress developer for your project? I can help with custom themes, functions, and plugins for WordPress and WooCommerce.</p>
+        <p>My previous projects include interactive maps, chat forums, sortable product listings, product feeds for external sites, and more.</p>
+        <div class="about-service-part">
+        <button type="button" class="wp-element-button build-btn ">Contact Me</button>
+      </div>
+      </div>
+    </div>
+    
+
+  </div>
+ </div>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-5">
+      <div class="about-image"> 
+      <img src="<?php echo get_template_directory_uri(); ?>/img/about.png" alt="build-image">
+      </div>
+    </div>
+    <div class="col-xl-7">
+      <div class="about-content">
+        <h1>Web Design & Development</h1>
+        <p>Need help with designing your website and don’t know where to start? I can create beautiful website designs for your new business, or redesign your old site to improve your conversions and achieve your business goals.</p>
+        <p>Do you need a website that you can easily edit yourself? I can create a fully custom theme for WordPress built just for your needs. WooCommerce can be added on for an easy-to-manage online store with the inventory, payment, and shipping solutions you need.</p>
+        <div class="about-service-part">
+        <button type="button" class="wp-element-button build-btn ">Contact Me</button>
+      </div>
+      </div>
+    </div>
+    
+
+  </div>
+ </div>
+</section>
+<!-- About Section End here====================================== -->
 <!-- GroW Section Start here====================================== -->
 <section class="grow-section" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/grow-section-bg.png'); background-size: cover; background-position: center;  width: 100%;">
  <div class="container">
@@ -121,7 +177,7 @@ get_header(); ?>
   </div>
  </div>
 </section>
-<!-- GroW Section End here====================================== -->
+<!-- About Section End here====================================== -->
 
 <!-- work Process Section Start here====================================== -->
 <section class="work-process-section">

@@ -7,6 +7,7 @@ function link_css_js() {
 
     // 2) Link Google Font (Rajdhani)
     wp_enqueue_style('google-font-rajdhani','https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap',array(),null);
+    wp_enqueue_style('google-font-rajdhani','https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"',array(),null);
 
     // 3) Link Bootstrap CSS File
     wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', array(), '5.3.3', 'all');

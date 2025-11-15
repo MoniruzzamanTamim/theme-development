@@ -97,6 +97,58 @@ width: 100%;
 
 
 
+/* ===========About Section Css Start Here=========== */
+
+.about-section {
+    padding: 100px 0;
+}
+.about-title {
+
+    margin-bottom: 40px;
+}
+.about-title span {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    position: relative;
+    display: inline-block;
+}
+
+.about-title span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* underline er distance */
+    height: 5px;
+    width: 50%;
+    background-color: #FF014F;
+    display: block;
+}
+.about-content {
+    margin-left: 50px;
+}
+
+
+.about-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+.about-content p {
+    font-weight: 600;
+font-size:18px
+}
+
+.about-service-part {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+
+
+
+/* ===========About Section Css End Here=========== */
+
 /* ===========Grow Section Css Start Here=========== */
 
 .grow-section {
