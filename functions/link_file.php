@@ -36,4 +36,4 @@ function link_css_js() {
     // 10) Custom JS
     wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true);
 }
-add_action('wp_enqueue_scripts', 'link_css_js');
+add_action('wp_enqueue_scripts', 'link_css_js',20);

@@ -30,3 +30,17 @@ function ali_pagenav(){
       if ($max > 1 ) echo '</div><pre>';
 }
 
+
+// Bolg Post Description Except to 40 Word
+// Custom Excerpt "Read More" Button
+function tamim_excerpt_more($more){
+    global $post;
+    return '<br><br><a class="redmore btn btn-primary wp-element-button blog_post_btn" href="'. get_permalink($post->ID) .'">Read More</a>';
+}
+add_filter('excerpt_more', 'tamim_excerpt_more');
+
+// Limit excerpt to 40 words
+function tamim_excerpt_length($length){
+    return 40;
+}
+add_filter('excerpt_length', 'tamim_excerpt_length', 999);

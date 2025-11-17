@@ -48,7 +48,4 @@ include_once('functions/shortcode.php');
 include_once('functions/shortcodes.php');
 // =======================================================
 
-
-
-
 ?>

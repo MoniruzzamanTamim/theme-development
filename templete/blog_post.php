@@ -4,7 +4,7 @@
 ?>
 
 
-<div class="main-part blog_part row"> 
+<div class="main-part blog_part row" id="post-container"> 
     <?php 
     if(have_posts()):
         while(have_posts()): the_post();
@@ -28,12 +28,16 @@
               </div>
                 <h2 class="blog-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                 <p ><?php the_excerpt(); ?></p>
-                <span><a class="btn btn-primary wp-element-button blog_post_btn" href="<?php the_permalink(); ?>">Read More</a></span>
             </div>
         </div>
     </div>
-    <?php
-        endwhile;
+    <?php endwhile;?>
+    <div class="pagination">
+    <a href="#" data-page="1">1</a>
+    <a href="#" data-page="2">2</a>
+    <a href="#" data-page="3">Next »</a>
+    </div>
+    <?php 
     else:
         _e('No posts found');
     endif; 

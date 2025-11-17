@@ -140,9 +140,12 @@ font-size:18px
 
 .about-service-part {
     display: flex;
-    justify-content: space-around;
+    gap: 10px;
     margin: 20px 0 0 0;
     text-align: center;
+}
+.about-service-part .about-btn{
+    width: 50%;
 }
 
 
@@ -264,7 +267,7 @@ font-size:18px
     padding: 100px 0;
     position: relative;
     background-color: #fff;
-    overflow: hidden; /* prevents pseudo elements from overflowing */
+    /* overflow: hidden; prevents pseudo elements from overflowing */
 }
 
 .build-section::after {
@@ -318,3 +321,21 @@ font-size:18px
 }
 
 /*===========================build-section CSS End here ============================= */
+
+/*===========================Service-section CSS Start here ============================= */
+section#service_area {
+    background: black;
+    padding: 100px 0;
+}
+.service-image{
+    padding: 10px 0;
+}
+.service-image img {
+    width: 100%;
+}
+
+
+.service-section div#page_nav-short ul {
+    background: black !important;
+}
+/*===========================Service-section CSS End here ============================= */

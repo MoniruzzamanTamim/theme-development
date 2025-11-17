@@ -3,6 +3,13 @@
 // Short For Custom Post With pagination 
 function service_shotcodes( $atts ) {
     // আউটপুট বাফারিং শুরু করা
+
+     //Content Description Limitation Set Shortcode attributes
+    $atts = shortcode_atts( array(
+        'words' => 40,  // default limit
+    ), $atts );
+    
+
     ob_start();
 
     // 1. সঠিক 'paged' ভেরিয়েবল সেট করা
@@ -19,6 +26,7 @@ function service_shotcodes( $atts ) {
         'paged'          => $paged // এই লাইনটি যোগ করা হয়েছে
     ));
 
+
     if ( $query->have_posts() ) { ?>
 
     <section id="service_area">
@@ -27,35 +35,50 @@ function service_shotcodes( $atts ) {
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                     <div class="col-md-4">
                         <div class="child_service">
-                            <h2><?php the_title(); ?></h2>
-                            <?php echo the_post_thumbnail('service') ?>
-                            <?php the_excerpt(); ?>
-                            <span><a class="btn btn-primary" href="<?php the_permalink(); ?>">Read More</a></span>
+                            <div class="service-image">
+                                <a href="<?php the_permalink(); ?>" target="_blank" rel="noopener noreferrer">
+                                    <?php 
+                                    if(has_post_thumbnail()): 
+                                        the_post_thumbnail('medium', ['class' => 'img-fluid']); 
+                                    endif;
+                                    ?>
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog_content_customise d-flex justify-content-between">
+                                    <h6><?php the_category(', '); ?></h6>
+                                    <h6 class="blog-time"><i class="fa fa-calendar"></i> <span><?php echo get_the_date('F j, Y'); ?></span></h6>
+                                </div>
+                                <h2 class="blog-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                <p ><?php echo wp_trim_words( get_the_content(), $atts['words'], '...' );  ?></p>
+                                <span><a class="btn btn-primary wp-element-button blog_post_btn" href="<?php the_permalink(); ?>">Read More</a></span>
+                        </div>
                         </div>
                     </div>
                 <?php endwhile; ?>
-                
+            </div>
+        </div>
+        <div class="container mt-5 py-5">
+            <div class="row">
+                <?php
+                $total_pages = $query->max_num_pages;
+                if ( $total_pages > 1 ) {
+                    echo '<div id="page_nav-short" class="text-center  short_page_nav ">'; // আপনার পেজিনেশন ক্লাস দিন
+                    echo paginate_links( array(
+                    'base'      => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                    'format'    => '?paged=%#%',
+                    'current'   => max(1, $paged),
+                    'total'     => $total_pages,
+                    'prev_text' => __('&laquo; Prev'),
+                    'next_text' => __('Next &raquo;'),
+                    'type'      => 'list' // Bootstrap ব্যবহারের জন্য 'list' ব্যবহার করলে সুবিধা
+                    ) );
+                    echo '</div>';
+                }
+                ?>
             </div>
         </div>
     </section>
-
-    <?php
-    $total_pages = $query->max_num_pages;
-
-    if ( $total_pages > 1 ) {
-        echo '<div id="page_nav-short" class="text-center  short_page_nav">'; // আপনার পেজিনেশন ক্লাস দিন
-        echo paginate_links( array(
-            'base'      => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-            'format'    => '?paged=%#%',
-            'current'   => max(1, $paged),
-            'total'     => $total_pages,
-            'prev_text' => __('&laquo; Prev'),
-            'next_text' => __('Next &raquo;'),
-            'type'      => 'list' // Bootstrap ব্যবহারের জন্য 'list' ব্যবহার করলে সুবিধা
-        ) );
-        echo '</div>';
-    }
-    ?>
     
     <?php
     } // if ( $query->have_posts() ) এর ক্লোজিং ব্র্যাকেট

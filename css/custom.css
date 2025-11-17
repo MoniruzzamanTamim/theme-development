@@ -52,7 +52,7 @@ body{
     color: var(--dark-color);
     font-size: 16px;
     line-height: 1.6;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }   
 
 .col-xl-12.no-padding {
@@ -97,7 +97,7 @@ h2{
 }
 /* // ================= Add Breadcrumb Meta Box  Related Css================= */
 .breadcrumb {
-    font-size: 25px !important;
+    font-size: 19px !important;
     margin: 0  !important;
     justify-content: center !important;
     padding: 40px 0 !important;
@@ -108,13 +108,14 @@ h2{
 .breadcrumb a {
     color: #efefef !important;
     text-decoration: none !important;
-    font-size: 25px;
+    font-size: 19px;
+    margin-right: 11px;
 }
 .breadcrumb a:hover {
     text-decoration: underline !important;
 }
 .breadcrumb span {
-    font-size: 25px;
+    font-size: 19px;
     color: #ff004a;
     margin-left: 16px !important;
 }
@@ -124,13 +125,13 @@ h2{
 .blog-area{
     border-radius: 20px;
     border: 2px solid  #ffffff14;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 100%;
 }
 .blog-area .blog-image a img {
     height: 250px;
     object-fit: cover;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100%;
 }
 .blog-area .blog-content {
@@ -179,14 +180,14 @@ h2{
 
 .page-numbers  {
     color: white;
-    background-color: #ea186f;
+    background-color: #FF014F;
     padding: 8px 14px;
     margin: 5px;
 }
  span.page-numbers.current {
     background: black;
     color: #fbfbfb;
-    border: 1px solid #ea186f;
+    border: 1px solid #FF014F;
 }
 
 
@@ -209,7 +210,7 @@ button.wp-block-search__button.wp-element-button {
     display: flex !important;
 }
 .short_page_nav .page-numbers a.page-numbers {
-    background-color: #ea186f !important; 
+    background-color: #FF014F !important; 
 }
 .short_page_nav  span.page-numbers.current {
     background: black !important;
@@ -329,7 +330,7 @@ Slider Short Code কে ফুল উইথ বানানো যাতে ক
     margin-right: -50vw; /* viewport এর 50% right offset */
     width: 100vw;        /* viewport width */
     max-width: 100vw;    /* full width রাখবে */
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 /* Jquery plugin CSS END  */
 
