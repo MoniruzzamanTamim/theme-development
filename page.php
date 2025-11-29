@@ -6,7 +6,14 @@
 <?php get_header(); ?>
 <!-- ================Header Section End====================  -->
 
-<!-- page Width Control Related Code Start here -->
+<!-- ================= page Title Control Related Code Start  here =================  -->
+<?php 
+    $show_title = get_post_meta(get_the_ID(), '_tamim_show_page_title', true);
+    if ($show_title === '1') : ?>
+        <h1 class="page-title"><?php the_title(); ?></h1>
+<?php endif; ?>
+<!-- ================= page Title Control Related Code End  here =================  -->
+<!-- ================= page Width Control Related Code Start here =================  -->
 <?php
     // Get the layout option (either 'full-width' or 'boxed') from custom meta field
     $layout_option = get_post_meta(get_the_ID(), '_page_layout', true);
@@ -21,7 +28,7 @@
         $container_class = 'container'; // Boxed layout
     }
 ?>
-<!-- page Width Control Related Code End  here -->
+<!-- ================= page Width Control Related Code End  here =================  -->
 <!-- // ================= Add Breadcrumb related Code Start here  ================= -->
 <?php
     $show_breadcrumb = get_post_meta(get_the_ID(), '_tamim_show_breadcrumb', true); 

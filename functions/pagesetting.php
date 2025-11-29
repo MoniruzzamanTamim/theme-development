@@ -92,3 +92,41 @@ function tamim_breadcrumb_save_data($post_id) {
 add_action('save_post', 'tamim_breadcrumb_save_data');
 
 // Breadcrumb Related Code END  Here==================================
+
+// Page Title  Related Code Start   Here==================================
+// Add Meta Box
+function tamim_page_title_meta_box() {
+    add_meta_box(
+        'tamim_page_title_meta',        // ID
+        __('Page Title Options', 'tamim-personal'), // Title
+        'tamim_page_title_meta_box_html',         // Callback
+        'page',                        // Screen (page)
+        'side',                        // Context (side, normal)
+        'default'                      // Priority
+    );
+}
+add_action('add_meta_boxes', 'tamim_page_title_meta_box');
+
+// Meta Box HTML
+function tamim_page_title_meta_box_html($post) {
+    $value = get_post_meta($post->ID, '_tamim_show_page_title', true);
+    ?>
+    <label for="tamim_show_page_title">
+        <input type="checkbox" name="tamim_show_page_title" id="tamim_show_page_title" value="1" <?php checked($value, '1'); ?> />
+        <?php _e('Show Page Title', 'tamim-personal'); ?>
+    </label>
+    <?php
+}
+
+// Save Meta Box Value
+function tamim_save_page_title_meta($post_id) {
+    if (array_key_exists('tamim_show_page_title', $_POST)) {
+        update_post_meta($post_id, '_tamim_show_page_title', '1');
+    } else {
+        update_post_meta($post_id, '_tamim_show_page_title', '0');
+    }
+}
+add_action('save_post', 'tamim_save_page_title_meta');
+// Page Title  Related Code End   Here==================================
+
+
