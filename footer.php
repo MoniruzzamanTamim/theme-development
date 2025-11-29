@@ -26,8 +26,8 @@ $designer_link = get_theme_mod('footer_link', '#');
 </section>
 
    <!-- Main Footer   Part END -->
-<!-- Buttom Fotter Part Start -->
-<section class="buttom-footer bg-black py-3 text-center" >
+<!-- bottom Fotter Part Start -->
+<section class="bottom-footer bg-black py-3 text-center" >
         <?php if (get_theme_mod('show_footer_section', true)) : ?>
     <div class="container-fluid">
     <div class="row">
@@ -52,7 +52,7 @@ $designer_link = get_theme_mod('footer_link', '#');
     </div>
     <?php endif; ?>
 </section>
-<!-- Buttom Footer Part End... -->
+<!-- bottom Footer Part End... -->
 </footer>
 
 <!-- // Footer Section END  -->

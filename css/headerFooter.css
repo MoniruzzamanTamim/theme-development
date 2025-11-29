@@ -120,29 +120,29 @@ ul.nav-menu li ul.sub-menu {
 
 
 
-.col-xl-8.header-colum-two {
+.col-xl-8.header-column-two { 
     align-items: center;
     display: flex;
 }
 
 
 /* Menu Position Controls */
-.header-section.left .header_colum_one {
+.header-section.left .header_column_one {
  order:1
 }
-.header-section.left .header_colum_two {
+.header-section.left .header_column_two {
  order:0
 }
-.header-section.left .header_colum_three {
+.header-section.left .header_column_three {
  order:2
 }
-.header-section.right .header_colum_one {
+.header-section.right .header_column_one {
  order:0
 }
-.header-section.right .header_colum_two {
+.header-section.right .header_column_two {
  order:2
 }
-.header-section.right .header_colum_three {
+.header-section.right .header_column_three {
  order:1
 }
 
@@ -171,10 +171,10 @@ ul.nav-menu li ul.sub-menu {
 
 /* FOOTER SECTION  */
 
-.footer-buttom{
+.footer-bottom{
     background:var(--footer-bg) !important ;
 }
-.footer-buttom p {
+.footer-bottom p {
     color: var(--footer-text);
 }
 
