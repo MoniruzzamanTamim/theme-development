@@ -25,7 +25,7 @@ $designer_link = get_theme_mod('footer_link', '#');
     </div>
 </section>
 
-   <!-- Main Footer   Part END -->
+<!-- Main Footer   Part END -->
 <!-- bottom Fotter Part Start -->
 <section class="bottom-footer bg-black py-3 text-center" >
         <?php if (get_theme_mod('show_footer_section', true)) : ?>
