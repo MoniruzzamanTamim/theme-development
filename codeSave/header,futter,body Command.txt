@@ -1,8 +1,5 @@
 <?php ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="<?php language_attributes() ;?>" class='no-js'>
 <head>
@@ -18,7 +15,7 @@
             <!-- LOGO SECTION -->
         <div class="col-xl-3 header-colum-one">
                 <div class="header-logo">
-                    <img class="lheader-ogo-image" src="<?php echo get_theme_mod('header_logo') ?>" >
+                    <img class="header-logo-image" src="<?php echo get_theme_mod('header_logo') ?>" >
                 </div>
         </div>
                     <!-- MENU SECTION -->
@@ -85,10 +82,6 @@ $designer_link = get_theme_mod('footer_link', '#');
 </footer>
 <?php endif; ?>
 <!-- // Footer Section END  -->
-
-
-
-
 
     <?php wp_footer();?>
 </body>
