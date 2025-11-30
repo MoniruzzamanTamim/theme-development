@@ -2,27 +2,28 @@
 
 // OWL CAROSOL 
 
-jQuery(document).ready(function(jQuery){
-    
+jQuery(document).ready(function($){
+        var $ = jQuery;
+
   // Slider Js Code Start here
-  jQuery('#slider-carousel').owlCarousel({
+  $('#slider-carousel').owlCarousel({
     loop:true,
     nav:true,
     items:1
   });
-  jQuery('#banner-slider').owlCarousel({
+  $('#banner-slider').owlCarousel({
     loop:true,
     items:1
   });
   // Slider Js Code END here
 
   // Blog Page Ajax Pagination Create Code Start here====================================>
-   jQuery(document).on("click", ".pagination a", function(e){
+   $(document).on("click", ".pagination a", function(e){
         e.preventDefault();
 
-        let page = jQuery(this).data("page");
+        let page = $(this).data("page");
 
-        jQuery.ajax({
+        $.ajax({
             url: ajax_object.ajax_url,
             type: "POST",
             data: {
@@ -30,20 +31,20 @@ jQuery(document).ready(function(jQuery){
                 page: page
             },
             beforeSend: function(){
-                jQuery("#post-container").addClass("loading");
+                $("#post-container").addClass("loading");
             },
             success: function(response){
-                jQuery("#post-container").html(response);
+                $("#post-container").html(response);
 
                 // smooth scroll (optional)
-                jQuery('html, body').animate({
-                    scrollTop: jQuery("#post-container").offset().top - 50
+                $('html, body').animate({
+                    scrollTop: $("#post-container").offset().top - 50
                 }, 300);
             }
         });
 
     });
      // Blog Page Ajax Pagination Create Code End here====================================>
-});
+},jQuery.noConflict());
 
 
