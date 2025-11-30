@@ -52,7 +52,7 @@ body{
     color: var(--dark-color);
     font-size: 16px;
     line-height: 1.6;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }   
 
 .col-xl-12.no-padding {
@@ -125,13 +125,13 @@ h2{
 .blog-area{
     border-radius: 20px;
     border: 2px solid  #ffffff14;
-    /* overflow: hidden; */
+    overflow: hidden;
     height: 100%;
 }
 .blog-area .blog-image a img {
     height: 250px;
     object-fit: cover;
-    /* overflow: hidden; */
+    overflow: hidden;
     width: 100%;
 }
 .blog-area .blog-content {
@@ -330,7 +330,7 @@ Slider Short Code কে ফুল উইথ বানানো যাতে ক
     margin-right: -50vw; /* viewport এর 50% right offset */
     width: 100vw;        /* viewport width */
     max-width: 100vw;    /* full width রাখবে */
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 /* Jquery plugin CSS END  */
 
