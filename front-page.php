@@ -8,10 +8,10 @@ get_header(); ?>
 <!-- Banner Slider Section Satrt Here ==================================-->
 <section class="banner-section" >
   <div id="banner-slider" class="owl-carousel owl-theme">
-  <div id="slider-item-one" class="slider-item d-flex align-items-center">
+    <div id="slider-item-one" class="slider-item d-flex align-items-center">
         <div class="container">
           <div class="row">
-            <div class="col xl-6">
+            <div class="col xl-6 d-flex align-items-center">
               <div class="slider-content ">
                   <h1>Hello,</h1>
                   <h2>My name Md Moniruzzaman Tamim</h2>
@@ -32,10 +32,18 @@ get_header(); ?>
                   </div>
               </div>
             </div>
+            <div class="col xl-6">
+              <div class="slider-video ">
+       <video autoplay muted  playsinline>
+            <source src="<?php echo get_template_directory_uri(); ?>/img/Programming.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+        </video>
+              </div>
+            </div>
           </div>
         </div>
-  </div>
-  <div id="slider-item-two" class="slider-item d-flex align-items-center"  style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/Shapes-Hero-Banner.png'); background-size: cover; background-position: center;  width: 100%;">
+    </div>
+    <div id="slider-item-two" class="slider-item d-flex align-items-center"  style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/Shapes-Hero-Banner.png'); background-size: cover; background-position: center;  width: 100%;">
     <div class="container">
       <div class="row">
             <div class="col xl-6">
@@ -78,10 +86,7 @@ get_header(); ?>
       </div>
     </div>
 
-  </div>
-  <div id="slider-item-three" class="slider-item"><h1>3</h1></div>
-  <div id="slider-item-four" class="slider-item"><h1>4</h1></div>
-  <div id="slider-item-five" class="slider-item"><h1>5</h1></div>
+    </div>
   </div>
    
 </section>

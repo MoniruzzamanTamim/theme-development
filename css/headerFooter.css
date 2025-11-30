@@ -35,6 +35,7 @@
     position: relative;
     z-index: 1000;
     background-color: var(--header-bg-color);
+    border-bottom: 1px solid white !important;
 }
 /* HEADER LOGO SECTION  */
 img.header-logo-image {

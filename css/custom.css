@@ -95,14 +95,21 @@ h2{
     max-width: 1200px; /* Adjust the max-width as per your design */
     margin: 0 auto; /* Center the container */
 }
+/* // ================= Page title  Related Css================= */
+.page-title {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0 8px 0;
+}
 /* // ================= Add Breadcrumb Meta Box  Related Css================= */
 .breadcrumb {
     font-size: 19px !important;
     margin: 0  !important;
     justify-content: center !important;
-    padding: 40px 0 !important;
+    padding: 0 0 20px 0 !important;
     background: black !important;
-    border-top: 1px solid white !important;
     width: 100% !important;
 }
 .breadcrumb a {
