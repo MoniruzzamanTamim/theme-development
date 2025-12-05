@@ -100,6 +100,41 @@ function tamim_theme_color($wp_customize) {
         )));
     }
 
+     /**
+     * =========================
+     * 2️⃣ Custom Login Page Color
+     * =========================
+     */
+    $wp_customize->add_section('tamim_color_section_custom_login', array(
+        'title'    => __('Custom Login Page ', 'tamim-personal'),
+        'priority' => 20,
+        'panel'    => 'tamim-color-panel',
+    ));
+
+    $custom_login_colors = array(
+        'login_bg'             => __('Page Background Color', 'tamim-personal'),
+        'login_btn'           => __(' Login Button Color', 'tamim-personal'),
+        'login_btn-text' => __('Login Button Text Color', 'tamim-personal'),
+        'header_text_hover'     => __(' Menu Hover Text Color', 'tamim-personal'),
+
+    );
+
+    foreach ($custom_login_colors as $id => $label) {
+        $setting_id = 'tamim_color_' . $id;
+
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => '#ffffff',
+            'sanitize_callback' => 'sanitize_hex_color',
+            'transport'         => 'refresh',
+        ));
+
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $setting_id, array(
+            'label'    => $label,
+            'section'  => 'tamim_color_section_custom_login',
+            'settings' => $setting_id,
+        )));
+    }
+
 }
 add_action('customize_register', 'tamim_theme_color');
 
@@ -173,7 +208,13 @@ $colors = array(
             /* === FOOTER  === */
             --footer-bg: <?php echo esc_html($colors['footer-bg']); ?>;
             --footer-text: <?php echo esc_html($colors['footer-text']); ?>;
-           
+
+            /* ============================== */
+            /*    CUSTOM LOGIN PAGE COLORS    */
+            /* ============================== */
+            --login-bg: <?php echo esc_html($login_bg); ?>;
+            --login-btn-bg: <?php echo esc_html($login_btn); ?>;
+            --login-btn-text: <?php echo esc_html($login_btn_text); ?>;
         }
     </style>
     <?php

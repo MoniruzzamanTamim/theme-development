@@ -47,6 +47,9 @@ include_once('functions/shortcode.php');
 //Create Short Code with pagination
 include_once('functions/shortcodes.php');
 // =======================================================
+// Login Enqueue Register
+include_once('functions/login-enqueue.php');
+// =======================================================
 function custom_theme_scripts() {
     // main.js enqueue করা
     wp_enqueue_script(

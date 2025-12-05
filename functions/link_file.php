@@ -6,7 +6,6 @@ function link_css_js() {
     wp_enqueue_style('wp-style', get_stylesheet_uri()); // style.css File Link
 
     // 2) Link Google Font (Rajdhani)
-    wp_enqueue_style('google-font-rajdhani','https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap',array(),null);
     wp_enqueue_style('google-font-rajdhani','https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"',array(),null);
 
     // 3) Link Bootstrap CSS File
@@ -22,7 +21,7 @@ function link_css_js() {
     wp_enqueue_style('header_footer', get_template_directory_uri() . '/css/headerFooter.css', array(), '1.0.0', 'all');
 
     // 6) Enqueue Font Awesome (CDN)
-    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css', array(), '6.5.0');
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', array(), '6.5.0');
 
     // 7) jQuery (WordPress default version)
     wp_enqueue_script('jquery');
@@ -36,4 +35,4 @@ function link_css_js() {
     // 10) Custom JS
     wp_enqueue_script('main-js', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true);
 }
-add_action('wp_enqueue_scripts', 'link_css_js',20);
+add_action('wp_enqueue_scripts', 'link_css_js',99);

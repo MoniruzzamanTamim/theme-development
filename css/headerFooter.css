@@ -36,6 +36,12 @@
     z-index: 1000;
     background-color: var(--header-bg-color);
     border-bottom: 1px solid white !important;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+section.banner-section {
+    padding-top: 60px;
 }
 /* HEADER LOGO SECTION  */
 img.header-logo-image {
@@ -58,7 +64,6 @@ ul.nav-menu {
 ul.nav-menu li a {
   display: inline-block;
   font-size: 16px;
-  font-weight: 500;
   padding: 3px 14px;
   color: var(--header-text-color);
   transition: var(--transition);
@@ -82,16 +87,18 @@ ul.nav-menu li{
 }
 
 ul.nav-menu li ul.sub-menu {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     background: #ff014f;
     min-width: 222px;
     border-radius: 4px;
-    z-index: 1000;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+    transform: translateY(30px);
 }
-
 .header-menu ul.sub-menu li {
   display: block;
   padding: 10px 15px;
@@ -114,8 +121,10 @@ ul.nav-menu li ul.sub-menu {
 
 /* Show dropdown on hover */
 .header-menu ul li:hover > ul.sub-menu {
-  display: block;
-   transition: var(--transition);
+  visibility:visible;
+opacity:1;
+transition: .5s;
+transform: translateY(0);
 }
 
 
@@ -151,7 +160,7 @@ ul.nav-menu li ul.sub-menu {
 
 
 /* header-extra SECTION  */
-.header-extra .header-btn  {
+.header-extra .download-cv-button  {
     padding: 10px 22px;
     color: var(--header-btn-text);
     border: 1px solid var(--header-btn-border);
@@ -160,7 +169,7 @@ ul.nav-menu li ul.sub-menu {
     transition: var(--transition);
 }
 
-.header-extra .header-btn:hover {
+.header-extra .download-cv-button:hover {
     background-color: var(--header-btn-bg-hover);
     border-color: var(--header-btn-border-hover);
     color: var( --header-btn-text-hover);
@@ -179,4 +188,123 @@ ul.nav-menu li ul.sub-menu {
     color: var(--footer-text);
 }
 
+/* Menu Icon */
 
+/* Responsive Css */
+@media (min-width: 768px) {
+    .header-menu {
+        display: block !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    ul.nav-menu li a {
+    padding: 3px 8px;
+}
+.header-section {
+    padding: 8px 20px !important;
+}
+}
+
+@media (max-width: 767.98px) { 
+    section.banner-section {
+    padding-top: 0;
+}
+    .header-section {
+    padding: 3px 12px;
+}
+    .header-logo img {
+    width: 54%;
+}
+    .header-section {
+        position: relative;
+    }
+    .header-menu {
+    position: absolute;
+    width: 40%;
+    top: 100%;
+    right: 0;
+    background: #ff014f;
+    transform: scale(.5);
+    visibility:hidden;
+    opacity:0;
+  transition: .5s !important;
+
+}
+
+    .header-menu.show {
+        visibility:visible;
+    opacity:999;
+    transition: .5s !important;
+        transform: scale(1);
+    }
+
+    ul#menu-main-menu {
+        flex-direction: column;
+        padding: 20px 0;
+        gap:0px;
+    }
+    ul.nav-menu li {
+        text-align: center;
+        background: #000000;
+        width: 100%;
+        border-top: 1px solid white;
+    }
+    ul.nav-menu li:last-child{
+        border-bottom: 1px solid white;
+    }
+    ul.nav-menu li:hover{
+        background:white;
+        border-top: 1px solid white;
+    }
+    ul.nav-menu li:hover a {
+        color: #ff014f;
+    }
+    ul.nav-menu li a {
+        padding: 5px 0px;
+        color: #ffffff;
+        transition: var(--transition);
+        position: relative;
+        border-bottom: none;
+    }
+    ul.nav-menu li a:hover{
+        background: #ffffff;
+        color:#ff014f;
+    }
+    .header-menu ul li:hover > ul.sub-menu {
+        transition: var(--transition);
+        width: 100%;
+        left: -110%;
+    }
+    .header-menu ul.sub-menu li {
+        padding: 0px 0;
+        border-bottom: none;
+        background-color: #ff014f;
+    }
+    .header-menu ul.sub-menu li:last-child{
+        border-bottom: 1px solid white;
+    }
+    .header-menu ul.sub-menu li a {
+        color: #fff;
+    }
+    .header-menu-icon img {
+        width: 40px;
+        cursor: pointer;
+    }
+
+ul.nav-menu li ul.sub-menu {
+    transform: translateX(30px);
+}
+.header-menu ul li:hover > ul.sub-menu {
+transform: translateX(0);
+}
+}
+/* Responsive  */
+@media (max-width: 575.98px) {
+    .header-section {
+    padding: 8px 12px;
+}
+.header-logo img {
+    width: 79%;
+}
+    }

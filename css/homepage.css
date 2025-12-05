@@ -2,10 +2,11 @@
 
 /* BANNER SLIDER SECTIOn */
 .slider-item {
-    height: 85vh;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
+    padding: 0 25px;
 }
 #slider-item-one{
 background: rgb(0, 0, 0);
@@ -100,7 +101,7 @@ width: 100%;
 /* ===========About Section Css Start Here=========== */
 
 .about-section {
-    padding: 100px 0;
+    padding: 100px 20px;
 }
 .about-title {
 
@@ -156,9 +157,11 @@ font-size:18px
 
 .grow-section{
     background-color: #1A1F2B;
-    padding: 130px 0;
+    padding: 130px 20px;
 }
-
+.grow-section .row {
+    align-items: center; /* সারির সব কলাম মাঝখানে হবে */
+}
 .grow-section .grow-content {
     color: white;
     
@@ -204,7 +207,7 @@ font-size:18px
 
 /* =============================work-process-section CSS Start here ============================= */
 .work-process-section {
-    padding: 100px 0;
+    padding: 100px 20px;
 }
 .work-title{
     padding: 20px;
@@ -228,6 +231,7 @@ font-size:18px
     text-align: left;
     height: 100%;
     margin-top: 40px;
+    overflow:hidden;
 }
 .work-process:before {
     background-color: #FF014F;
@@ -264,7 +268,7 @@ font-size:18px
 /* ============================build-section CSS Start  here ============================= */
 
 .build-section {
-    padding: 100px 0;
+    padding: 100px 20px;
     position: relative;
     background-color: #fff;
     /* overflow: hidden; prevents pseudo elements from overflowing */
@@ -323,9 +327,9 @@ font-size:18px
 /*===========================build-section CSS End here ============================= */
 
 /*===========================Service-section CSS Start here ============================= */
-section#service_area {
+.service-section{
     background: black;
-    padding: 100px 0;
+    padding: 100px 20px;
 }
 .service-image{
     padding: 10px 0;
@@ -339,3 +343,325 @@ section#service_area {
     background: black !important;
 }
 /*===========================Service-section CSS End here ============================= */
+
+
+
+
+/*===========================Responsive   CSS Start  here ============================= */
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .about-content h1 {
+    font-size: 42px;
+}
+.work-title h1 {
+    margin: 0px 210px;
+}
+.build-section .build-image .build-img-inner-content {
+    padding: 98px 80px 40px 40px;
+    
+}
+}
+/* Medium devices and up */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* .slider-item {
+    height: 90vh;
+} */
+.slider-video video {
+    width: 100%;
+}
+.slider-content h1 {
+    font-size: 37px;
+}
+.slider-content h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+.slider-content-two h2 {
+    color: #000000;
+    font-weight: 900;
+    font-size: 24px;
+}
+.social-media span {
+    width: 40px;
+    height: 40px;
+}
+.slider-two-image img {
+    display: block;
+    width: 100% !important;
+    position: relative;
+}
+.elementor-kit-1847 button, .elementor-kit-1847 input[type="button"], .elementor-kit-1847 input[type="submit"], .elementor-kit-1847 .elementor-button {
+    padding: 5px 40px 5px 40px;
+}
+/* About Section */
+.about-section {
+    padding: 40px 20px;
+}
+.about-title span {
+    font-size: 40px;
+}
+.about-content {
+    margin-left: 0;
+}
+.about-content h1 {
+    font-size: 36px;
+}
+.about-content p {
+    font-size: 16px;
+}
+.about-image img {
+    height: 355px;
+}
+
+
+/* Grow section */
+
+.grow-section .grow-content  h1 {
+    font-size: 30px;
+    padding-top: 0;
+}
+.grow-section .grow-video video {
+    padding-left: 0;
+}
+/* work-process-section */ 
+.work-process-section {
+    padding: 30px 20px;
+}
+.work-title h1 {
+    margin: 0;
+}
+.work-process {
+    margin: 25px 0;
+}
+.work-process img {
+    width: 60px;
+}
+/* .build-section  */
+.build-section{
+    padding: 100px 0;
+}
+.build-section .build-content {
+    color: white;
+    margin-bottom: 35px;
+    padding: 0 30px;
+    padding-top: 28px;
+}
+}
+
+@media (max-width: 767.98px) { 
+.slider-item {
+    height: 90vh;
+}
+    .slider-video {
+    display: none;
+}
+.slider-two-right {
+    display: none;
+}
+.slider-content h2 {
+    font-size: 23px;
+}
+
+.owl-dots {
+    bottom: 0;
+}
+.wp-element-button {
+    width: 50%;
+}
+/*  .about-section  */
+.about-section {
+    padding: 39px 0;
+}
+.about-title span {
+    font-size: 30px;
+} 
+.about-content {
+    margin-left: 0;
+    padding: 20px;
+}
+.grow-section {
+    padding: 50px 20px;
+}
+.grow-section .grow-video {
+    margin-top: 26px;
+}
+.grow-section .grow-video video {
+    padding-left: 0;
+    padding-bottom: 27px;
+}
+.grow-button {
+    width: 100%;
+}
+/* work-title */
+.work-process-section {
+    padding: 50px 20px;
+}
+.work-title h1 {
+    margin: 0;
+}
+.work-process img {
+    width: 60px;
+}
+/* build-section  */
+.build-section {
+    padding: 100px 0px;
+}
+.build-section .build-content {
+    padding-left: 40px;
+}
+.build-section .build-image .build-img-inner-content {
+    border-radius: 0 280px 0 0;
+}
+.build-section .build-image .build-img-inner-content {
+    padding: 90px 67px 40px 35px;
+    top: 0;
+}
+.build-section .build-image .build-img-inner-content .build-btn {
+    width: 100%;
+}
+
+/* Service Section */
+.service-section{
+    background: black;
+    padding: 0 20px 40px 20px;
+}
+.service-section .child_service {
+    margin-bottom: 27px;
+}
+.service-section .blog_post_btn {
+    width: 100%;
+}
+}
+
+
+@media (max-width: 575.98px) { 
+/* .slider-item {
+    height: 70vh;
+    padding: 0 12px;
+} */
+
+.slider-content-two h2 {
+    font-size: 24px !important;
+    font-weight: bolder;
+}
+.slider-content h2 {
+    font-size: 36px;
+    font-weight: bolder;
+}
+.banner-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.banner-btn {
+    width: 100%;
+    text-align:center;
+}
+
+.about-section {
+    padding: 39px 12px;
+}
+.about-content h1 {
+    font-size: 42px;
+}
+/* About Section */
+.about-service-part {
+    flex-direction: column;
+}
+.about-service-part .about-btn {
+    width: 100%;
+}
+.about-content {
+    padding: 20px 0;
+}
+
+/* Grow Section */
+.grow-section {
+    padding: 40px 12px;
+}
+.grow-section .grow-content  h1 {
+    font-size: 28px;
+}
+
+/* work-process-section */
+.work-process-section {
+    /* padding: 30px 12px; */
+    padding: 30px 12px;
+}
+
+/* Build Section */
+.build-section {
+    padding: 47px 12px;
+    margin-bottom: 40px;
+}
+
+.build-section .build-content {
+    padding-left: 12px;
+}
+.build-section .build-image .build-img-inner-content {
+    padding: 31px 12px;
+    border-radius: 0;
+    width: 100%;
+    top: 100%;
+    height: 120%;
+}
+/* .service-section */
+.service-section {
+    background: black;
+    padding: 50px 12px 40px 12px;
+    margin-top: 162px;
+}
+
+.elementor-kit-1847 button, .elementor-kit-1847 input[type="button"], .elementor-kit-1847 input[type="submit"], .elementor-kit-1847 .elementor-button {
+    padding: 6px 40px 6px 40px;
+}
+}
+/*===========================Responsive   CSS End here ============================= */
+
+.slider-section {
+    /* Desktop/Laptop */
+    height: 100vh;
+    min-height: 600px;
+    max-height: 900px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) and (min-height: 600px) {
+    .slider-section {
+        height: 85vh;
+        min-height: 500px;
+        max-height: 700px;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 767px) and (orientation: portrait) {
+    .slider-section {
+        height: 90vh;
+        min-height: 450px;
+        max-height: 650px;
+    }
+}
+
+/* Mobile Landscape */
+@media (max-width: 767px) and (orientation: landscape) {
+    .slider-section {
+        height: 110vh; /* ল্যান্ডস্কেপে বেশি */
+        min-height: 350px;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+    .slider-section {
+        height: 95vh;
+        min-height: 400px;
+    }
+}
+
+/* iOS Device Fix */
+@supports (-webkit-touch-callout: none) {
+    .slider-section {
+        height: -webkit-fill-available;
+    }
+}
