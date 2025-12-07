@@ -4,7 +4,7 @@
 add_theme_support('post-thumbnails');
 add_image_size('post-thumbnails', 970, 350, true);
 
-
+// Set POST Type
 function my_theme_setup(){
   add_theme_support('post-thumbnails');
   add_theme_support('post-formats', ['aside ', 'gallery ', 'image', 'audio', 'video', 'chat']);

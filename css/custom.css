@@ -95,6 +95,9 @@ h2{
     max-width: 1140px; /* Adjust the max-width as per your design */
     margin: 0 auto; /* Center the container */
 }
+
+
+/*  */
 /* // ================= Page title  Related Css================= */
 .page-title {
     background-color: #000000;
@@ -126,9 +129,15 @@ h2{
     color: #ff004a;
     margin-left: 16px !important;
 }
+
+/* After Header Fixed Add This Css */
+section.body_section {
+    padding: 110px 0 !important;
+}
 /* ======================================Page Setting Related Code End here =================================== */
 
 /* ===================== BLOG SECTION STYLES ==========================*/
+
 .blog-area{
     border-radius: 20px;
     border: 2px solid  #ffffff14;
@@ -394,5 +403,8 @@ textarea#comment {
     text-align: center;
     margin: 0;
     padding: 75px 0 8px 0;
+}
+section.body_section {
+    padding: 110px 0 !important;
 }
     }

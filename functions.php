@@ -47,18 +47,12 @@ include_once('functions/shortcode.php');
 //Create Short Code with pagination
 include_once('functions/shortcodes.php');
 // =======================================================
-// Login Enqueue Register
+// Login Page  Enqueue Register
 include_once('functions/login-enqueue.php');
 // =======================================================
-function custom_theme_scripts() {
-    // main.js enqueue করা
-    wp_enqueue_script(
-        'custom-main', // script handle (unique নাম)
-        get_template_directory_uri() . '/js/main.js', // JS file path
-        array('jquery'), // dependencies (jQuery আগে লোড হবে)
-        '1.0', // version
-        true // true = footer এ load হবে
-    );
-}
-add_action('wp_enqueue_scripts', 'custom_theme_scripts');
+// =======================================================
+// Wordpress Theme option
+include_once('functions/themeoption.php');
+// =======================================================
+
 ?>

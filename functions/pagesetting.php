@@ -93,7 +93,9 @@ add_action('save_post', 'tamim_breadcrumb_save_data');
 
 // Breadcrumb Related Code END  Here==================================
 
-// Page Title  Related Code Start   Here==================================
+// =====================================
+//Page Title  Related Code Start   Here
+// ==================================
 // Add Meta Box
 function tamim_page_title_meta_box() {
     add_meta_box(
