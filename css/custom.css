@@ -101,7 +101,7 @@ h2{
     color: #ffffff;
     text-align: center;
     margin: 0;
-    padding: 20px 0 8px 0;
+    padding: 100px 0 8px 0;
 }
 /* // ================= Add Breadcrumb Meta Box  Related Css================= */
 .breadcrumb {
@@ -385,3 +385,14 @@ textarea#comment {
     padding: 10px 0;
 }
 
+
+
+@media (max-width: 768.98px) {
+.page-title {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 75px 0 8px 0;
+}
+    }

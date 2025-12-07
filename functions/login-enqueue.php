@@ -28,10 +28,9 @@ add_filter( 'login_headerurl', 'login_logo_url_change');
 
 // ==========================Register Theme Customizer For Custom login Page =======================================
 
-// Register Theme Customizer For Footer Section 
+// Register Theme Customizer For login Page  Section 
 function tamim_custom_login($wp_customize) {
 
-    // ✅ Separate Panel for Footer Options
     $wp_customize->add_panel('tamim_custom-login-panel', array(
         'title'       => __('Custom Login Panel', 'tamim-personal'),
         'description' => __('Customize Login Panel', 'tamim-personal'),
@@ -62,30 +61,15 @@ add_action('customize_register', 'tamim_custom_login');
 
 
 // Theme Custom Login page Style
-function custom_color_login(){
-  ?>
-  <style>
+
+function tamim_custom_login_css() {
+?>
+<style>
     #login h1 a, .login h1 a{
       background-image: url(<?php print get_theme_mod("login_logo"); ?>) !important;
     }
-
-    body.login {
-      background: url(<?php print get_theme_mod("custom_login_bg"); ?>) !important;
-    }
-
-    #login form p.submit input {
-      background: <?php print get_theme_mod("custom_primary_color"); ?>  !important;
-    }  
-    .login #login_error,
-    .login .message,
-    .login .success {
-      border-left: 4px solid <?php print get_theme_mod("custom_primary_color"); ?>  !important;
-    }
-    input#user_login,
-    input#user_pass {
-      border-left: 4px solid <?php print get_theme_mod("custom_primary_color"); ?>  !important;
-    }  
-  </style>
-  <?php 
+</style>
+<?php
 }
-add_action('login_enqueue_scripts', 'custom_color_login');
+add_action('login_enqueue_scripts', 'tamim_custom_login_css');
+
