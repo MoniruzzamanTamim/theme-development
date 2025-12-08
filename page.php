@@ -42,7 +42,7 @@
 
 
 <!-- ================Body Section Start===================  -->
-<section class="body_section">
+<section class="body_section main-page">
     <div class="<?php echo $container_class; ?>"> <!-- Dynamically add container class here -->
         <div class="row">
             <div class="col-xl-12">

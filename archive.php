@@ -8,7 +8,7 @@ get_header(); ?>
 
 
 <!-- ================Body Section Start===================  -->
-<section class="body_section">
+<section class="body_section archive-section bg-black ">
 
     <div class="container">
         <div class="row">

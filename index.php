@@ -18,7 +18,7 @@
                        <!-- Blog Posts Area  END  -->
                 </div>
                 <div class="col-xl-4 ">
-                    <div class="Sidebars-part px-5 ">
+                    <div class="Sidebars-part  ">
                                             <h2 class="py-2">Show SideBar Area</h2>
                                             <?php get_sidebar(); ?>
                     </div>

@@ -6,7 +6,7 @@
 get_header(); ?>
 <!-- //Header Section END ============================================= -->
 <!-- Banner Slider Section Satrt Here ==================================-->
-<section class="banner-section" >
+<section class="banner-section front-page" >
   <div id="banner-slider" class="owl-carousel owl-theme">
     <div id="slider-item-one" class="slider-item d-flex align-items-center">
         <div class="container">
