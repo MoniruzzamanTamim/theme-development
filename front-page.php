@@ -51,7 +51,9 @@ get_header(); ?>
                   <h1>Hello,</h1>
                   <h2>As a Creative Web Designer, I Transform Ideas Into Stunning Digital Experiences That Combine Design, Usability, and Technology</h2>
                   <div class="social-media">
-                    <span><i class="fa fa-facebook"></i></span>
+                    <a href="https://www.facebook.com/moniruzzamantamim99/" target="_blank" rel="noopener noreferrer">
+    <span><i class="fa fa-facebook"></i></span>
+</a>
                     <span><i class="fa fa-linkedin"></i></span>
                     <span><i class="fa fa-briefcase"></i></span>
                     <span><?php echo file_get_contents(get_template_directory() . '/img/fiverr.svg'); ?></span>
