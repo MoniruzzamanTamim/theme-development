@@ -1,0 +1,49 @@
+/*
+* This template for displaying the Footer
+*/
+/*
+@Package TAMIM Theme
+====================================
+        THEME OPTION DESIGN 
+====================================
+*/
+
+
+/*====================================
+        HEADER RELATED CSS 
+====================================*/
+
+
+span.site-title{
+    font-size: 29px;
+    color: white;
+    font-weight: bolder;
+}
+
+/*HEADER  Responsive Css */
+
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    span.site-title{
+    font-size: 18px;
+    color: white;
+    font-weight: bolder;
+}
+}
+
+
+@media (max-width: 767.98px) { 
+      span.site-title{
+    font-size: 18px;
+    color: white;
+    font-weight: bolder;
+}
+}
+/* Responsive  */
+@media (max-width: 575.98px) {
+      span.site-title{
+    font-size: 16px;
+    color: white;
+    font-weight: bolder;
+}
+    }

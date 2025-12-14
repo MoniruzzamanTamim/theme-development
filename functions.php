@@ -5,18 +5,26 @@ include_once('functions/default.php');
 // =======================================================
 
 // =======================================================
-// / Linkup Additional CSS & JS Bootstrap & Custom, FontAwesome for Theme
+// / Linkup Additional CSS & JS Bootstrap & Custom, FontAwesome & etc. for Theme
 include_once('functions/link_file.php');
 // =======================================================
 
 // ======================================================================
 // Register Theme Customizer For Header Section 
-include_once('functions/headerFunction.php');
+include_once('functions/theme_customizer/headerFunction.php');
 // =======================================================
 
 // ======================================================================
 //For Register Theme Customizer For Footer Section 
-include_once('functions/footerFunction.php');
+include_once('functions/theme_customizer/footerFunction.php');
+// =======================================================
+// ======================================================================
+//Theme Color Customize Option 
+include_once('functions/theme_customizer/themecolor.php');
+// =======================================================
+// =======================================================
+// Login Page  Enqueue Register
+include_once('functions/theme_customizer/login-enqueue.php');
 // =======================================================
 // ======================================================================
 //Page Setting for Page Relate Code metabox
@@ -32,10 +40,7 @@ include_once('functions/blogpage.php');
 //Blog Page Sidebar S
 include_once('functions/widget.php');
 // =======================================================
-// ======================================================================
-//Theme Color Customize Option 
-include_once('functions/themecolor.php');
-// =======================================================
+
 //Custom Post ==================================================
 include_once('functions/custompost.php');
 // =======================================================
@@ -46,13 +51,13 @@ include_once('functions/shortcode.php');
 
 //Create Short Code with pagination
 include_once('functions/shortcodes.php');
-// =======================================================
-// Login Page  Enqueue Register
-include_once('functions/login-enqueue.php');
-// =======================================================
+
 // =======================================================
 // Wordpress Theme option
-include_once('functions/themeoption.php');
+// include_once('functions/themeoption.php');
+// =======================================================
+// Wordpress Theme option
+include_once('functions/theme_options.php');
 // =======================================================
 
 ?>

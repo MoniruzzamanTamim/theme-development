@@ -6,13 +6,13 @@ get_header(); ?>
 
 
 <!-- ================Body Section Start===================  -->
-<section class="body_section">
+<section class="body_section fourzorofour bg-black">
 
         <div class="container">
             <div class="row">
-                <div class="col-xl-8"> 
+                <div class="col-xl-8 d-flex flex-item-center"> 
                     <!-- Slicing Blog Related Code  -->
-                    <?php get_template_part('templete/blog_post'); ?>
+                    <h1>404</h1>
                 </div>
                 <div class="col-xl-4">
                     <div class="Sidebars-part">

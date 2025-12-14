@@ -1,0 +1,225 @@
+<?php
+/*
+@Package Tamim-personal
+====================================
+        ADMIN PAGE
+====================================
+*/
+
+
+/*
+|--------------------------------------------------------------------------
+| 1. Admin Menu Register
+|--------------------------------------------------------------------------
+*/
+function tamim_theme_option_menu() {
+//MAIN MENU
+    add_menu_page('Theme Options','Theme Options','manage_options','tamim_theme_options','tamim_theme_options_page',get_template_directory_uri() . '/img/small-logo.png',90);
+//SUB-MENU
+    add_submenu_page('tamim_theme_options','General Settings','General','manage_options','tamim_theme_options','tamim_theme_options_page');
+    add_submenu_page('tamim_theme_options','Header Settings','Header','manage_options','tamim_header_options','tamim_header_options_page');
+    add_submenu_page('tamim_theme_options','Footer Settings','Footer','manage_options','tamim_footer_options','tamim_footer_options_page');
+}
+add_action('admin_menu', 'tamim_theme_option_menu');
+
+
+
+/*|--------------------------------------------------------------------------
+| 2. Register Settings, Sections, Fields
+|--------------------------------------------------------------------------*/
+function tamim_settings_init() {
+
+     /*--------------------------------------------------------------------------
+    STEP-1:  Register one single option array 
+    register_setting( $option_group:string, $option_name:string, $args:array )
+    --------------------------------------------------------------------------*/
+    register_setting('tamim_options_group', 'tamim_options', 'tamim_register_options_sanitize');
+
+    /*--------------------------------------------------------------------------
+    Step-2: ADD SECTION 
+    add_settings_field( $id:string, $title:string, $callback:callable, $page:string, $section:string, $args:array )
+    --------------------------------------------------------------------------*/
+
+    //Header Part 
+    add_settings_section('tamim_header','HEADER Settings','tamim_header_section_cb','tamim_header_options');
+ 
+    //Footer Part 
+    add_settings_section('tamim_footer','FOOTER Settings','tamim_footer_section_cb','tamim_footer_options');
+
+
+
+    /*|--------------------------------------------------------------------------
+        FOOTER SECTION
+        add_settings_field( $id:string, $title:string, $callback:callable, $page:string, $section:string, $args:array )
+    |--------------------------------------------------------------------------*/
+     //Header Part 
+    add_settings_field('tamim_header_address','Address Info','tamim_header_address_cb','tamim_header_options','tamim_header');
+    add_settings_field('tamim_header_email','Email Info','tamim_header_email_cb','tamim_header_options','tamim_header');
+    add_settings_field('tamim_header_phone','Phone Info','tamim_header_phone_cb','tamim_header_options','tamim_header');
+    add_settings_field('tamim_header_facebook','Facebook URL','tamim_header_facebook_cb','tamim_header_options','tamim_header');
+
+    //Footer Part 
+    add_settings_field('tamim_footer_text','Footer Text','tamim_footer_text_cb','tamim_footer_options','tamim_footer');
+
+}
+add_action('admin_init', 'tamim_settings_init');
+
+
+
+/*
+|--------------------------------------------------------------------------
+| 3. SECTION CALLBACKS
+|--------------------------------------------------------------------------
+*/
+
+//HEADER SECTION CALLBACK 
+function tamim_header_section_cb() {
+    echo "<p>Change header-related information below.</p>";
+}
+
+//FOOTER SECTION CALLBACK 
+function tamim_footer_section_cb() {
+    echo "<p>Change footer-related information below.</p>";
+}
+
+
+
+/*
+|--------------------------------------------------------------------------
+| 4. FIELD RENDER CALLBACKS
+|--------------------------------------------------------------------------
+*/
+
+// HEADER FIELD CALLBACK
+function tamim_header_address_cb() {
+    $options = get_option('tamim_options');
+    ?>
+    <input type="text" name="tamim_options[address]"
+           value="<?php echo esc_attr($options['address'] ?? ''); ?>" size="50">
+    <?php
+}
+
+function tamim_header_email_cb() {
+    $options = get_option('tamim_options');
+    ?>
+    <input type="email" name="tamim_options[email]"
+           value="<?php echo esc_attr($options['email'] ?? ''); ?>" size="50">
+    <?php
+}
+
+function tamim_header_phone_cb() {
+    $options = get_option('tamim_options');
+    ?>
+    <input type="text" name="tamim_options[phone]"
+           value="<?php echo esc_attr($options['phone'] ?? ''); ?>" size="30">
+    <?php
+}
+
+function tamim_header_facebook_cb() {
+    $options = get_option('tamim_options');
+    ?>
+    <input type="url" name="tamim_options[facebook]"
+           value="<?php echo esc_attr($options['facebook'] ?? ''); ?>" size="50"
+           placeholder="https://facebook.com/yourpage">
+    <?php
+}
+
+// FOOTER FIELD CALLBACK
+function tamim_footer_text_cb() {
+    $options = get_option('tamim_options');
+    ?>
+    <input type="text" name="tamim_options[footer_text]"
+           value="<?php echo esc_attr($options['footer_text'] ?? ''); ?>" size="60"
+           placeholder="© 2025 THEME. Designed by Tamim">
+    <?php
+}
+
+
+
+/*
+|--------------------------------------------------------------------------
+| 5. SANITIZE ALL OPTIONS for SAVE VALLU ADMIN PANEL 
+|--------------------------------------------------------------------------
+*/
+function tamim_register_options_sanitize($input) {
+    $sanitized = [];
+
+    // HEADER
+    if (isset($input['address'])) {
+        $sanitized['address'] = sanitize_text_field($input['address']);
+    }
+    if (isset($input['email'])) {
+        $sanitized['email'] = sanitize_email($input['email']);
+    }
+    if (isset($input['phone'])) {
+        $sanitized['phone'] = sanitize_text_field($input['phone']);
+    }
+    if (isset($input['facebook'])) {
+        $sanitized['facebook'] = esc_url_raw($input['facebook']);
+    }
+
+    // FOOTER
+    if (isset($input['footer_text'])) {
+        $sanitized['footer_text'] = sanitize_text_field($input['footer_text']);
+    }
+
+    return $sanitized;
+}
+
+
+
+/*
+|--------------------------------------------------------------------------
+| 6. PAGE RENDER CALLBACKS
+|--------------------------------------------------------------------------
+*/
+
+// GENERAL PAGE
+function tamim_theme_options_page() {
+    ?>
+    <div class="wrap">
+        <h1>Theme Options</h1>
+        <form action="options.php" method="post">
+            <?php
+            settings_fields('tamim_options_group');
+            do_settings_sections('tamim_theme_options');
+            submit_button();
+            ?>
+        </form>
+    </div>
+    <?php
+}
+
+
+// HEADER PAGE
+function tamim_header_options_page() {
+    ?>
+    <div class="wrap">
+        <h1>Header Settings</h1>
+        <form action="options.php" method="post">
+            <?php
+            settings_fields('tamim_options_group');
+            do_settings_sections('tamim_header_options');
+            submit_button();
+            ?>
+        </form>
+    </div>
+    <?php
+}
+
+
+// FOOTER PAGE
+function tamim_footer_options_page() {
+    ?>
+    <div class="wrap">
+        <h1>Footer Settings</h1>
+        <form action="options.php" method="post">
+            <?php
+            settings_fields('tamim_options_group');
+            do_settings_sections('tamim_footer_options');
+            submit_button();
+            ?>
+        </form>
+    </div>
+    <?php
+}
