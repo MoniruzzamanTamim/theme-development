@@ -9,6 +9,7 @@ include_once('functions/default.php');
 include_once('functions/link_file.php');
 // =======================================================
 
+// THEME CUSTOMIZER RELATED ENQUEUE......................................................
 // ======================================================================
 // Register Theme Customizer For Header Section 
 include_once('functions/theme_customizer/headerFunction.php');
@@ -27,7 +28,7 @@ include_once('functions/theme_customizer/themecolor.php');
 include_once('functions/theme_customizer/login-enqueue.php');
 // =======================================================
 // ======================================================================
-//Page Setting for Page Relate Code metabox
+//Page Setting for Page Relate Code metabox..................................
 //For Control Page Width Customly
 include_once('functions/pagesetting.php');
 // =======================================================
@@ -57,7 +58,7 @@ include_once('functions/shortcodes.php');
 // include_once('functions/themeoption.php');
 // =======================================================
 // Wordpress Theme option
-include_once('functions/theme_options.php');
+include_once('functions/theme_option/theme_options.php');
 // =======================================================
 
 ?>

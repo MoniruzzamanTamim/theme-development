@@ -184,15 +184,13 @@ function tamim_admin_footer_script() {
 /**1️⃣ Register Header Settings, Section, and Fields*/
 function tamim_register_header_settings() {
     // Step-1: Register setting For All
-    register_setting('tamim_themes_options_groups', 'tamims_options', 'tamims_registers_options_sanitizes');
+    register_setting('tamim_themes_options_groups', 'theme_option', 'tamims_registers_options_sanitizes');
 
     // Step-2: Add Section
     add_settings_section('headers_section', 'Header Settings', 'tamim_headers_section_cb', 'tamim_header_options');
     
     //Step-3: Add Fields
     $fields = array(
-        array('header_btn_enable', 'Enable Header Button'),
-        array('copyright_enable', 'Enable Bottom header (Copyright)'),
         array('header_logo', 'Header Logo'),
         array('header_mobile_logo', 'Header Mobile Logo'),
         array('header_menu', 'Main Header Menu'),
@@ -235,48 +233,19 @@ function tamim_headers_section_cb() {
 
 /**3️⃣ Field Callbacks */
 
-// 1. Enable/Disable Header Button
-function tamim_header_header_btn_enable_cb() {
-    $options = get_option('tamims_options');
-    $enabled = isset($options['header_btn_enable']) ? $options['header_btn_enable'] : '1';
-    ?>
-    <label>
-        <input type="checkbox" 
-               name="tamims_options[header_btn_enable]" 
-               value="1" 
-               <?php checked('1', $enabled); ?> />
-        Show Header Button On Right Side
-    </label>
-    <p class="description">Uncheck to hide header button completely.</p>
-    <?php
-}
 
-// 2. Enable/Disable Copyright
-function tamim_header_copyright_enable_cb() {
-    $options = get_option('tamims_options');
-    $enabled = isset($options['copyright_enable']) ? $options['copyright_enable'] : '1';
-    ?>
-    <label>
-        <input type="checkbox" 
-               name="tamims_options[copyright_enable]" 
-               value="1" 
-               <?php checked('1', $enabled); ?> />
-        Show Copyright Section
-    </label>
-    <p class="description">Uncheck to hide copyright section.</p>
-    <?php
-}
+
 
 // 3. Upload Header Logo
 function tamim_header_header_logo_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     $logo_url = isset($options['header_logo']) ? $options['header_logo'] : '';
     ?>
     
     <div style="margin-bottom: 15px;">
         <input type="hidden" 
                id="tamim_header_logo_url" 
-               name="tamims_options[header_logo]" 
+               name="theme_option[header_logo]" 
                value="<?php echo esc_attr($logo_url); ?>" />
         
         <input type="text" 
@@ -316,14 +285,14 @@ function tamim_header_header_logo_cb() {
 
 // 4. Upload Mobile Logo
 function tamim_header_header_mobile_logo_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     $logo_url = isset($options['header_mobile_logo']) ? $options['header_mobile_logo'] : '';
     ?>
     
     <div style="margin-bottom: 15px;">
         <input type="hidden" 
                id="tamim_mobile_logo_url" 
-               name="tamims_options[header_mobile_logo]" 
+               name="theme_option[header_mobile_logo]" 
                value="<?php echo esc_attr($logo_url); ?>" />
         
         <input type="text" 
@@ -363,13 +332,13 @@ function tamim_header_header_mobile_logo_cb() {
 
 // 5. Header Menu Selection
 function tamim_header_header_menu_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     $selected_menu = isset($options['header_menu']) ? $options['header_menu'] : '';
     
     // Get all WordPress menus
     $menus = wp_get_nav_menus();
     ?>
-    <select name="tamims_options[header_menu]" style="min-width: 200px; padding: 5px;">
+    <select name="theme_option[header_menu]" style="min-width: 200px; padding: 5px;">
         <option value="">-- Select Menu --</option>
         <?php foreach ($menus as $menu): ?>
         <option value="<?php echo esc_attr($menu->slug); ?>" <?php selected($selected_menu, $menu->slug); ?>>
@@ -383,11 +352,11 @@ function tamim_header_header_menu_cb() {
 
 // 6. Header Button Text
 function tamim_header_header_button_text_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     $button_text = isset($options['header_button_text']) ? $options['header_button_text'] : 'Download CV';
     ?>
     <input type="text" 
-           name="tamims_options[header_button_text]" 
+           name="theme_option[header_button_text]" 
            value="<?php echo esc_attr($button_text); ?>" 
            placeholder="e.g., Download CV"
            style="width: 300px; padding: 8px;" />
@@ -397,7 +366,7 @@ function tamim_header_header_button_text_cb() {
 
 // 7. CV File Upload (PDF/DOC)
 function tamim_header_cv_file_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     $cv_url = isset($options['cv_file']) ? $options['cv_file'] : '';
     $cv_filename = basename($cv_url);
     ?>
@@ -405,7 +374,7 @@ function tamim_header_cv_file_cb() {
     <div style="margin-bottom: 15px;">
         <input type="hidden" 
                id="tamim_cv_file_url" 
-               name="tamims_options[cv_file]" 
+               name="theme_option[cv_file]" 
                value="<?php echo esc_attr($cv_url); ?>" />
         
         <input type="text" 
@@ -453,10 +422,10 @@ function tamim_header_cv_file_cb() {
 
 // 8. Header Background Color (Color Picker)
 function tamim_header_header_bg_color_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[header_bg_color]" 
+           name="theme_option[header_bg_color]" 
            value="<?php echo esc_attr($options['header_bg_color'] ?? '#ffffff'); ?>" 
            class="tamim-color-field" 
            data-default-color="#ffffff"
@@ -467,10 +436,10 @@ function tamim_header_header_bg_color_cb() {
 
 // 9. Logo/Title Color (Color Picker)
 function tamim_header_logo_title_color_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[logo_title_color]" 
+           name="theme_option[logo_title_color]" 
            value="<?php echo esc_attr($options['logo_title_color'] ?? '#000000'); ?>" 
            class="tamim-color-field" 
            data-default-color="#000000"
@@ -481,10 +450,10 @@ function tamim_header_logo_title_color_cb() {
 
 // 10. Menu Text Color (Color Picker)
 function tamim_header_menu_text_color_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[menu_text_color]" 
+           name="theme_option[menu_text_color]" 
            value="<?php echo esc_attr($options['menu_text_color'] ?? '#333333'); ?>" 
            class="tamim-color-field" 
            data-default-color="#333333"
@@ -495,10 +464,10 @@ function tamim_header_menu_text_color_cb() {
 
 // 11. Menu Background Color (Color Picker)
 function tamim_header_menu_bg_color_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[menu_bg_color]" 
+           name="theme_option[menu_bg_color]" 
            value="<?php echo esc_attr($options['menu_bg_color'] ?? 'transparent'); ?>" 
            class="tamim-color-field" 
            data-default-color="transparent"
@@ -509,10 +478,10 @@ function tamim_header_menu_bg_color_cb() {
 
 // 12. Menu Hover Color (Color Picker)
 function tamim_header_menu_hover_color_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[menu_hover_color]" 
+           name="theme_option[menu_hover_color]" 
            value="<?php echo esc_attr($options['menu_hover_color'] ?? '#0073aa'); ?>" 
            class="tamim-color-field" 
            data-default-color="#0073aa"
@@ -523,10 +492,10 @@ function tamim_header_menu_hover_color_cb() {
 
 // 13. Menu Hover Background (Color Picker)
 function tamim_header_menu_hover_bg_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[menu_hover_bg]" 
+           name="theme_option[menu_hover_bg]" 
            value="<?php echo esc_attr($options['menu_hover_bg'] ?? 'transparent'); ?>" 
            class="tamim-color-field" 
            data-default-color="transparent"
@@ -537,10 +506,10 @@ function tamim_header_menu_hover_bg_cb() {
 
 // 14. Button Background Color (Color Picker)
 function tamim_header_button_bg_color_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[button_bg_color]" 
+           name="theme_option[button_bg_color]" 
            value="<?php echo esc_attr($options['button_bg_color'] ?? '#0073aa'); ?>" 
            class="tamim-color-field" 
            data-default-color="#0073aa"
@@ -551,10 +520,10 @@ function tamim_header_button_bg_color_cb() {
 
 // 15. Button Border Color (Color Picker)
 function tamim_header_button_border_color_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[button_border_color]" 
+           name="theme_option[button_border_color]" 
            value="<?php echo esc_attr($options['button_border_color'] ?? '#0073aa'); ?>" 
            class="tamim-color-field" 
            data-default-color="#0073aa"
@@ -565,10 +534,10 @@ function tamim_header_button_border_color_cb() {
 
 // 16. Button Text Color (Color Picker)
 function tamim_header_button_text_color_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[button_text_color]" 
+           name="theme_option[button_text_color]" 
            value="<?php echo esc_attr($options['button_text_color'] ?? '#ffffff'); ?>" 
            class="tamim-color-field" 
            data-default-color="#ffffff"
@@ -579,10 +548,10 @@ function tamim_header_button_text_color_cb() {
 
 // 17. Button Hover Background (Color Picker)
 function tamim_header_button_hover_bg_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[button_hover_bg]" 
+           name="theme_option[button_hover_bg]" 
            value="<?php echo esc_attr($options['button_hover_bg'] ?? '#005a87'); ?>" 
            class="tamim-color-field" 
            data-default-color="#005a87"
@@ -593,10 +562,10 @@ function tamim_header_button_hover_bg_cb() {
 
 // 18. Button Hover Border (Color Picker)
 function tamim_header_button_hover_border_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[button_hover_border]" 
+           name="theme_option[button_hover_border]" 
            value="<?php echo esc_attr($options['button_hover_border'] ?? '#005a87'); ?>" 
            class="tamim-color-field" 
            data-default-color="#005a87"
@@ -607,10 +576,10 @@ function tamim_header_button_hover_border_cb() {
 
 // 19. Button Hover Text (Color Picker)
 function tamim_header_button_hover_text_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[button_hover_text]" 
+           name="theme_option[button_hover_text]" 
            value="<?php echo esc_attr($options['button_hover_text'] ?? '#ffffff'); ?>" 
            class="tamim-color-field" 
            data-default-color="#ffffff"
@@ -621,10 +590,10 @@ function tamim_header_button_hover_text_cb() {
 
 // 20. Mobile Menu Background (Color Picker)
 function tamim_header_mobile_menu_bg_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[mobile_menu_bg]" 
+           name="theme_option[mobile_menu_bg]" 
            value="<?php echo esc_attr($options['mobile_menu_bg'] ?? '#ff014f'); ?>" 
            class="tamim-color-field" 
            data-default-color="#ff014f"
@@ -635,10 +604,10 @@ function tamim_header_mobile_menu_bg_cb() {
 
 // 21. Mobile Menu Text Color (Color Picker)
 function tamim_header_mobile_menu_text_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[mobile_menu_text]" 
+           name="theme_option[mobile_menu_text]" 
            value="<?php echo esc_attr($options['mobile_menu_text'] ?? '#ffffff'); ?>" 
            class="tamim-color-field" 
            data-default-color="#ffffff"
@@ -670,7 +639,7 @@ function tamim_header_options_page_cb() {
 
 function theme_option_header_color(){
 
-$options = get_option('tamims_options');
+$options = get_option('theme_option');
 
 $header_bg_color = $options['header_bg_color'] ?? '#1a1a1a';
 $header_logo_color = $options['logo_title_color'] ?? '#ffffffff';

@@ -86,7 +86,7 @@ function tamim_footer_admin_footer_script() {
 /**1️⃣ Register Footer Settings*/
 function tamim_register_footer_settings() {
     // Use the same option group as header
-    register_setting('tamim_themes_options_groups', 'tamims_options', 'tamims_registers_options_sanitizes');
+    register_setting('tamim_themes_options_groups', 'theme_option', 'tamims_registers_options_sanitizes');
 
     // Add Section
     add_settings_section(
@@ -138,12 +138,12 @@ function tamim_footers_section_cb() {
 
 // Enable/Disable Top Footer
 function tamim_footer_top_footer_enable_cb() {
-    $options = get_option('tamims_options');
-    $enabled = isset($options['top_footer_enable']) ? $options['top_footer_enable'] : '1';
+    $options = get_option('theme_option');
+    $enabled = isset($options['top_footer_enable']) ? $options['top_footer_enable'] : '0';
     ?>
     <label>
         <input type="checkbox" 
-               name="tamims_options[top_footer_enable]" 
+               name="theme_option[top_footer_enable]" 
                value="1" 
                <?php checked('1', $enabled); ?> />
         Show Top Footer (Logo, Links, Contact)
@@ -154,12 +154,12 @@ function tamim_footer_top_footer_enable_cb() {
 
 // Enable/Disable Bottom Footer
 function tamim_footer_copyright_enable_cb() {
-    $options = get_option('tamims_options');
-    $enabled = isset($options['copyright_enable']) ? $options['copyright_enable'] : '1';
+    $options = get_option('theme_option');
+    $enabled = isset($options['copyright_enable']) ? $options['copyright_enable'] : '0';
     ?>
     <label>
         <input type="checkbox" 
-               name="tamims_options[copyright_enable]" 
+               name="theme_option[copyright_enable]" 
                value="1" 
                <?php checked('1', $enabled); ?> />
         Show Bottom Footer (Copyright Section)
@@ -170,10 +170,10 @@ function tamim_footer_copyright_enable_cb() {
 
 // Website Title
 function tamim_footer_footer_title_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[footer_title]" 
+           name="theme_option[footer_title]" 
            value="<?php echo esc_attr($options['footer_title'] ?? 'TAMIM'); ?>" 
            style="width: 300px; padding: 8px;" 
            placeholder="TAMIM" />
@@ -182,14 +182,14 @@ function tamim_footer_footer_title_cb() {
 
 // Footer Logo
 function tamim_footer_footer_logo_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     $logo_url = $options['footer_logo'] ?? '';
     ?>
     
     <div style="margin-bottom: 15px;">
         <input type="hidden" 
                id="tamim_footer_logo_url" 
-               name="tamims_options[footer_logo]" 
+               name="theme_option[footer_logo]" 
                value="<?php echo esc_attr($logo_url); ?>" />
         
         <input type="text" 
@@ -231,9 +231,9 @@ function tamim_footer_footer_logo_cb() {
 
 // Address
 function tamim_footer_footer_address_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
-    <textarea name="tamims_options[footer_address]" 
+    <textarea name="theme_option[footer_address]" 
               rows="2"
               style="width: 80%; padding: 8px;"
               placeholder="7 No Elephant Road, Dhaka"><?php 
@@ -244,10 +244,10 @@ function tamim_footer_footer_address_cb() {
 
 // Useful Links Title
 function tamim_footer_useful_links_title_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[useful_links_title]" 
+           name="theme_option[useful_links_title]" 
            value="<?php echo esc_attr($options['useful_links_title'] ?? 'Useful Links'); ?>" 
            style="width: 300px; padding: 8px;" 
            placeholder="Useful Links" />
@@ -256,13 +256,13 @@ function tamim_footer_useful_links_title_cb() {
 
 // Useful Links Menu
 function tamim_footer_useful_links_menu_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     $selected_menu = $options['useful_links_menu'] ?? '';
     
     // Get all WordPress menus
     $menus = wp_get_nav_menus();
     ?>
-    <select name="tamims_options[useful_links_menu]" style="width: 300px; padding: 8px;">
+    <select name="theme_option[useful_links_menu]" style="width: 300px; padding: 8px;">
         <option value="">-- Select Menu --</option>
         <?php foreach ($menus as $menu): ?>
         <option value="<?php echo esc_attr($menu->term_id); ?>" 
@@ -283,10 +283,10 @@ function tamim_footer_useful_links_menu_cb() {
 
 // Quick Links Title
 function tamim_footer_quick_links_title_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[quick_links_title]" 
+           name="theme_option[quick_links_title]" 
            value="<?php echo esc_attr($options['quick_links_title'] ?? 'Quick Links'); ?>" 
            style="width: 300px; padding: 8px;" 
            placeholder="Quick Links" />
@@ -295,13 +295,13 @@ function tamim_footer_quick_links_title_cb() {
 
 // Quick Links Menu
 function tamim_footer_quick_links_menu_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     $selected_menu = $options['quick_links_menu'] ?? '';
     
     // Get all WordPress menus
     $menus = wp_get_nav_menus();
     ?>
-    <select name="tamims_options[quick_links_menu]" style="width: 300px; padding: 8px;">
+    <select name="theme_option[quick_links_menu]" style="width: 300px; padding: 8px;">
         <option value="">-- Select Menu --</option>
         <?php foreach ($menus as $menu): ?>
         <option value="<?php echo esc_attr($menu->term_id); ?>" 
@@ -322,10 +322,10 @@ function tamim_footer_quick_links_menu_cb() {
 
 // Contact Title
 function tamim_footer_contact_title_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[contact_title]" 
+           name="theme_option[contact_title]" 
            value="<?php echo esc_attr($options['contact_title'] ?? 'Contact Information'); ?>" 
            style="width: 300px; padding: 8px;" 
            placeholder="Contact Information" />
@@ -334,10 +334,10 @@ function tamim_footer_contact_title_cb() {
 
 // Phone Number
 function tamim_footer_contact_phone_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[contact_phone]" 
+           name="theme_option[contact_phone]" 
            value="<?php echo esc_attr($options['contact_phone'] ?? '01739820399'); ?>" 
            style="width: 300px; padding: 8px;" 
            placeholder="01739820399" />
@@ -346,10 +346,10 @@ function tamim_footer_contact_phone_cb() {
 
 // Email Address
 function tamim_footer_contact_email_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="email" 
-           name="tamims_options[contact_email]" 
+           name="theme_option[contact_email]" 
            value="<?php echo esc_attr($options['contact_email'] ?? 'tamimiqbal896@gmail.com'); ?>" 
            style="width: 300px; padding: 8px;" 
            placeholder="tamimiqbal896@gmail.com" />
@@ -358,9 +358,9 @@ function tamim_footer_contact_email_cb() {
 
 // Contact Address
 function tamim_footer_contact_address_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
-    <textarea name="tamims_options[contact_address]" 
+    <textarea name="theme_option[contact_address]" 
               rows="2"
               style="width: 80%; padding: 8px;"
               placeholder="7 No Elephant Road, Dhaka"><?php 
@@ -371,10 +371,10 @@ function tamim_footer_contact_address_cb() {
 
 // Background Color
 function tamim_footer_footer_bg_color_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[footer_bg_color]" 
+           name="theme_option[footer_bg_color]" 
            value="<?php echo esc_attr($options['footer_bg_color'] ?? '#1a1a1a'); ?>" 
            class="tamim-color-field"
            data-default-color="#1a1a1a" />
@@ -384,10 +384,10 @@ function tamim_footer_footer_bg_color_cb() {
 
 // Text Color
 function tamim_footer_footer_text_color_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[footer_text_color]" 
+           name="theme_option[footer_text_color]" 
            value="<?php echo esc_attr($options['footer_text_color'] ?? '#ffffff'); ?>" 
            class="tamim-color-field"
            data-default-color="#ffffff" />
@@ -397,10 +397,10 @@ function tamim_footer_footer_text_color_cb() {
 
 // Link Color
 function tamim_footer_footer_link_color_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[footer_link_color]" 
+           name="theme_option[footer_link_color]" 
            value="<?php echo esc_attr($options['footer_link_color'] ?? '#cccccc'); ?>" 
            class="tamim-color-field"
            data-default-color="#cccccc" />
@@ -410,10 +410,10 @@ function tamim_footer_footer_link_color_cb() {
 
 // Copyright Text
 function tamim_footer_footer_copyright_cb() {
-    $options = get_option('tamims_options');
+    $options = get_option('theme_option');
     ?>
     <input type="text" 
-           name="tamims_options[footer_copyright]" 
+           name="theme_option[footer_copyright]" 
            value="<?php echo esc_attr($options['footer_copyright'] ?? '© 2025 TAMIM Theme. All rights reserved.'); ?>" 
            style="width: 80%; padding: 8px;" 
            placeholder="Copyright text" />

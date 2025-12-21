@@ -135,10 +135,7 @@ h2{
     margin-left: 16px !important;
 }
 
-/* After Header Fixed Add This Css */
-section.body_section {
-    padding: 0 0 !important;
-}
+
 /* ======================================Page Setting Related Code End here =================================== */
 
 /* ===================== BLOG SECTION STYLES ==========================*/
@@ -199,7 +196,7 @@ section.body_section {
     color: white;
 }
 
-.page-numbers  {
+.page-numbers {
     color: white;
     background-color: #FF014F;
     padding: 8px 14px;
@@ -365,7 +362,7 @@ h3#reply-title {
     border-bottom: 4px solid black;
     padding-bottom: 7px;
     display: inline-block;
-    color: black;
+    color: #ffffff;
 }
 p.logged-in-as {
     display: none;
@@ -379,7 +376,15 @@ textarea#comment {
     padding: 10px;
 }
 
-.form-submit input#submit {
+.reply {
+     padding: 8px 42px;
+    background-color: var( --button-bg-color);
+    color: var(--button-text);
+    border: transparent;
+    display: inline-block;
+}
+
+.form-submit input#submit, .reply {
     padding: 8px 42px;
     background-color: var( --button-bg-color);
     color: var(--button-text);
@@ -387,19 +392,95 @@ textarea#comment {
 }
 
 .comment-author a.url {
-    color: black;
+    color: rgb(255, 255, 255);
     font: weight 600px;
 }
 .comment-meta.commentmetadata a {
-    color: black;
+    color: rgb(255, 255, 255);
     padding: 8px 0;
 }
 
+div#respond {
+    margin-top: 46px;
+}
 .comment {
     padding: 10px 0;
 }
+.h3,.comment p,.says, .fn a, .reply a {    color: white;}
+
+/* ==================Comment Related Css END here ............================*/
 
 
+
+/* Blog,singel,404, search,archive Page  structure Related CSS START Here................. */
+
+.page-design  {
+    border-top: 1px solid white;
+    margin-top: 60px;
+    padding: 60px 25px !important;
+    background-color: #000000;
+}
+/* Blog Page Related CSS End Here................. */
+/* Signel Page Related CSS START Here................. */
+
+.singel-page{
+    color: white !important;
+}
+/* Signel Page Related CSS End Here................. */
+/* Search  Page Related CSS START Here................. */
+.search-page .pagination {
+    display: none;
+}
+/* Search Page Related CSS End Here................. */
+/* archive  Page Related CSS START Here................. */
+.archive-section .pagination {
+    display: none;
+}
+.blog_content_customise  h6 a{
+
+}
+/* archive Page Related CSS End Here................. */
+
+/* 404 Page Related CSS Start Here............................. */
+.error-404 {
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    align-items: center;
+    text-align: center;
+}
+.content h1 {
+    font-size: 68px;
+    color: var(--button-text);
+}
+.content .button-404 {
+    padding: 20px 25px;
+    background-color: var( --button-bg-color);
+    font-size: 20px;
+    border: none;
+    margin-top: 20px !important;
+}
+.content .button-404, input#searchsubmit {
+    padding: 10px 42px;
+    background-color: var( --button-bg-color);
+    font-size: 17px;
+    border: none;
+    margin-top: 9px;
+    display: inline-block;
+   color: var(--button-text);
+}
+
+.search-box-404 {
+    margin: 22px 0;
+}
+.search-box-404 input#s {
+    width: 59%;
+    height: 46px;
+    border: var( --button-bg-color);
+    margin-right: 10px;
+    padding: 0 10px;
+}
+/* 404 Page Related CSS END Start Here............................. */
 
 @media (max-width: 768.98px) {
 .page-title {

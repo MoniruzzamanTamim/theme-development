@@ -4,7 +4,7 @@
 */ 
 get_header(); ?>
 
-<section class="body_section full-width-page">
+<section class="body_section full-width-page page-design ">
     <div class="container-fluid"><!-- Dynamically add container class here -->
         <div class="row">
             <div class="col-xl-12">

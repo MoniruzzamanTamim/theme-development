@@ -7,7 +7,7 @@ get_header(); ?>
 
 
 <!-- ================Body Section Start===================  -->
-<section class="body_section search-page bg-black py-5">
+<section class="body_section search-page bg-black page-design ">
 
         <div class="container">
             <div class="row">
@@ -21,8 +21,8 @@ get_header(); ?>
                     <?php get_template_part('templete/blog_post'); ?>
                 </div>
                 <div class="col-xl-4">
-                    <div class="Sidebars-part px-5">
-                                            <h2>Show SideBar Area</h2>
+                    <div class="Sidebars-part ">
+                                            <!-- <h2>Show SideBar Area</h2> -->
                                             <?php get_sidebar(); ?>
                     </div>
                 </div>

@@ -33,13 +33,19 @@ $cv_file_url = isset($tamim_options['cv_file']) ? $tamim_options['cv_file'] : ''
 $button_text = isset($tamim_options['header_button_text']) ? $tamim_options['header_button_text'] : 'Download CV';
 
 // Generate secure download URL if CV exists
+$cv_file_url = 'https://example.com/uploads/cv.pdf';
+
 if (!empty($cv_file_url)) {
-    $download_cv_url = add_query_arg(array(
-        'tamim_download_cv' => '1',
-        'file' => urlencode($cv_file_url),
-        'nonce' => wp_create_nonce('tamim_download_cv')
-    ), home_url('/'));
+    $download_cv_url = add_query_arg(
+        array(
+            'tamim_download_cv' => '1',
+            'file'  => esc_url_raw($cv_file_url),
+            'nonce' => wp_create_nonce('tamim_download_cv'),
+        ),
+        home_url('/')
+    );
 }
+
 
 // Check if button should be shown
 $show_button = ($header_btn_enable == '1' && !empty($cv_file_url));
@@ -93,7 +99,7 @@ $show_button = ($header_btn_enable == '1' && !empty($cv_file_url));
             </div>
 
             <!-- EXTRA BUTTON - Show only when enabled -->
-            <?php if ($show_button): ?>
+            
             <div class="col-xl-2 col-lg-2 col-md-3 d-none d-md-block text-end header_column_three">
                 <div class="header-extra">
                     <a href="<?php echo esc_url($download_cv_url); ?>" 
@@ -103,7 +109,7 @@ $show_button = ($header_btn_enable == '1' && !empty($cv_file_url));
                     </a>
                 </div>
             </div>
-            <?php endif; ?>
+       
             
             <!-- Mobile Menu Icon (যেমনটি ছিল) -->
             <!-- আপনার header.php এর mobile icon অংশে এই কোডটি ব্যবহার করুন -->

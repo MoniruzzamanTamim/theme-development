@@ -22,6 +22,21 @@ border-top: 1px solid white;
 .slider-content h2 {
     font-size: 36px;
 }
+
+/* CSS Only (Simple Rotating Text) */
+.cursor {
+  display: inline-block;
+  margin-left: 3px;
+  animation: blink 1s infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .social-media {
     display: flex;
     gap: 8px;

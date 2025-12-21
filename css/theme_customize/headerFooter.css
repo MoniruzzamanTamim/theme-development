@@ -180,9 +180,12 @@ transform: translateY(0);
 
 
 /* FOOTER SECTION  */
-
+footer {
+    border-top: 1px solid #ffffff !important;
+}
 .footer-bottom{
     background:var(--footer-bg) !important ;
+   
 }
 .footer-bottom p {
     color: var(--footer-text);

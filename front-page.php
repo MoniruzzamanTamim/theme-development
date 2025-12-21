@@ -15,7 +15,8 @@ get_header(); ?>
               <div class="slider-content ">
                   <h1>Hello,</h1>
                   <h2>My name Md Moniruzzaman Tamim</h2>
-                  <h3>I'M <span class=texteffect></span><span>|</span></h3>
+                  <h2>I am <span id="typewriter"></span><span class="cursor">|</span></h2>
+                  <!-- Text Animation -->
                   <div class="social-media">
                     <span><i class="fa fa-facebook"></i></span>
                     <span><i class="fa fa-linkedin"></i></span>

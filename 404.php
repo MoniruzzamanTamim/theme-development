@@ -6,23 +6,26 @@ get_header(); ?>
 
 
 <!-- ================Body Section Start===================  -->
-<section class="body_section fourzorofour bg-black">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-8 d-flex flex-item-center"> 
-                    <!-- Slicing Blog Related Code  -->
+<section class="body_section fourzorofour bg-black page-design ">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 "> 
+                <!-- Slicing Blog Related Code  -->
+                <div class="error-404">
+                <div class="content">
                     <h1>404</h1>
+                    <h2>Oops! Page Not Found</h2>
+                    <p>The page you’re looking for doesn’t exist or may have been moved.</p>
+                    <a class="button-404" href="<?php echo esc_url(home_url('/')); ?>">Go Back Home</a>
+                    <div class="search-box-404"><?php get_search_form(); ?></div>
                 </div>
-                <div class="col-xl-4">
-                    <div class="Sidebars-part">
-                                            <h2>Show SideBar Area</h2>
-                                            <?php get_sidebar(); ?>
-                    </div>
                 </div>
 
             </div>
         </div>
+
+        </div>
+    </div>
 </section>
 <!-- ================Body Section End====================  -->
 

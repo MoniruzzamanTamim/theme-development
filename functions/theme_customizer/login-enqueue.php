@@ -3,7 +3,7 @@
 // Loading CSS file
 //File Location: this File Is Set to Functions/link_file.php 
 
-add_action('login_enqueue_scripts', 'login_enqueue_register');
+// add_action('login_enqueue_scripts', 'login_enqueue_register');
 
 // Changing Login form logo
 function login_logo_change(){

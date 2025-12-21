@@ -8,7 +8,7 @@ get_header(); ?>
 
 
 <!-- ================Body Section Start===================  -->
-<section class="body_section py-5 singel-page ">
+<section class="body_section py-5 singel-page page-design  ">
 
     <div class="container">
         <div class="row">
@@ -22,7 +22,8 @@ get_header(); ?>
 
             <div class="col-xl-4">
                 <div class="Sidebars-part">
-                <h2>Show SideBar Area</h2>
+                <!-- <h2>Show SideBar Area</h2> -->
+                 <?php get_sidebar(); ?>
                 </div>
             </div>
 
