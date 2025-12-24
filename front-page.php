@@ -83,15 +83,37 @@ get_header(); ?>
                     <div class="slider-content slider-content-two">
                         <h1><?php echo esc_html(get_theme_mod('slider2_title', 'Hello,')); ?></h1>
                         <h2><?php echo esc_html(get_theme_mod('slider2_description', 'As a Creative Web Designer, I Transform Ideas Into Stunning Digital Experiences That Combine Design, Usability, and Technology')); ?></h2>
-                        <div class="social-media">
-                            <!-- Same social media links as above -->
-                            <?php if(get_theme_mod('facebook_url')): ?>
-                            <a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" target="_blank" rel="noopener noreferrer">
-                                <span><i class="fa fa-facebook"></i></span>
-                            </a>
-                            <?php endif; ?>
-                            <!-- Add other social links similarly -->
-                        </div>
+                         <div class="social-media">
+                    <?php if(get_theme_mod('facebook_url')): ?>
+                    <a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" target="_blank" rel="noopener noreferrer">
+                        <span><i class="fa fa-facebook"></i></span>
+                    </a>
+                    <?php endif; ?>
+                    
+                    <?php if(get_theme_mod('linkedin_url')): ?>
+                    <a href="<?php echo esc_url(get_theme_mod('linkedin_url')); ?>" target="_blank" rel="noopener noreferrer">
+                        <span><i class="fa fa-linkedin"></i></span>
+                    </a>
+                    <?php endif; ?>
+                    
+                    <?php if(get_theme_mod('upwork_url')): ?>
+                    <a href="<?php echo esc_url(get_theme_mod('upwork_url')); ?>" target="_blank" rel="noopener noreferrer">
+                        <span><i class="fa fa-briefcase"></i></span>
+                    </a>
+                    <?php endif; ?>
+                    
+                    <?php if(get_theme_mod('fiverr_url')): ?>
+                    <a href="<?php echo esc_url(get_theme_mod('fiverr_url')); ?>" target="_blank" rel="noopener noreferrer">
+                        <span><?php echo file_get_contents(get_template_directory() . '/img/fiverr.svg'); ?></span>
+                    </a>
+                    <?php endif; ?>
+                    
+                    <?php if(get_theme_mod('twitter_url')): ?>
+                    <a href="<?php echo esc_url(get_theme_mod('twitter_url')); ?>" target="_blank" rel="noopener noreferrer">
+                        <span><i class="fa fa-twitter"></i></span>
+                    </a>
+                    <?php endif; ?>
+                  </div>git 
                         <div class="banner-btn">
                             <button type="button" class="home-btn banner-btn">Contact Me</button>
                             <?php $cv_pdf_url = get_theme_mod('cv_pdf_file'); ?>
