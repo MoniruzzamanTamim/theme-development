@@ -1,9 +1,12 @@
 <?php
 
 // Loading CSS file
-//File Location: this File Is Set to Functions/link_file.php 
 
-// add_action('login_enqueue_scripts', 'login_enqueue_register');
+function login_enqueue_register(){
+    wp_enqueue_style( 'login_enqueue', get_stylesheet_directory_uri(). "/css/theme_customize/login_enqueue.css", array(), "1.0.1", "all" );
+}
+
+add_action('login_enqueue_scripts', 'login_enqueue_register');
 
 // Changing Login form logo
 function login_logo_change(){

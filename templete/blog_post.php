@@ -32,23 +32,16 @@
         </div>
     </div>
     <?php endwhile;?>
-    <div class="pagination">
-    <a href="#" data-page="1">1</a>
-    <a href="#" data-page="2">2</a>
-    <a href="#" data-page="3">Next »</a>
-    </div>
-    <?php 
-    else:
+    <?php else:
         _e('No posts found');
-    endif; 
-    ?>
+    endif; ?>
 </div>
 
 <!-- Pagination -->
 <div id="page_nav" class="mt-4">
     <?php 
-    if (function_exists('ali_pagenav')) { 
-        ali_pagenav(); 
+    if (function_exists('tamim_pagenav')) { 
+        tamim_pagenav(); 
     } else { 
         next_posts_link('Older Posts'); 
         previous_posts_link('Newer Posts'); 

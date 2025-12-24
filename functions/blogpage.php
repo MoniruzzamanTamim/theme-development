@@ -12,7 +12,7 @@ function my_theme_setup(){
 add_action('after_setup_theme', 'my_theme_setup');
 
 // ===========Set Pagination On  Post Section=============
-function ali_pagenav(){
+function tamim_pagenav(){
   global $wp_query, $wp_rewrite;
   $pages ='';
   $max = $wp_query->max_num_pages;
@@ -31,15 +31,14 @@ function ali_pagenav(){
 }
 
 
-// Bolg Post Description Except to 40 Word
 // Custom Excerpt "Read More" Button
 function tamim_excerpt_more($more){
     global $post;
-    return '<br><br><a class="redmore btn btn-primary wp-element-button blog_post_btn" href="'. get_permalink($post->ID) .'">Read More</a>';
+    return '<br><br><a class="redmore btn btn-primary common-btn blog_post_btn" href="'. get_permalink($post->ID) .'">Read More</a>';
 }
 add_filter('excerpt_more', 'tamim_excerpt_more');
 
-// Limit excerpt to 40 words
+// Bolg Post Description Except to 40 Word --> Limit excerpt to 40 words
 function tamim_excerpt_length($length){
     return 40;
 }

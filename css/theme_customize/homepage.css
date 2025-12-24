@@ -1,0 +1,775 @@
+/* HOME PAGE DESIGN PAGE */
+
+:root{
+--main-color:#FF014F;
+--white:#f0f4f6;
+--black:#151515;
+--background :#162e44;
+--f-background:#11263a;
+--p-color:#9b9b9b;
+--green:#27ae60;
+--red:#e74c3c;
+--yellow:#f1c40f;
+--blue:#2980b9;
+--orange:#e67e22;
+--purple:#8e44ad;
+--light-color:#7f8c8d;
+--dark-color:#2c3e50;
+--shadow:rgba(0,0,0,0.2);
+--transition: all .2s linear;
+--font-primary:  'Rajdhani', sans-serif;
+
+}
+/* ALL BTN DESIGN */
+.home-btn{
+    background-color: var(--home-btn-bg);
+    color: var(--home-btn-text);
+    border: 1px solid var(--home-btn-border);
+    padding: 12px 39px;
+    border: transparent;
+    transition: var(--transition);
+}
+.home-btn:hover {
+    background-color: var(--home-btn-bg-hover);
+    color: var(--home-btn-text-hover);
+    border: 1px solid var(--home-btn-border-hover);
+    transition: var(--transition);
+}
+
+
+/* BANNER SLIDER SECTIOn */
+.slider-item {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    padding: 0 25px;
+}
+#slider-item-one{
+background: var(--banner1-bg);
+border-top: 1px solid white;
+}
+
+.slider-content{
+    color: white;
+}
+.slider-content h1 {
+    font-size: 48px;
+    color: var(--banner-title);
+}
+.slider-content h2 {
+    font-size: 36px;
+}
+
+/* CSS Only (Simple Rotating Text) */
+.cursor {
+  display: inline-block;
+  margin-left: 3px;
+  animation: blink 1s infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.social-media {
+    display: flex;
+    gap: 8px;
+    padding: 25px 0;
+}
+
+.social-media span{
+    width: 49px;
+    height: 49px;
+    background-color: #FF014F;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 0px 10px 0px;
+}
+.social-media span img{
+    width: 55px;
+}
+
+.social-media span svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+}
+
+.social-media span:hover{
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#slider-item-two{
+background-color: #F2F0EF;
+background-size: cover; 
+width: 100%;
+}
+
+
+.slider-content-two h1, .slider-content-two h2, .slider-content-two h3{
+    color: #000000;
+    font-weight: 900;
+}
+
+
+.slider-two-right {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.slider-two-image  {
+    text-align: -webkit-right;
+    position: relative;
+}
+.slider-two-image img {
+    display: block;
+    width: 75% !important;
+
+    position: relative;
+}
+
+.slider-two-image .inner-image {
+    position: absolute;
+    top: 50%;
+    right: -49px;
+    width: 49%;
+    transform: translateY(-50%);
+}
+.slider-two-image .inner-image-two {
+    position: absolute;
+    top: 50%;
+    left: -43px;
+    width: 57%;
+    transform: translateY(9%);
+}
+
+
+
+/* ===========About Section Css Start Here=========== */
+
+.about-section {
+    padding: 100px 20px;
+    background-color: var(--about-bg);
+}
+.about-title {
+
+    margin-bottom: 40px;
+}
+.about-title span {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    position: relative;
+    display: inline-block;
+    color: var(--about-title);
+}
+
+.about-title span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* underline er distance */
+    height: 5px;
+    width: 50%;
+    background-color: var(--about-title-border);
+    display: block;
+}
+.about-content {
+    margin-left: 50px;
+}
+
+
+.about-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--about-title);
+}
+.about-content p {
+    font-weight: 600;
+    font-size:18px;
+    color: var(--about-text);
+
+}
+
+.about-service-part {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+.about-service-part .about-btn{
+    width: 50%;
+}
+
+
+
+/* ===========About Section Css End Here=========== */
+
+/* ===========Grow Section Css Start Here=========== */
+
+.grow-section{
+    background-color: var(--grow-bg);
+    padding: 130px 20px;
+}
+.grow-section .row {
+    align-items: center; /* সারির সব কলাম মাঝখানে হবে */
+}
+.grow-section .grow-content {
+    color: white;
+    
+}
+
+.grow-section .grow-content  h1 {
+    font-size: 48px;
+    font-weight: 700;
+    padding-top: 30px;
+    color: var(--grow-title);
+}
+.grow-section .grow-content  p {
+    font-weight: 600;
+    color: var(--grow-text);
+
+}
+
+.grow-service-part {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+
+.g-service h3 {
+    color: var(--grow-service-count);
+    font-size: 36px;
+    font-weight: 900;
+}
+.g-service span {
+    font-weight: 900;
+    color: var(--grow-service-text);
+}
+.grow-section .grow-video {
+    text-align: center;
+}
+.grow-section .grow-video video {
+    height: 100%;
+    width: 100%;
+    padding-left: 55px;
+    padding-bottom: 27px;
+}
+
+/* ===========Grow Section Css End Here=========== */
+
+
+/* =============================work-process-section CSS Start here ============================= */
+.work-process-section {
+    padding: 100px 20px;
+    background-color: var(--work-bg);
+}
+.work-title{
+    padding: 20px;
+}
+.work-title span {
+    color:var(--work-subtitle);
+    font-weight: 700;
+}
+.work-title h1 {
+    margin: 0 289px;
+    color: var(--work-title);
+    font-weight: 700;
+    font-family: sans-serif;
+}
+.work-process {
+    background-color: var(--work-step-bg);
+    box-shadow: 0 0 15px rgba(0,0,0,.1);
+    padding: 30px 20px;
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    height: 100%;
+    margin-top: 40px;
+    overflow:hidden;
+}
+.work-process:before {
+    background-color: var(--work-count-bg);
+    border-radius: 0 0 0 270px;
+    content: "";
+    height: 55px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .7s;
+    width: 70px;
+    z-index: -1;
+}
+.work-process img {
+    width: 95px;
+}
+.work-process h4 {
+    font-size: 32px;
+    font-family: 'Rajdhani';
+    font-weight: 600;
+    margin: 11px 0;
+    color: var(--work-step-title);
+}
+.work-process p {
+   
+    color: var( --work-step-desc);
+}
+.work-process .number {
+    color: var(--work-count-color);
+    font-size: 24px;
+    font-weight: 600;
+    position: absolute;
+    right: 15px;
+    top: 5px;
+}
+
+/* =============================work-process-section CSS End here ============================= */
+
+/* ============================build-section CSS Start  here ============================= */
+
+.build-section {
+    padding: 100px 20px;
+    position: relative;
+    background-color: var(--build-bg);
+    /* overflow: hidden; prevents pseudo elements from overflowing */
+}
+
+.build-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: var(--build-after-bg);
+}
+.build-section  .container{
+    z-index: 2;
+}
+.build-section .build-content {
+    color: white;
+    margin-bottom: 35px;
+}
+.build-section .build-content p {
+    font-weight: 600;
+    color: var(--build-subtitle);
+}
+.build-section .build-content h3 {
+    font-size: 41px;
+    font-weight: bold;
+    color: var( --build-title);
+}
+.build-section .build-image {
+    position: relative;
+}
+
+.build-section .build-image .build-img-inner-content {
+    background-color: var(--build-after-bg);
+    padding: 118px 80px 62px 40px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 0 280px 0 0;
+}
+.build-section .build-image .build-img-inner-content p {
+    font-weight: bold;
+    color: var(--build-subtitle);
+}
+.build-section .build-image .build-img-inner-content h3 {
+    font-weight: bold;
+    max-width: 300px;
+    color: var( --build-title);
+}
+.build-section .build-image .build-img-inner-content .build-btn {
+    font-weight: 700;
+    background:var(--build-btn-bg);
+    color: var(--build-btn-text);
+    border: 1px solid var(--build-btn-border);
+    transition: var(--transition);
+}
+.build-section .build-image .build-img-inner-content .build-btn:hover {
+    font-weight: 700;
+    background:var(--build-btn-bg-hover);
+    color: var(--build-btn-text-hover);
+    border: 1px solid var(--build-btn-border-hover);
+    transition: var(--transition);
+}
+
+/*===========================build-section CSS End here ============================= */
+
+/*===========================Service-section CSS Start here ============================= */
+.service-section{
+    background: var(--service-bg);
+    padding: 100px 20px;
+}
+.service-section .child_service {
+    background-color: var(--service-step-bg);
+    border: 1px solid var(--service-step-border);
+    padding: 10px;
+}
+.service-image{
+    padding: 10px 0;
+}
+.service-image img {
+    width: 100%;
+}
+
+.service-section .child_service .blog-content  .blog_content_customise h6{
+    color: var( --service-catagory-time);
+}
+.service-section .child_service .blog-content h2{
+    color: var(--service-title);
+}
+.service-section .child_service .blog-content p {
+    color: var(--service-des);
+}
+
+a.service-btn{
+    background-color: var(--service-btn-bg);
+    color: var(--service-btn-text);
+    border: 1px solid var(--service-btn-border);
+    padding: 12px 39px;
+    border: transparent;
+    transition: var(--transition);
+}
+a.service-btn:hover {
+    background-color: var(--service-btn-bg-hover);
+    color: var(--service-btn-text-hover);
+    border: 1px solid var( --service-btn-border-hover);
+    transition: var(--transition);
+}
+
+.service-section div#page_nav-short ul {
+    background: var(--service-bg) !important;
+}
+/*===========================Service-section CSS End here ============================= */
+
+
+
+
+/*===========================Responsive   CSS Start  here ============================= */
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .about-content h1 {
+    font-size: 42px;
+}
+.work-title h1 {
+    margin: 0px 210px;
+}
+.build-section .build-image .build-img-inner-content {
+    padding: 98px 80px 40px 40px;
+    
+}
+}
+/* Medium devices and up */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* .slider-item {
+    height: 90vh;
+} */
+.slider-video video {
+    width: 100%;
+}
+.slider-content h1 {
+    font-size: 37px;
+}
+.slider-content h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+.slider-content-two h2 {
+    color: #000000;
+    font-weight: 900;
+    font-size: 24px;
+}
+.social-media span {
+    width: 40px;
+    height: 40px;
+}
+.slider-two-image img {
+    display: block;
+    width: 100% !important;
+    position: relative;
+}
+.elementor-kit-1847 button, .elementor-kit-1847 input[type="button"], .elementor-kit-1847 input[type="submit"], .elementor-kit-1847 .elementor-button {
+    padding: 5px 40px 5px 40px;
+}
+/* About Section */
+.about-section {
+    padding: 40px 20px;
+}
+.about-title span {
+    font-size: 40px;
+}
+.about-content {
+    margin-left: 0;
+}
+.about-content h1 {
+    font-size: 36px;
+}
+.about-content p {
+    font-size: 16px;
+}
+.about-image img {
+    height: 355px;
+}
+
+
+/* Grow section */
+
+.grow-section .grow-content  h1 {
+    font-size: 30px;
+    padding-top: 0;
+}
+.grow-section .grow-video video {
+    padding-left: 0;
+}
+/* work-process-section */ 
+.work-process-section {
+    padding: 30px 20px;
+}
+.work-title h1 {
+    margin: 0;
+}
+.work-process {
+    margin: 25px 0;
+}
+.work-process img {
+    width: 60px;
+}
+/* .build-section  */
+.build-section{
+    padding: 100px 0;
+}
+.build-section .build-content {
+    color: white;
+    margin-bottom: 35px;
+    padding: 0 30px;
+    padding-top: 28px;
+}
+}
+
+@media (max-width: 767.98px) { 
+.slider-item {
+    height: 90vh;
+}
+    .slider-video {
+    display: none;
+}
+.slider-two-right {
+    display: none;
+}
+.slider-content h2 {
+    font-size: 23px;
+}
+
+.owl-dots {
+    bottom: 0;
+}
+.common-btn {
+    width: 50%;
+}
+/*  .about-section  */
+.about-section {
+    padding: 39px 0;
+}
+.about-title span {
+    font-size: 30px;
+} 
+.about-content {
+    margin-left: 0;
+    padding: 20px;
+}
+.grow-section {
+    padding: 50px 20px;
+}
+.grow-section .grow-video {
+    margin-top: 26px;
+}
+.grow-section .grow-video video {
+    padding-left: 0;
+    padding-bottom: 27px;
+}
+.grow-button {
+    width: 100%;
+}
+/* work-title */
+.work-process-section {
+    padding: 50px 20px;
+}
+.work-title h1 {
+    margin: 0;
+}
+.work-process img {
+    width: 60px;
+}
+/* build-section  */
+.build-section {
+    padding: 100px 0px;
+}
+.build-section .build-content {
+    padding-left: 40px;
+}
+.build-section .build-image .build-img-inner-content {
+    border-radius: 0 280px 0 0;
+}
+.build-section .build-image .build-img-inner-content {
+    padding: 90px 67px 40px 35px;
+    top: 0;
+}
+.build-section .build-image .build-img-inner-content .build-btn {
+    width: 100%;
+}
+
+/* Service Section */
+.service-section{
+    background: black;
+    padding: 0 20px 40px 20px;
+}
+.service-section .child_service {
+    margin-bottom: 27px;
+}
+.service-section .blog_post_btn {
+    width: 100%;
+}
+}
+
+
+@media (max-width: 575.98px) { 
+/* .slider-item {
+    height: 70vh;
+    padding: 0 12px;
+} */
+
+.slider-content-two h2 {
+    font-size: 24px !important;
+    font-weight: bolder;
+}
+.slider-content h2 {
+    font-size: 36px;
+    font-weight: bolder;
+}
+.banner-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.banner-btn {
+    width: 100%;
+    text-align:center;
+}
+
+.about-section {
+    padding: 39px 12px;
+}
+.about-content h1 {
+    font-size: 42px;
+}
+/* About Section */
+.about-service-part {
+    flex-direction: column;
+}
+.about-service-part .about-btn {
+    width: 100%;
+}
+.about-content {
+    padding: 20px 0;
+}
+
+/* Grow Section */
+.grow-section {
+    padding: 40px 12px;
+}
+.grow-section .grow-content  h1 {
+    font-size: 28px;
+}
+
+/* work-process-section */
+.work-process-section {
+    /* padding: 30px 12px; */
+    padding: 30px 12px;
+}
+
+/* Build Section */
+.build-section {
+    padding: 47px 12px;
+    margin-bottom: 40px;
+}
+
+.build-section .build-content {
+    padding-left: 12px;
+}
+.build-section .build-image .build-img-inner-content {
+    padding: 31px 12px;
+    border-radius: 0;
+    width: 100%;
+    top: 100%;
+    height: 120%;
+}
+/* .service-section */
+.service-section {
+    background: black;
+    padding: 50px 12px 40px 12px;
+    margin-top: 162px;
+}
+
+.elementor-kit-1847 button, .elementor-kit-1847 input[type="button"], .elementor-kit-1847 input[type="submit"], .elementor-kit-1847 .elementor-button {
+    padding: 6px 40px 6px 40px;
+}
+}
+/*===========================Responsive   CSS End here ============================= */
+
+.slider-section {
+    /* Desktop/Laptop */
+    height: 100vh;
+    min-height: 600px;
+    max-height: 900px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) and (min-height: 600px) {
+    .slider-section {
+        height: 85vh;
+        min-height: 500px;
+        max-height: 700px;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 767px) and (orientation: portrait) {
+    .slider-section {
+        height: 90vh;
+        min-height: 450px;
+        max-height: 650px;
+    }
+}
+
+/* Mobile Landscape */
+@media (max-width: 767px) and (orientation: landscape) {
+    .slider-section {
+        height: 110vh; /* ল্যান্ডস্কেপে বেশি */
+        min-height: 350px;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+    .slider-section {
+        height: 95vh;
+        min-height: 400px;
+    }
+}
+
+/* iOS Device Fix */
+@supports (-webkit-touch-callout: none) {
+    .slider-section {
+        height: -webkit-fill-available;
+    }
+}

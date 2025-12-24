@@ -62,14 +62,14 @@ body{
 
 
 
-.wp-element-button {
+.common-btn {
     background-color: var( --button-bg-color);
     color: var(--button-text);
     border: transparent;
     padding: 10px 39px;
     border: transparent;
 }
-.wp-element-button:hover {
+.common-btn:hover {
     background-color: var( --button-bg-color);
     color: var(--button-text);
 }
@@ -211,6 +211,17 @@ h2{
 
 
 /* ====================SIDEBAR STYLE START HERE=========================== */
+.wp-element-button{
+    background-color: var( --button-bg-color);
+    color: var(--button-text);
+    border: transparent;
+    padding: 10px 39px;
+    border: transparent;
+}
+.wp-element-button:hover {
+    background-color: var( --button-bg-color);
+    color: var(--button-text);
+}
 button.wp-block-search__button.wp-element-button {
     width: 38%;
 }

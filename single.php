@@ -19,7 +19,6 @@ get_header(); ?>
                 <?php comments_template(); ?>
                 </div>
             </div>
-
             <div class="col-xl-4">
                 <div class="Sidebars-part">
                 <!-- <h2>Show SideBar Area</h2> -->

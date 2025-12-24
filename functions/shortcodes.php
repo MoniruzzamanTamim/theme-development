@@ -51,7 +51,7 @@ function service_shotcodes( $atts ) {
                                 </div>
                                 <h2 class="blog-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                 <p ><?php echo wp_trim_words( get_the_content(), $atts['words'], '...' );  ?></p>
-                                <span><a class="btn btn-primary wp-element-button blog_post_btn" href="<?php the_permalink(); ?>">Read More</a></span>
+                                <span><a class="btn common-btn service-btn" href="<?php the_permalink(); ?>">Read More</a></span>
                         </div>
                         </div>
                     </div>

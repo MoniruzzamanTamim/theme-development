@@ -17,9 +17,8 @@ function link_css_js() {
 
     // 5) Link Custom CSS File
     wp_enqueue_style('custom', get_template_directory_uri() . '/css/custom.css', array(), '1.0.0', 'all');
-    wp_enqueue_style('home_page', get_template_directory_uri() . '/css/homepage.css', array(), '1.0.0', 'all');
+    wp_enqueue_style('home_page', get_template_directory_uri() . '/css/theme_customize/homepage.css', array(), '1.0.0', 'all');
     wp_enqueue_style('header_footer', get_template_directory_uri() . '/css/theme_customize/headerFooter.css', array(), '1.0.0', 'all');
-  wp_enqueue_style( 'login_enqueue', get_stylesheet_directory_uri(). "/css/theme_customize/login_enqueue.css", array(), "1.0.1", "all" );
     wp_enqueue_style('theme_option_css', get_template_directory_uri() . '/css/theme_ption/theme-option.css', array(), '1.0.0', 'all');
 
     // 6) Enqueue Font Awesome (CDN)

@@ -1,4 +1,15 @@
 <?php
+
+/**
+ * Backward compatibility for deprecated author description
+ */
+if ( ! function_exists( 'the_author_description' ) ) {
+    function the_author_description() {
+        echo esc_html( get_the_author_meta( 'description' ) );
+    }
+}
+
+
 // =======================================================
 // Website Title &  Default Theme Function 
 include_once('functions/default.php');
@@ -26,6 +37,10 @@ include_once('functions/theme_customizer/themecolor.php');
 // =======================================================
 // Login Page  Enqueue Register
 include_once('functions/theme_customizer/login-enqueue.php');
+// =======================================================
+// =======================================================
+// Home Page  Enqueue Register
+include_once('functions/theme_customizer/homeFunction.php');
 // =======================================================
 // ======================================================================
 //Page Setting for Page Relate Code metabox..................................
