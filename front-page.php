@@ -17,7 +17,7 @@ get_header(); ?>
                   <h2><?php echo esc_html(get_theme_mod('slider1_name', 'My name Md Moniruzzaman Tamim')); ?></h2>
                   <h2>I am <span id="typewriter"></span><span class="cursor">|</span></h2>
                   <!-- Text Animation -->
-                  <div class="social-media">
+                  <div class="social-media slider1-social-media">
                     <?php if(get_theme_mod('facebook_url')): ?>
                     <a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" target="_blank" rel="noopener noreferrer">
                         <span><i class="fa fa-facebook"></i></span>
@@ -83,7 +83,7 @@ get_header(); ?>
                     <div class="slider-content slider-content-two">
                         <h1><?php echo esc_html(get_theme_mod('slider2_title', 'Hello,')); ?></h1>
                         <h2><?php echo esc_html(get_theme_mod('slider2_description', 'As a Creative Web Designer, I Transform Ideas Into Stunning Digital Experiences That Combine Design, Usability, and Technology')); ?></h2>
-                         <div class="social-media">
+                         <div class="social-media slider2-social-media">
                     <?php if(get_theme_mod('facebook_url')): ?>
                     <a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" target="_blank" rel="noopener noreferrer">
                         <span><i class="fa fa-facebook"></i></span>
@@ -113,7 +113,7 @@ get_header(); ?>
                         <span><i class="fa fa-twitter"></i></span>
                     </a>
                     <?php endif; ?>
-                  </div>git 
+                  </div>
                         <div class="banner-btn">
                             <button type="button" class="home-btn banner-btn">Contact Me</button>
                             <?php $cv_pdf_url = get_theme_mod('cv_pdf_file'); ?>

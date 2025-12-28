@@ -100,8 +100,8 @@ h2{
 /*  */
 /* // ================= Page title  Related Css================= */
 .page-title {
-    background-color: #000000;
-    color: #ffffff;
+    background: var(--breadcrumb-bg) !important;
+    color: var(--breadcrumb-link)    !important;
     text-align: center;
     margin: 0;
     padding: 100px 0 8px 0;
@@ -117,11 +117,12 @@ h2{
     margin: 0  !important;
     justify-content: center !important;
     padding: 0 0 20px 0 !important;
-    background: black !important;
+    background: var(--breadcrumb-bg) !important;
     width: 100% !important;
+    color: var(--breadcrumb-text);
 }
 .breadcrumb a {
-    color: #efefef !important;
+    color: var(--breadcrumb-link)    !important;
     text-decoration: none !important;
     font-size: 19px;
     margin-right: 11px;
@@ -131,7 +132,7 @@ h2{
 }
 .breadcrumb span {
     font-size: 19px;
-    color: #ff004a;
+    color: var(--breadcrumb-text) !important;
     margin-left: 16px !important;
 }
 
@@ -140,16 +141,17 @@ h2{
 
 /* ===================== BLOG SECTION STYLES ==========================*/
 .blog-page {
-     background: var(--service-bg);
+     background: var(--blog-bg);
 }
 
-.blog-area{
+.blog-area {
     border-radius: 20px;
     overflow: hidden;
     height: 100%;
-    background-color: var(--service-step-bg);
-    border: 2px solid var(--service-step-border);
+    background-color: var(--blog-step-bg);
+    border: 1px solid var(--blog-step-border);
 }
+
 .blog-area .blog-image a img {
     height: 250px;
     object-fit: cover;
@@ -169,16 +171,19 @@ h2{
     font-size: 16px;
     display: flex;
     align-items: center;
-    color: var( --service-catagory-time);
+    color: var(--blog-catagory-time);
     display: flex;
     gap: 2px;
+}
+.blog-time , .blog_content_customise  h6  a{
+    color: var(--blog-catagory-time);
 }
 
 .blog-time i {
     margin-right: 5px; 
 } 
 .blog-content .blog-title  a{
-    color: var(--service-title);
+    color: var(--blog-title);
     font-family: var(--font-primary);
     font-size: 24px;
     font-weight: 700;
@@ -187,27 +192,39 @@ h2{
 }
 
 .blog-content p{
-    color: var(--service-des);
+    color: var(--blog-des);
 }
 .blog_post_btn {
+    background-color: var( --blog-btn-bg);
+    color: var(--blog-btn-text);
+    border: 1px solid var(--blog-btn-border);
     padding: 8px 39px;
-    border: transparent;
+    display: inline-block;
+    margin-top: 20px;   
+}
+.blog_post_btn:hover {
+    background-color: var( --blog-btn-bg-hover);
+    color: var(--blog-btn-text-hover);
+    border: 1px solid var(--blog-btn-border-hover);
 }
 
 .wp_pagenav p{
     color: white;
+    display:none
 }
 
 .page-numbers {
-    color: white;
-    background-color: #FF014F;
+    background-color: var( --blog-btn-bg);
+    color: var(--blog-btn-text);
+    border: 1px solid var(--blog-btn-border);
     padding: 8px 14px;
     margin: 5px;
 }
- span.page-numbers.current {
-    background: black;
-    color: #fbfbfb;
-    border: 1px solid #FF014F;
+span.page-numbers.current {
+    background-color: var( --blog-btn-bg-hover);
+    color: var(--blog-btn-text-hover);
+    border: 1px solid var(--blog-btn-border-hover);
+
 }
 
 
@@ -495,7 +512,7 @@ div#respond {
 }
 /* 404 Page Related CSS END Start Here............................. */
 
-@media (max-width: 768.98px) {
+@media (max-width: 767.98px) {
 .page-title {
     background-color: #000000;
     color: #ffffff;
@@ -503,7 +520,18 @@ div#respond {
     margin: 0;
     padding: 75px 0 8px 0;
 }
-section.body_section {
-    padding: 110px 0 !important;
+section.blog-page {
+    padding: 110px 20px  !important;
+}
+.page-design {
+    border-top: 1px solid white;
+    margin-top: 0;
+}
+    }
+
+
+    @media (max-width: 575.98px) { 
+section.blog-page {
+    padding: 20px 12px  !important;
 }
     }

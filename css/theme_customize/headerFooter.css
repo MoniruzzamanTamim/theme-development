@@ -32,7 +32,7 @@
 
 .header-section {
     padding: 8px 0;
-    position: relative;
+    /* position: relative; */
     z-index: 1000;
     background-color: var(--header-bg-color);
     border-bottom: 1px solid white !important;
@@ -64,7 +64,7 @@ ul.nav-menu {
 ul.nav-menu li a {
   display: inline-block;
   font-size: 16px;
-  padding: 3px 14px;
+  padding: 3px 10px;
   color: var(--header-text-color);
   transition: var(--transition);
   position: relative;
@@ -160,15 +160,15 @@ transform: translateY(0);
 
 
 /* header-extra SECTION  */
-.header-extra .download-cv-button  {
-    padding: 12px 22px;
+.header-extra .download-cv-button {
+    padding: 8px 22px;
     color: var(--header-btn-text);
     border: 1px solid var(--header-btn-border);
     width: 100%;
     background-color: var(--header-btn-bg);
     transition: var(--transition);
+    font-weight: bolder;
 }
-
 .header-extra .download-cv-button:hover {
     background-color: var(--header-btn-bg-hover);
     border-color: var(--header-btn-border-hover);
@@ -207,6 +207,16 @@ footer {
 .header-section {
     padding: 8px 20px !important;
 }
+.header-extra .download-cv-button {
+    padding: 7px 10px;
+    font-size: 14px;
+}
+ul.nav-menu li a {
+
+padding: 3px 5px;
+
+}
+
 }
 
 @media (max-width: 767.98px) { 

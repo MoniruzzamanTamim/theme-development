@@ -14,29 +14,30 @@
 <!-- // ================= Add Breadcrumb related Code End here  ================= -->
 
 <!-- ================Body Section Start===================  -->
-<section class="body_section blog-page bg-black page-design ">
+<section class="body_section blog-page page-design">
+    <div class="container">
+        <div class="row">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-8 "> 
-                <!-- Blog Posts Area  Start Method Slicing -->
-                      <div class="main_blog-post">
-                        <div class="col-row">
-                            <?php get_template_part('templete/blog_post'); ?>
-                        </div>
-                    </div>
-                       <!-- Blog Posts Area  END  -->
-                </div>
-                <div class="col-xl-4 ">
-                    <div class="Sidebars-part  ">
-                                            <!-- <h2 class="py-2">Show SideBar Area</h2> -->
-                                            <?php get_sidebar(); ?>
+            <!-- Main Content -->
+            <div class="col-12 col-lg-8">
+                <div class="main_blog-post">
+                    <div class="col-row">
+                        <?php get_template_part('templete/blog_post'); ?>
                     </div>
                 </div>
-
             </div>
+
+            <!-- Sidebar (Only PC & Laptop) -->
+            <div class="col-lg-4 d-none d-lg-block">
+                <div class="Sidebars-part">
+                    <?php get_sidebar(); ?>
+                </div>
+            </div>
+
         </div>
+    </div>
 </section>
+
 <!-- ================Body Section End====================  -->
 
 

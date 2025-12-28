@@ -84,22 +84,50 @@ border-top: 1px solid white;
 .social-media span{
     width: 49px;
     height: 49px;
-    background-color: #FF014F;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px 0px 10px 0px;
 }
+
+.slider1-social-media span{
+    background-color: var(--banner1-icon-bg);
+    color: var(--banner1-icon-text);
+    border: 1px solid var(--banner1-icon_bg);
+}
+
+.slider1-social-media span:hover{
+    background-color: var(--banner1-icon-bg-hover);
+    color: var(--banner1-icon-text-hover);
+    border: 1px solid var(--banner1-icon_border-hover);
+    border-radius: 10px 0px 10px 0px;
+}
+.slider2-social-media span{
+    background-color: var(--banner2-icon-bg);
+    color: var(--banner2-icon-text);
+    border: 1px solid var(--banner2-icon-bg);
+}
+.slider2-social-media span:hover{
+    background-color: var(--banner2-icon-bg-hover);
+    color: var(--banner2-icon-text-hover);
+    border: 1px solid var(--banner2-icon-border-hover);
+    border-radius: 10px 0px 10px 0px;
+}
 .social-media span img{
     width: 55px;
 }
-
-.social-media span svg {
+.slider1-social-media span svg {
     width: 22px;
     height: 22px;
-    fill: white;
+    fill: var(--banner1-icon-text);
 }
+.slider2-social-media span svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--banner2-icon-text);
+}
+
 
 .social-media span:hover{
     cursor: pointer;
@@ -449,6 +477,22 @@ a.service-btn:hover {
 
 .service-section div#page_nav-short ul {
     background: var(--service-bg) !important;
+    border: none !important;
+}
+
+.service-section  .short_page_nav .page-numbers {
+    color: var(--service-btn-text);
+    background-color: var(--service-btn-bg)  !important;
+    padding: 8px 14px;
+    margin: 5px;
+    display: flex !important;
+}
+.service-section  .short_page_nav .page-numbers a.page-numbers {
+    background-color: var(--service-btn-bg)  !important; 
+}
+.service-section  .short_page_nav  span.page-numbers.current {
+    background-color: var(--service-btn-bg-hover) !important;
+    border: 1px solid var( --service-btn-border-hover);
 }
 /*===========================Service-section CSS End here ============================= */
 

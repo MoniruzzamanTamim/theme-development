@@ -36,6 +36,9 @@ function tamim_theme_color($wp_customize) {
         'h3'            => __('H3 Color', 'tamim-personal'),
         'h4'            => __('H4 Color', 'tamim-personal'),
         'menu'          => __('Menu Color', 'tamim-personal'),
+        'breadcrumb_bg'    => __('Breadcrumb & TITLE BG Color', 'tamim-personal'),
+        'breadcrumb_text'  => __('Breadcrumb Text Color', 'tamim-personal'),
+        'breadcrumb_link'  => __('Breadcrumb Link Color', 'tamim-personal'),
     );
 
     foreach ($general_colors as $id => $label) {
@@ -168,21 +171,21 @@ function tamim_theme_color($wp_customize) {
         
         // Banner Colors
         'home_banner1_bg'           => array(__('Banner 1 Background', 'tamim-personal'), '#000000'),
-        'home_banner_title'          => array(__('Banner Title Color', 'tamim-personal'), '#FFFFFF'),
-        'home_banner_sub_title'         => array(__('Banner Sub Title Color', 'tamim-personal'), '#000000'),
-        'home_banner_text-animation'         => array(__('Banner Text Animation Color', 'tamim-personal'), '#ffffffff'),
-        'home_banner_icon_bg'       => array(__('Banner Icon Background', 'tamim-personal'), '#FF014F'),
-        'home_banner_icon_text' => array(__('Banner Icon Text', 'tamim-personal'), '#D60043'),
-        'home_banner_icon_border'       => array(__('Banner Icon Border', 'tamim-personal'), '#FF014F'),
-        'home_banner_icon_bg_hover' => array(__('Banner Icon BG Hover', 'tamim-personal'), '#D60043'),
-        'home_banner_icon_text_hover' => array(__('Banner Icon Text Hover', 'tamim-personal'), '#D60043'),
-        'home_banner_icon_border_hover' => array(__('Banner Icon Border Hover', 'tamim-personal'), '#D60043'),
+        'home_banner1_title'          => array(__('Banner 1 Title Color', 'tamim-personal'), '#FFFFFF'),
+        'home_banner1_sub_title'         => array(__('Banner 1 Sub Title Color', 'tamim-personal'), '#000000'),
+        'home_banner1_text-animation'         => array(__('Banner 1 Text Animation Color', 'tamim-personal'), '#ffffffff'),
+        'home_banner1_icon_bg'       => array(__('Banner 1 Icon Background', 'tamim-personal'), '#FF014F'),
+        'home_banner1_icon_text' => array(__('Banner 1 Icon Text', 'tamim-personal'), '#D60043'),
+        'home_banner1_icon_border'       => array(__('Banner 1 Icon Border', 'tamim-personal'), '#FF014F'),
+        'home_banner1_icon_bg_hover' => array(__('Banner 1 Icon BG Hover', 'tamim-personal'), '#D60043'),
+        'home_banner1_icon_text_hover' => array(__('Banner 1 Icon Text Hover', 'tamim-personal'), '#D60043'),
+        'home_banner1_icon_border_hover' => array(__('Banner 1 Icon Border Hover', 'tamim-personal'), '#D60043'),
 
         'home_banner2_bg'           => array(__('Banner 2 Background', 'tamim-personal'), '#F2F0EF'),
         'home_banner2_title'          => array(__('Banner 2 Title Color', 'tamim-personal'), '#FFFFFF'),
         'home_banner2_sub_title'         => array(__('Banner 2 Sub Title Color', 'tamim-personal'), '#000000'),
         'home_banner2_text-animation'         => array(__('Banner 2 Text Animation Color', 'tamim-personal'), '#ffffffff'),
-        'home_banner2_icon_bg'       => array(__('Banner Icon Background', 'tamim-personal'), '#FF014F'),
+        'home_banner2_icon_bg'       => array(__('Banner 2 Icon Background', 'tamim-personal'), '#FF014F'),
         'home_banner2_icon_text' => array(__('Banner 2 Icon Text', 'tamim-personal'), '#D60043'),
         'home_banner2_icon_border'       => array(__('Banner 2 Icon Border', 'tamim-personal'), '#FF014F'),
         'home_banner2_icon_bg_hover' => array(__('Banner 2 Icon BG Hover', 'tamim-personal'), '#D60043'),
@@ -257,6 +260,54 @@ function tamim_theme_color($wp_customize) {
             'settings' => $setting_id,
         )));
     }
+    /**
+     * =========================
+     * 5 Blog Page Colors Section
+     * =========================
+     */
+    $wp_customize->add_section('tamim_color_section_blogpage', array(
+        'title'    => __('Blog Page Colors', 'tamim-personal'),
+        'priority' => 40,
+        'panel'    => 'tamim-color-panel',
+    ));
+
+    // BLOG Page All Buttons Colors
+    $blogpage_colors = array(
+        'blog_all_btn_bg'           => array(__('All Buttons Background', 'tamim-personal'), '#FF014F'),
+        'blog_all_btn_text'         => array(__('All Buttons Text Color', 'tamim-personal'), '#FFFFFF'),
+        'blog_all_btn_border'       => array(__('All Buttons Border', 'tamim-personal'), '#FF014F'),
+        'blog_all_btn_bg_hover'     => array(__('All Buttons BG Hover', 'tamim-personal'), '#D60043'),
+        'blog_all_btn_text_hover'   => array(__('All Buttons Text Hover', 'tamim-personal'), '#FFFFFF'),
+        'blog_all_btn_border_hover' => array(__('All Buttons Border Hover', 'tamim-personal'), '#D60043'),
+        
+        // You can add more blog page specific colors here
+         'blog_bg' => array(__('Blog Background', 'tamim-personal'), '#000000ff'),
+         'blog_step_bg' => array(__('Blog Step BG', 'tamim-personal'), '#eb0b4eff'),
+        'blog_step_border' => array(__('Blog Step Border ', 'tamim-personal'), '#FF014F'),
+        'blog_catagory_time' => array(__('Blog Catagory & Time ', 'tamim-personal'), '#ffffffff'),
+        'blog_subtitle'       => array(__('Blog Sub-title', 'tamim-personal'), '#FFFFFF'),
+        'blog_title'          => array(__('Blogle Color', 'tamim-personal'), '#FFFFFF'),
+        'blog-des'           => array(__('Blog Normal Text', 'tamim-personal'), '#E0E0E0'),      
+    );
+
+    foreach ($blogpage_colors as $id => $data) {
+        $label = $data[0];
+        $default = $data[1];
+        $setting_id = 'tamim_color_' . $id;
+
+        $wp_customize->add_setting($setting_id, array(
+            'default'           => $default,
+            'sanitize_callback' => 'sanitize_hex_color',
+            'transport'         => 'refresh',
+            'capability'        => 'edit_theme_options',
+        ));
+
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $setting_id, array(
+            'label'    => $label,
+            'section'  => 'tamim_color_section_blogpage',
+            'settings' => $setting_id,
+        )));
+    }
 }
 add_action('customize_register', 'tamim_theme_color');
 
@@ -281,6 +332,9 @@ function tamim_theme_cus() {
         --h3-color: <?php echo esc_html(get_theme_mod('tamim_color_h3', '#333333')); ?>;
         --h4-color: <?php echo esc_html(get_theme_mod('tamim_color_h4', '#444444')); ?>;
         --menu-color: <?php echo esc_html(get_theme_mod('tamim_color_menu', '#ffffff')); ?>;
+        --breadcrumb-bg: <?php echo esc_html(get_theme_mod('tamim_color_breadcrumb_bg', '#000000ff')); ?>;
+        --breadcrumb-text: <?php echo esc_html(get_theme_mod('tamim_color_breadcrumb_text', '#FF014F')); ?>;
+        --breadcrumb-link: <?php echo esc_html(get_theme_mod('tamim_color_breadcrumb_link', '#ffffffff')); ?>;
 
         /* === Header === */
         --header-bg-color: <?php echo esc_html(get_theme_mod('tamim_color_header_bg', '#000000')); ?>;
@@ -309,25 +363,25 @@ function tamim_theme_cus() {
         --home-btn-border-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_all_btn_border_hover', '#D60043')); ?>;
         
         --banner1-bg: <?php echo esc_html(get_theme_mod('tamim_color_home_banner1_bg', '#000000')); ?>;
-        --banner-title: <?php echo esc_html(get_theme_mod('tamim_color_home_banner_title', '#FFFFFF')); ?>;
-        --banner-sub-title: <?php echo esc_html(get_theme_mod('tamim_color_home_banner_sub_title', '#ffffffff')); ?>;
+        --banner1-title: <?php echo esc_html(get_theme_mod('tamim_color_home_banner1_title', '#FFFFFF')); ?>;
+        --banner1-sub-title: <?php echo esc_html(get_theme_mod('tamim_color_home_banner1_sub_title', '#ffffffff')); ?>;
         --banner-text-animation: <?php echo esc_html(get_theme_mod('tamim_color_home_banner_text-animation', '#ffffffff')); ?>;
-        --banner-icon-bg: <?php echo esc_html(get_theme_mod('tamim_color_home_banner_icon_bg', '#FF014F')); ?>;
-        --banner-icon_text: <?php echo esc_html(get_theme_mod('tamim_color_home_banner_icon_text', '#FF014F')); ?>;
-        --banner-icon-border: <?php echo esc_html(get_theme_mod('tamim_color_home_banner_icon_border', '#FF014F')); ?>;
-        --banner-icon-bg-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_banner_icon_bg_hover', '#D60043')); ?>;
-        --banner-icon-text-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_banner_icon_text_hover', '#D60043')); ?>;
-        --banner-icon-border-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_banner_icon_border_hover', '#D60043')); ?>;
+        --banner1-icon-bg: <?php echo esc_html(get_theme_mod('tamim_color_home_banner1_icon_bg', '#FF014F')); ?>;
+        --banner1-icon-text: <?php echo esc_html(get_theme_mod('tamim_color_home_banner1_icon_text', '#FF014F')); ?>;
+        --banner1-icon-border: <?php echo esc_html(get_theme_mod('tamim_color_home_banner1_icon_border', '#FF014F')); ?>;
+        --banner1-icon-bg-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_banner1_icon_bg_hover', '#D60043')); ?>;
+        --banner1-icon-text-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_banner1_icon_text_hover', '#D60043')); ?>;
+        --banner1-icon-border-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_banner1_icon_border_hover', '#D60043')); ?>;
         --banner2-bg: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_bg', '#F2F0EF')); ?>;
-        --banner-title: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_title', '#FFFFFF')); ?>;
-        --banner-sub-title: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_sub_title', '#ffffffff')); ?>;
-        --banner-text-animation: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_text-animation', '#ffffffff')); ?>;
-        --banner-icon-bg: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_icon_bg', '#FF014F')); ?>;
-        --banner-icon_text: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_icon_text', '#FF014F')); ?>;
-        --banner-icon-border: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_icon_border', '#FF014F')); ?>;
-        --banner-icon-bg-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_icon_bg_hover', '#D60043')); ?>;
-        --banner-icon-text-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_icon_text_hover', '#D60043')); ?>;
-        --banner-icon-border-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_icon_border_hover', '#D60043')); ?>;
+        --banner2-title: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_title', '#FFFFFF')); ?>;
+        --banner2-sub-title: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_sub_title', '#ffffffff')); ?>;
+        --banner2-text-animation: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_text-animation', '#ffffffff')); ?>;
+        --banner2-icon-bg: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_icon_bg', '#FF014F')); ?>;
+        --banner2-icon-text: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_icon_text', '#ffffffff')); ?>;
+        --banner2-icon-border: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_icon_border', '#FF014F')); ?>;
+        --banner2-icon-bg-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_icon_bg_hover', '#D60043')); ?>;
+        --banner2-icon-text-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_icon_text_hover', '#ffffffff')); ?>;
+        --banner2-icon-border-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_banner2_icon_border_hover', '#D60043')); ?>;
         
 
         --about-bg: <?php echo esc_html(get_theme_mod('tamim_color_home_about_bg', '#FFFFFF')); ?>;
@@ -374,6 +428,20 @@ function tamim_theme_cus() {
         --service-btn-text-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_service_btn_text_hover', '#FFFFFF')); ?>;
         --service-btn-border-hover: <?php echo esc_html(get_theme_mod('tamim_color_home_service_btn_border_hover', '#D60043')); ?>;
 
+        /* === Blog Page Colors === */
+        --blog-btn-bg: <?php echo esc_html(get_theme_mod('tamim_color_blog_all_btn_bg', '#FF014F')); ?>;
+        --blog-btn-text: <?php echo esc_html(get_theme_mod('tamim_color_blog_all_btn_text', '#FFFFFF')); ?>;
+        --blog-btn-border: <?php echo esc_html(get_theme_mod('tamim_color_blog _all_btn_border', '#FF014F')); ?>;
+        --blog-btn-bg-hover: <?php echo esc_html(get_theme_mod('tamim_color_blog_all_btn_bg_hover', '#D60043')); ?>;
+        --blog-btn-text-hover: <?php echo esc_html(get_theme_mod('tamim_color_blog_all_btn_text_hover', '#FFFFFF')); ?>;
+        --blog-btn-border-hover: <?php echo esc_html(get_theme_mod('tamim_color_blog_all_btn_border_hover', '#D60043')); ?>;    
+        --blog-bg: <?php echo esc_html(get_theme_mod('tamim_color_blog_bg', '#000000ff')); ?>;
+        --blog-step-bg: <?php echo esc_html(get_theme_mod('tamim_color_blog_step_bg', '#eb0b4eff')); ?>;
+        --blog-step-border: <?php echo esc_html(get_theme_mod('tamim_color_blog_step_border', '#FF014F')); ?>;
+        --blog-catagory-time: <?php echo esc_html(get_theme_mod('tamim_color_blog_catagory_time', '#ffffffff')); ?>;
+        --blog-des: <?php echo esc_html(get_theme_mod('tamim_color_blog_des', '#E0E0E0')); ?>;
+        --blog-subtitle: <?php echo esc_html(get_theme_mod('tamim_color_blog_subtitle', '#FFFFFF')); ?>;
+        --blog-title: <?php echo esc_html(get_theme_mod('tamim_color_blog_title', '#FFFFFF')); ?>;      
     }
     </style>
     <?php

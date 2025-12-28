@@ -63,7 +63,7 @@ $show_button = ($header_btn_enable == '1' && !empty($cv_file_url));
                             <!-- Desktop Logo (shown on medium screens and up) -->
                             <img src="<?php echo esc_url($desktop_logo); ?>" 
                                  alt="<?php echo esc_attr(get_bloginfo('name')); ?>" 
-                                 class="d-none d-md-block">
+                                 class="d-none d-md-block header-logo-image">
                             
                             <!-- Mobile Logo (shown on small screens) -->
                             <img src="<?php echo esc_url($mobile_logo); ?>" 
@@ -114,7 +114,7 @@ $show_button = ($header_btn_enable == '1' && !empty($cv_file_url));
             <!-- Mobile Menu Icon (যেমনটি ছিল) -->
             <!-- আপনার header.php এর mobile icon অংশে এই কোডটি ব্যবহার করুন -->
 <div class="d-block d-md-none col-sm-4 col-4 text-end">
-    <div class="header-menu-icon" onclick="console.log('CLICKED!'); alert('Menu Icon Clicked!');">
+    <div class="header-menu-icon">
         <img src="<?php echo get_template_directory_uri(); ?>/img/menu-icon.png" 
              alt="Menu Icon"
              style="cursor: pointer;">
