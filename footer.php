@@ -1,6 +1,9 @@
 <?php
 /*
-* This template for displaying the Footer
+@Package TAMIM Theme
+====================================
+        SEARCH Page Template
+====================================
 */
 ?>
 

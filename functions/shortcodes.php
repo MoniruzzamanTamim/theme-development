@@ -1,6 +1,16 @@
+
+<?php
+/*
+@Package TAMIM Theme
+====================================
+        SHORTCODE FUNCTION WITH PAGINATION
+====================================
+*/
+?>
+
+
 <?php
 
-// Short For Custom Post With pagination 
 function service_shotcodes( $atts ) {
     // আউটপুট বাফারিং শুরু করা
 

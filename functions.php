@@ -1,5 +1,13 @@
 <?php
+/*
+@Package TAMIM Theme
+====================================
+        MAIN FUNCTION  FILE
+====================================
+*/
+?>
 
+<?php
 /**
  * Backward compatibility for deprecated author description
  */

@@ -1,8 +1,14 @@
 <?php
 /*
- * Theme Front Page 
+@Package TAMIM Theme
+====================================
+        Home Page Template
+====================================
 */
-get_header(); ?>
+?>
+<!-- ================Header Section Start===================  -->
+<?php get_header(); ?>
+<!-- ================Header Section Start====================  -->
 
 <!-- Banner Slider Section -->
 <section class="banner-section front-page">

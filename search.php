@@ -1,17 +1,21 @@
+
 <?php
 /*
-* The template for displaying Search Resealt
-*/ 
-get_header(); ?>
-
-
-
+@Package TAMIM Theme
+====================================
+        SEARCH Page Template
+====================================
+*/
+?>
+<!-- ================Header Section Start===================  -->
+<?php get_header(); ?>
+<!-- ================Header Section Start====================  -->
 <!-- ================Body Section Start===================  -->
-<section class="body_section search-page bg-black page-design ">
+<section class="body_section search-page  page-design ">
 
         <div class="container">
             <div class="row">
-                <div class="col-xl-8"> 
+                <div class="col-12 col-lg-8"> 
 
                 <div class="search-title">
                     <h2 class='title'> <?php printf(__('Search Result For: %s', 'tamim-Personal'), get_search_query());?></h2>
@@ -20,7 +24,8 @@ get_header(); ?>
                     <!-- Slicing Blog Related Code  -->
                     <?php get_template_part('templete/blog_post'); ?>
                 </div>
-                <div class="col-xl-4">
+                <!-- Sidebar (Only PC & Laptop) -->
+            <div class="col-lg-4 d-none d-lg-block">
                     <div class="Sidebars-part ">
                                             <!-- <h2>Show SideBar Area</h2> -->
                                             <?php get_sidebar(); ?>

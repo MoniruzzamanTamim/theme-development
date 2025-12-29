@@ -1,9 +1,14 @@
 <?php
 /*
-* Template Name: Page width sidebar
-*/ 
-get_header(); ?>
-
+@Package TAMIM Theme
+====================================
+        SIDEBAR Page Template
+====================================
+*/
+?>
+<!-- ================Header Section Start===================  -->
+<?php get_header(); ?>
+<!-- ================Header Section Start====================  -->
 
 <section class="body_section sidebar-page ">
     <div class="container-fluid"><!-- Dynamically add container class here -->

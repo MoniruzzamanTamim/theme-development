@@ -1,4 +1,12 @@
 <?php
+/*
+@Package TAMIM Theme
+====================================
+        BLOG PAGE SETTING FUNCTION
+====================================
+*/
+?>
+<?php
 // ===========Set Thumble on Blog and Page=============
 
 add_theme_support('post-thumbnails');

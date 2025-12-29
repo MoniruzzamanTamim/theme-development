@@ -1,3 +1,13 @@
+<?php
+/*
+@Package TAMIM Theme
+====================================
+        404 Page Template
+====================================
+*/
+?>
+
+
 <!-- ================Header Section Start===================  -->
 <?php error_reporting(E_ALL);
 ini_set('display_errors', 1);

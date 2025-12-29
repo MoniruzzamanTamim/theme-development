@@ -1,5 +1,13 @@
 <?php
-// Page Width Control Here
+/*
+@Package TAMIM Theme
+====================================
+        PAGE SETTING FUNCTION
+====================================
+*/
+?>
+
+<?php
 
 // Add a custom meta box for layout selection
 function custom_meta_box_layout_control() {

@@ -1,10 +1,14 @@
 <?php
 /*
- * Theme Front Page 
+@Package TAMIM  Theme
+====================================
+        HOME Page Template
+====================================
 */
-// Header Section Start =============================================
-get_header(); ?>
-<!-- //Header Section END ============================================= -->
+?>
+<!-- ================Header Section Start===================  -->
+<?php get_header(); ?>
+<!-- ================Header Section Start====================  -->
 <!-- Banner Slider Section Satrt Here ==================================-->
 <section class="banner-section front-page" >
   <div id="banner-slider" class="owl-carousel owl-theme">

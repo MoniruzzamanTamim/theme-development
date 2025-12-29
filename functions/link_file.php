@@ -1,3 +1,13 @@
+
+<?php
+/*
+@Package TAMIM Theme
+====================================
+        LINK CSS & JS FUNCTION
+====================================
+*/
+?>
+
 <?php
 
 // ========================= Linkup Additional CSS & JS  Font-Awesome, BootStrap, And Others Link ================================

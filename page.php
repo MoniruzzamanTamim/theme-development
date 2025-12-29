@@ -1,11 +1,14 @@
-<?php/*
-* The template for displaying pages
-*/ 
+<?php
+/*
+@Package TAMIM Theme
+====================================
+        ALL PAGE Template
+====================================
+*/
 ?>
 <!-- ================Header Section Start===================  -->
 <?php get_header(); ?>
-<!-- ================Header Section End====================  -->
-
+<!-- ================Header Section Start====================  -->
 <!-- ================= page Title Control Related Code Start  here =================  -->
 <?php 
     $show_title = get_post_meta(get_the_ID(), '_tamim_show_page_title', true);

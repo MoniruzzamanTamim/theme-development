@@ -1,7 +1,14 @@
+<?php
+/*
+@Package TAMIM Theme
+====================================
+        BLOG Page Template
+====================================
+*/
+?>
 <!-- ================Header Section Start===================  -->
 <?php get_header(); ?>
 <!-- ================Header Section Start====================  -->
-
 <!-- // ================= Add Breadcrumb related Code Start here  ================= -->
 <?php
     $show_breadcrumb = get_post_meta(get_the_ID(), '_tamim_show_breadcrumb', true); 

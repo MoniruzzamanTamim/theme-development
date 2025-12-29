@@ -1,6 +1,9 @@
 <?php
 /*
-* Header Template – Showing header on FrontEnd
+@Package TAMIM Theme
+====================================
+        HEADER Page Template
+====================================
 */
 ?>
 <!DOCTYPE html>

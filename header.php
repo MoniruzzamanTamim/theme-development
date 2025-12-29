@@ -1,8 +1,12 @@
 <?php
 /*
-* Header Template – Showing header on FrontEnd
+@Package TAMIM Theme
+====================================
+        HEADER  Template
+====================================
 */
 ?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>

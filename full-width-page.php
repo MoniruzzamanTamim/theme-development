@@ -1,8 +1,14 @@
 <?php
 /*
-* Template Name: Full Width Page
-*/ 
-get_header(); ?>
+@Package TAMIM Theme
+====================================
+        Full Width Page Template
+====================================
+*/
+?>
+<!-- ================Header Section Start===================  -->
+<?php get_header(); ?>
+<!-- ================Header Section Start====================  -->
 
 <section class="body_section full-width-page page-design ">
     <div class="container-fluid"><!-- Dynamically add container class here -->

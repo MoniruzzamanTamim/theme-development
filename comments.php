@@ -1,9 +1,12 @@
 <?php
-/**
- * The template for displaying comments
- *
- * @package Tamim-Personal
- */
+
+/*
+@Package TAMIM Theme
+====================================
+        SEARCH Page Template
+====================================
+*/
+
 
 if ( post_password_required() ) {
     return;

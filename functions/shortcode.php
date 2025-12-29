@@ -1,8 +1,13 @@
+<?php
+/*
+@Package TAMIM Theme
+====================================
+        SHORTCODE FUNCTION
+====================================
+*/
+?>
+
 <?php 
-
-
-// ShortCode Create
-
 
 function normal_shortcode(){
     return "Hello This is a Normal ShortCode";

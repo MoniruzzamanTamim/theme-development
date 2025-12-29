@@ -1,5 +1,13 @@
 <?php
-// Custom Post Type: Service
+/*
+@Package TAMIM Theme
+====================================
+        CUSTOM POST TYPE FUNCTION
+====================================
+*/
+?>
+
+<?php
 
 function tamim_custom_post() {
     register_post_type('service', array(

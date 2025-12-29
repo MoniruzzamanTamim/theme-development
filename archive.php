@@ -1,18 +1,21 @@
-<!-- ================Header Section Start===================  -->
-<?php 
+<?php
 /*
-* The template for displaying Archive Pages
-*/ 
-get_header(); ?>
+@Package TAMIM Theme
+====================================
+        ARCHIVE Page Template
+====================================
+*/
+?>
+<!-- ================Header Section Start===================  -->
+<?php get_header(); ?>
 <!-- ================Header Section Start====================  -->
 
-
 <!-- ================Body Section Start===================  -->
-<section class="body_section archive-section bg-black page-design  ">
+<section class="body_section archive-section  page-design  ">
 
     <div class="container">
         <div class="row">
-            <div class="col-xl-8"> 
+             <div class="col-12 col-lg-8">
                 <div class="archive-title">
                 <?php
                     the_archive_title('<h1 class="title">','</h1>');
@@ -22,7 +25,8 @@ get_header(); ?>
                     <!-- Slicing Blog Related Code  -->
                 <?php get_template_part('templete/blog_post'); ?>
             </div>
-            <div class="col-xl-4">
+             <!-- Sidebar (Only PC & Laptop) -->
+            <div class="col-lg-4 d-none d-lg-block">
                 <div class="Sidebars-part">
                         <h2>Show SideBar Area</h2>
                          <?php get_sidebar(); ?>

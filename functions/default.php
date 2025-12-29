@@ -1,3 +1,11 @@
+<?php
+/*
+@Package TAMIM Theme
+====================================
+        DEFAULT FUNCTION FILE
+====================================
+*/
+?>
 
 <?php
 // This Templete is Showing Theme Default Configuration..........

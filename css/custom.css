@@ -141,7 +141,7 @@ h2{
 
 /* ===================== BLOG SECTION STYLES ==========================*/
 .blog-page {
-     background: var(--blog-bg);
+    background: var(--blog-bg);
 }
 
 .blog-area {
@@ -248,6 +248,47 @@ button.wp-block-search__button.wp-element-button {
 
 
 /* ===================== Archive Page  STYLES Start here ==========================*/
+.archive-section{
+    background: var(--blog-bg);
+}
+.archive-title .title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--blog-title);       
+    font-family: var(--font-primary);
+}
+
+
+/* ===================== Archive Page  STYLES END  here ==========================*/
+/* ===================== Single Page  STYLES Start here ==========================*/
+.single-page{
+    background: var(--blog-bg);
+}
+.single-title .title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--blog-title);       
+    font-family: var(--font-primary);
+}
+
+
+/* ===================== Single Page  STYLES END  here ==========================*/
+/* ===================== Search Page  STYLES Start here ==========================*/
+.search-page{
+    background: var(--blog-bg);
+}
+.search-title .title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--blog-title);       
+    font-family: var(--font-primary);
+}
+
+
+/* ===================== Search Page  STYLES END  here ==========================*/
 
 /* ==========Custom Post ShortCode With Pagination Start  ============*/
 .short_page_nav .page-numbers {
@@ -453,10 +494,10 @@ div#respond {
 /* Blog Page Related CSS End Here................. */
 /* Signel Page Related CSS START Here................. */
 
-.singel-page{
+.single-page{
     color: white !important;
 }
-/* Signel Page Related CSS End Here................. */
+/* Single Page Related CSS End Here................. */
 /* Search  Page Related CSS START Here................. */
 .search-page .pagination {
     display: none;
@@ -497,7 +538,7 @@ div#respond {
     border: none;
     margin-top: 9px;
     display: inline-block;
-   color: var(--button-text);
+color: var(--button-text);
 }
 
 .search-box-404 {
@@ -526,6 +567,7 @@ section.blog-page {
 .page-design {
     border-top: 1px solid white;
     margin-top: 0;
+    padding: 40px 12px !important;
 }
     }
 
