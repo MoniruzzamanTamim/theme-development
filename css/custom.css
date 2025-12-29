@@ -43,7 +43,7 @@ html::-webkit-scrollbar {
 width: .5rem;
 }
 html::-webkit-scrollbar-thumb {
-background: #e67e22;
+background: #e62232;
 border-radius: 5rem;
 }
 /* ===================== GLOBAL CLASSES ==========================*/
@@ -426,14 +426,24 @@ Slider Short Code কে ফুল উইথ বানানো যাতে ক
 /* ==============Day 8================ */
 
 /* ==================Comment Related Css Start here ............================*/
+
+.blog-content .blog-title  a{
+    
+    font-family: var(--font-primary);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 16px;
+}
+
 h3#reply-title {
     font-size: 20px;
     font-weight: 500;
     font-family: sans-serif;
-    border-bottom: 4px solid black;
+    border-bottom: 2px solid var(--blog-title);
     padding-bottom: 7px;
     display: inline-block;
-    color: #ffffff;
+    color: var(--blog-title);
 }
 p.logged-in-as {
     display: none;
@@ -447,27 +457,28 @@ textarea#comment {
     padding: 10px;
 }
 
-.reply {
-     padding: 8px 42px;
-    background-color: var( --button-bg-color);
-    color: var(--button-text);
-    border: transparent;
-    display: inline-block;
-}
 
-.form-submit input#submit, .reply {
-    padding: 8px 42px;
-    background-color: var( --button-bg-color);
-    color: var(--button-text);
-    border: transparent;
+
+.form-submit input#submit, .reply  {
+    background-color: var( --blog-btn-bg);
+    color: var(--blog-btn-text);
+    border: 1px solid var(--blog-btn-border);
+    padding: 8px 39px;
+    display: inline-block;
+    margin-top: 20px;   
+}
+.form-submit input#submit:hover , .reply:hover  {
+    background-color: var( --blog-btn-bg-hover);
+    color: var(--blog-btn-text-hover);
+    border: 1px solid var(--blog-btn-border-hover);
 }
 
 .comment-author a.url {
-    color: rgb(255, 255, 255);
+    color: var(--blog-des);
     font: weight 600px;
 }
 .comment-meta.commentmetadata a {
-    color: rgb(255, 255, 255);
+    color: var(--blog-des);
     padding: 8px 0;
 }
 
@@ -477,7 +488,7 @@ div#respond {
 .comment {
     padding: 10px 0;
 }
-.h3,.comment p,.says, .fn a, .reply a {    color: white;}
+.h3,.comment p,.says, .fn a, .reply a {    color: var(--blog-des);}
 
 /* ==================Comment Related Css END here ............================*/
 

@@ -80,8 +80,6 @@ include_once('functions/shortcodes.php');
 // Wordpress Theme option
 // include_once('functions/themeoption.php');
 // =======================================================
-// Wordpress Theme option
-include_once('functions/theme_option/theme_options.php');
-// =======================================================
+
 
 ?>
